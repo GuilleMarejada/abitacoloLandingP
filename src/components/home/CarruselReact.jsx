@@ -17,7 +17,7 @@ const team = [
     position: "Co-Founder",
     linkImage: "https://via.placeholder.com/430x300",
     description:
-      "¡Hola! Soy Guille, madrileño y arquitecto habilitado por la Escuela Técnica Superior de Arquitectura de Madrid (ETSAM), con estudios complementarios en el University College de Dublín (Irlanda). También me he formado en diseño gráfico en el Istituto Marangoni de Milán (Italia) y cuento con el Máster en Comunicación Arquitectónica de la Universidad Politécnica de Madrid (UPM).",
+      "¡Hola! Soy Guille, madrileño y arquitecto habilitado por la Escuela Técnica Superior de Arquitectura de Madrid (ETSAM), con estudios...",
     linkedin: "https://www.linkedin.com/in/anarodriguez",
     instagram: "https://www.instagram.com/anarodriguez",
   },
@@ -26,7 +26,7 @@ const team = [
     position: "UX Product Designer Specialist",
     linkImage: "https://via.placeholder.com/430x300",
     description:
-      "Soy Diseñador de Productos Digitales con más de 2 años de experiencia en el ecosistema digital, donde he demostrado una sólida capacidad para desarrollar soluciones centradas en el usuario que se alinean con los objetivos empresariales y generan ingresos. Mi enfoque está en crear diseños que resuelvan problemas reales y mejoren la experiencia del usuario.",
+      "Soy Diseñador de Productos Digitales con más de 2 años de experiencia en el ecosistema digital, donde he demostrado una sólida capacidad...",
     linkedin: "https://www.linkedin.com/in/carlosgomez",
     instagram: "https://www.instagram.com/carlosgomez",
   },
@@ -107,7 +107,7 @@ const TeamCarousel = () => {
 
       <div className="flex justify-center items-center mt-6 space-x-4">
         <button className="p-2" onClick={prevSlide} aria-label="Ver anterior">
-          <img src={FlechaIzq} alt="Anterior" />
+          <img src={FlechaIzq.src} alt="Anterior" />
         </button>
 
         <div className="flex space-x-2">
@@ -123,7 +123,7 @@ const TeamCarousel = () => {
         </div>
 
         <button className="p-2" onClick={nextSlide} aria-label="Ver siguiente">
-          <img src={FlechaDrch} alt="Siguiente" />
+          <img src={FlechaDrch.src} alt="Siguiente" />
         </button>
       </div>
     </div>
