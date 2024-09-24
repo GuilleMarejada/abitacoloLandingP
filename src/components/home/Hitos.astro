@@ -143,12 +143,5 @@ const articulosHitos = [
         articleImage.src = articulosHitos[index].image; // Cambia la imagen del artículo al index
       });
     });
-
-    // Opción para volver a la imagen original cuando el mouse sale
-    articles.forEach((article) => {
-      article.addEventListener("mouseleave", () => {
-        articleImage.src = articulosHitos[0].image; // Cambia a la imagen original o una imagen por defecto
-      });
-    });
   });
 </script>
