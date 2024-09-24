@@ -7,19 +7,23 @@ import placeHolder3 from "../../image/home/placeholder3.png";
 const articulosHitos = [
   {
     titulo: "Título 1",
-    texto: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    texto:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
     image: placeHolder1,
+    clases: "",
   },
   {
     titulo: "Título 2",
     texto: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: placeHolder2,
+    clases: "max-md:hidden",
   },
   {
     titulo: "Título 3",
     texto:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
     image: placeHolder3,
+    clases: "max-lg:hidden",
   },
 ];
 ---
@@ -50,8 +54,6 @@ const articulosHitos = [
       class="w-full max-w-[1376px] h-[400px] object-cover"
       src={articulosHitos[0].image}
       alt="Imagen destacada de Hitos Abitacolo"
-      loading="lazy"
-      inferSize={true}
     />
 
     <section class="relative flex justify-center">
@@ -59,7 +61,7 @@ const articulosHitos = [
         {
           articulosHitos.map((articulo, index) => (
             <article
-              class="h-72 w-full p-12 relative grow bg-[#333333] hover:bg-[#202023] flex-col justify-start items-start gap-6 inline-flex test"
+              class={`h-72 w-full p-12 relative grow bg-[#333333] hover:bg-[#202023] flex-col justify-start items-start gap-6 inline-flex top-[-20px] ${articulo.clases}`}
               data-index={index}
             >
               <h2 class="self-stretch opacity-60 text-white/90 text-2xl font-bold uppercase leading-7">
@@ -134,14 +136,21 @@ const articulosHitos = [
   document.addEventListener("DOMContentLoaded", () => {
     // Encuentra todos los artículos en la página.
     const articles = document.querySelectorAll("article.test");
-    const articleImage = document.getElementById("articleImage");
+    const articleImage = document.getElementById(
+      "articleImage"
+    ) as HTMLImageElement;
 
-    // Manejar los eventos de mouseenter en cada artículo.
-    articles.forEach((article) => {
-      article.addEventListener("mouseenter", () => {
-        const index = article.getAttribute("data-index"); // Obtén el índice del artículo
-        articleImage.src = articulosHitos[index].image; // Cambia la imagen del artículo al index
+    // Asegúrate de que articleImage sea realmente una imagen.
+    if (articleImage) {
+      // Manejar los eventos de mouseenter en cada artículo.
+      articles.forEach((article) => {
+        article.addEventListener("mouseenter", () => {
+          const index = article.getAttribute("data-index"); // Obtén el índice del artículo
+          if (index !== null) {
+            articleImage.src = articulosHitos[Number(index)].image; // Cambia la imagen del artículo al index
+          }
+        });
       });
-    });
+    }
   });
 </script>
