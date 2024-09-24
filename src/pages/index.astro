@@ -1,17 +1,20 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Article from '../components/article.astro'
-
-
+import Banner from "../components/home/Banner.astro";
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import AboutUs from "../components/home/AboutUs.astro";
+import AboutOurJob from "../components/home/AboutOurJob.astro";
+import AboutOurTeam from "../components/home/AboutOurTeam.astro";
+import AboutOurProducts from "../components/home/AboutOurProducts.astro";
 ---
 
 <Layout title="Abitacolo">
-	<main>
-		<h1 class=" hover:animate-fade-out-down text-4xl text-center mt-20 text-verdeAbitacolo font-bold" >Abitacolo</h1>
-		<Article/>
-	
-		
-	</main>
+  <main>
+    <Nav />
+    <Banner />
+    <AboutUs />
+    <AboutOurJob />
+    <AboutOurTeam />
+    <AboutOurProducts />
+  </main>
 </Layout>
-
-
