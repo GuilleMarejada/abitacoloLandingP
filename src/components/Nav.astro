@@ -1,0 +1,48 @@
+---
+import AbitacoloBlanco from "../image/logos/AbitacoloBlanco.webp";
+---
+
+<nav class="w-full absolute flex justify-center">
+  <div
+    class="max-w-[1440px] w-full h-[65px] px-8 py-4 flex justify-between items-center"
+  >
+    <!-- Logo de Abitacolo -->
+    <div class="flex items-center gap-4">
+      <img src={AbitacoloBlanco.src} alt="Logotipo de Abitacolo" class="h-10" />
+
+      <ul class="flex items-center gap-4 ml-4">
+        <li>
+          <a href="#AboutUs" class="px-2 py-1.5 rounded-sm text-white">
+            ¿Qué es Abitacolo?
+          </a>
+        </li>
+        <li>
+          <a href="#team" class="px-2 py-1.5 rounded-sm text-white">
+            Nuestro equipo
+          </a>
+        </li>
+        <li>
+          <a href="#hitos" class="px-2 py-1.5 rounded-sm text-white">
+            Hitos Abitacolo
+          </a>
+        </li>
+        <li>
+          <a href="#products" class="px-2 py-1.5 rounded-sm text-white">
+            Nuestros productos
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <button class="px-2 py-1.5 rounded-sm text-white"> ES </button>
+      <a
+        href="#contacto"
+        class="px-2 py-1.5 bg-[#919e32] rounded-sm text-white uppercase tracking-tight"
+      >
+        Contáctanos
+      </a>
+      <!-- <DropDown /> -->
+    </div>
+  </div>
+</nav>
