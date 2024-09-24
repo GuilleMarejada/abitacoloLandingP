@@ -1,0 +1,83 @@
+---
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+    const name = data.get("username");
+    const email = data.get("email");
+    const password = data.get("password");
+    // Do something with the data
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+---
+
+<div id="contacto" class="grid justify-items-center mb-5 pt-12 bg-white pb-6">
+  <div class="grid gap-10 mb-10">
+    <p class="text-[42px] font-semibold leading-[52px]">
+      Ponte en Contacto con Nosotros
+    </p>
+    <div
+      class="max-w-[714px] text-[#151438]/40 text-[22px] font-medium leading-loose"
+    >
+      ¿Quieres más información sobre este proyecto? Puedes escribirnos o
+      llamarnos, te informaremos encantados.
+    </div>
+    <div class="w-[308px] text-black text-base font-normal leading-relaxed">
+      +34 xxx xxx xxx
+    </div>
+  </div>
+  <form
+    action="https://formsubmit.co/8ef3a12491cf88e883476dae52fd2893"
+    method="POST"
+    class="h-[516px] w-full grid justify-center flex-col gap-[35px]"
+  >
+    <div class="max-w-[783.71px] flex gap-2 justify-between items-center">
+      <input
+        type="text"
+        name="nombre"
+        placeholder="Nombre"
+        autocomplete="name"
+        class="max-w-[476px] w-full h-[50px] rounded-sm border border-[#666666] px-6 text-lg font-medium leading-relaxed placeholder-[#151438]/40"
+      />
+      <input
+        type="tel"
+        name="telefono"
+        placeholder="Teléfono"
+        autocomplete="tel"
+        class="max-w-[270px] h-[50px] rounded-sm border border-[#666666] px-6 text-lg font-medium leading-relaxed placeholder-[#151438]/40"
+      />
+    </div>
+    <input
+      type="email"
+      name="email"
+      placeholder="Email"
+      autocomplete="email"
+      class="max-w-[792px] h-[50px] rounded-sm border border-[#666666] px-6 text-lg font-medium leading-relaxed placeholder-[#151438]/40"
+    />
+    <select
+      name="motivo"
+      autocomplete="off"
+      class="max-w-[792px] h-[50px] rounded-sm border border-[#666666] px-6 text-lg font-medium leading-relaxed text-[#151438]/40"
+    >
+      <option value="">Indícanos el motivo del contacto</option>
+      <option value="consulta">Consulta</option>
+      <option value="soporte">Soporte</option>
+      <option value="otros">Otros</option>
+    </select>
+    <textarea
+      name="mensaje"
+      placeholder="Tu mensaje"
+      autocomplete="off"
+      class="max-w-[792px] h-[170px] rounded-sm border border-[#666666] p-4 text-lg font-medium leading-relaxed placeholder-[#151438]/40 resize-none"
+    ></textarea>
+    <button
+      type="submit"
+      class="w-60 h-14 bg-[#919e32]/60 rounded-sm text-white text-base font-normal uppercase hover:bg-[#919e32]/80 transition-colors"
+    >
+      ENVIAR
+    </button>
+  </form>
+</div>
