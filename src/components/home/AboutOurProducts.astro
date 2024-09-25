@@ -1,43 +1,39 @@
 ---
-
 import { Image } from "astro:assets";
 
 interface Props {
-  title : string;
+  title: string;
 }
 
-const {title} = Astro.props;
+const { title } = Astro.props;
 
 const productInfo = [
   {
     title: "Titulo-1",
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
     image: "https://via.placeholder.com/320x208",
   },
   {
     title: "Titulo-2",
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
     image: "https://via.placeholder.com/320x208",
   },
   {
     title: "Titulo-3",
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
     image: "https://via.placeholder.com/320x208",
   },
   {
     title: "Titulo-4",
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
     image: "https://via.placeholder.com/320x208",
   },
 ];
 ---
-
-
-
 
 <div
   id="products"
@@ -69,9 +65,12 @@ const productInfo = [
               <p class="text-white/40 text-base font-normal  uppercase">
                 {product.description}
               </p>
-              <button class="w-full max-w-[80px] text-white bg-verdeAbitacolo">
-                <a href={`/products/${product.title}`}>Ver mas</a>
-              </button>
+
+              <a class="w-fit" href={`/products/${product.title}`}>
+                <button class="w-[80px] text-white bg-verdeAbitacolo">
+                  Ver mas
+                </button>
+              </a>
             </div>
           </div>
         ))
