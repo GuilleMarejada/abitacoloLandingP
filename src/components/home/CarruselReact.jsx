@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TeamCard from "./TeamCard.jsx";
 import FlechaIzq from "../../image/FlechaIzq.webp";
 import FlechaDrch from "../../image/FlechaDrch.webp";
+
 const team = [
   {
     person: "Juliette C. Mallen",
@@ -106,7 +107,11 @@ const TeamCarousel = () => {
       </div>
 
       <div className="flex justify-center items-center mt-6 space-x-4">
-        <button className="p-2" onClick={prevSlide} aria-label="Ver anterior">
+        <button
+          className="p-2"
+          onClick={prevSlide}
+          aria-label="Ver el miembro anterior del equipo"
+        >
           <img src={FlechaIzq.src} alt="Anterior" loading="lazy" />
         </button>
 
@@ -118,11 +123,16 @@ const TeamCarousel = () => {
                 index === currentIndex ? "bg-[#919e32]" : "bg-gray-300"
               }`}
               onClick={() => setCurrentIndex(index)}
+              aria-label={`Ir al miembro ${index + 1} del equipo`}
             />
           ))}
         </div>
 
-        <button className="p-2" onClick={nextSlide} aria-label="Ver siguiente">
+        <button
+          className="p-2"
+          onClick={nextSlide}
+          aria-label="Ver el siguiente miembro del equipo"
+        >
           <img src={FlechaDrch.src} alt="Siguiente" loading="lazy" />
         </button>
       </div>
