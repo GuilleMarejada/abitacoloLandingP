@@ -1,0 +1,156 @@
+---
+import { Image } from "astro:assets";
+import placeHolder1 from "../../image/home/placeholder1.png";
+import placeHolder2 from "../../image/home/placeholder2.png";
+import placeHolder3 from "../../image/home/placeholder3.png";
+
+const articulosHitos = [
+  {
+    titulo: "Título 1",
+    texto:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
+    image: placeHolder1,
+    clases: "",
+  },
+  {
+    titulo: "Título 2",
+    texto: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    image: placeHolder2,
+    clases: "max-md:hidden",
+  },
+  {
+    titulo: "Título 3",
+    texto:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+    image: placeHolder3,
+    clases: "max-lg:hidden",
+  },
+];
+---
+
+<div class="w-full py-16 grid justify-center bg-[#333333] px-4" role="main">
+  <div
+    id="hitos"
+    class="bg-[#919e32] grid justify-center max-w-[1376px] rounded-lg"
+  >
+    <header class="h-[350px] px-8 py-24 flex justify-center items-center">
+      <div class="grid justify-center">
+        <h1
+          class="max-w-[528px] justify-self-center text-white/90 text-[56px] font-semibold uppercase leading-[64px]"
+        >
+          Hitos Abitacolo
+        </h1>
+        <p
+          class="max-w-[956px] text-white/90 text-2xl uppercase leading-[42px]"
+        >
+          Únete a nosotros en esta emocionante etapa de crecimiento y forma
+          parte de nuestra historia.
+        </p>
+      </div>
+    </header>
+
+    <Image
+      id="articleImage"
+      class="w-full max-w-[1376px] h-[400px] object-cover"
+      src={articulosHitos[0].image}
+      alt="Imagen destacada de Hitos Abitacolo"
+    />
+
+    <section class="relative flex justify-center">
+      <div class="px-8 pb-24 bg-black/5 flex gap-4">
+        {
+          articulosHitos.map((articulo, index) => (
+            <article
+              class={`h-72 w-full p-12 relative grow bg-[#333333] hover:bg-[#202023] flex-col justify-start items-start gap-6 inline-flex top-[-20px] ${articulo.clases}`}
+              data-index={index}
+            >
+              <h2 class="self-stretch opacity-60 text-white/90 text-2xl font-bold uppercase leading-7">
+                {articulo.titulo}
+              </h2>
+              <p class="self-stretch opacity-60 text-white text-sm font-normal uppercase leading-tight">
+                {articulo.texto}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <div class="h-20 flex lg:justify-end px-8 py-4 border-b border-white/10">
+      <button
+        class="px-4 py-3 bg-black/30 rounded-sm border max-lg:justify-self-start border-white/10 backdrop-blur-xl text-white/90 uppercase"
+        aria-label="Ver todos los hitos"
+      >
+        Ver todos
+      </button>
+    </div>
+
+    <footer
+      class="min-h-[408px] px-8 py-24 border-t border-black/10 flex max-lg:flex-col-reverse items-center gap-4"
+    >
+      <div class="flex-1 pr-32">
+        <p class="text-white/60 text-[28px] leading-9">
+          En Abitacolo, cada día damos pasos firmes hacia el éxito. Estamos
+          buscando inversores visionarios que quieran ser parte de nuestra
+          emocionante trayectoria. Únete a nosotros y sé parte de una historia
+          de innovación y crecimiento imparable.
+        </p>
+      </div>
+      <div class="flex-1 flex flex-col gap-7">
+        <h2 class="text-white/90 text-[40px]">
+          ¡Empieza tu historia con nosotros!
+        </h2>
+        <button
+          class="h-14 px-6 py-4 bg-[#333333] rounded-sm text-white uppercase"
+          aria-label="Contáctanos"
+        >
+          Contáctanos
+        </button>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<script>
+  // Hacer que articulosHitos esté accesible aquí.
+  const articulosHitos = [
+    {
+      titulo: "Título 1",
+      texto: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      image: "https://via.placeholder.com/1440x400?text=Imagen+1",
+    },
+    {
+      titulo: "Título 2",
+      texto:
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      image: "https://via.placeholder.com/1440x400?text=Imagen+2",
+    },
+    {
+      titulo: "Título 3",
+      texto:
+        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+      image: "https://via.placeholder.com/1440x400?text=Imagen+3",
+    },
+  ];
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Encuentra todos los artículos en la página.
+    const articles = document.querySelectorAll("article.test");
+    const articleImage = document.getElementById(
+      "articleImage"
+    ) as HTMLImageElement;
+
+    // Asegúrate de que articleImage sea realmente una imagen.
+    if (articleImage) {
+      // Manejar los eventos de mouseenter en cada artículo.
+      articles.forEach((article) => {
+        article.addEventListener("mouseenter", () => {
+          const index = article.getAttribute("data-index"); // Obtén el índice del artículo
+          if (index !== null) {
+            articleImage.src = articulosHitos[Number(index)].image; // Cambia la imagen del artículo al index
+          }
+        });
+      });
+    }
+  });
+</script>
