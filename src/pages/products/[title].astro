@@ -1,0 +1,37 @@
+---
+import type { GetStaticPaths } from "astro";
+export const getStaticPaths = (() => {
+    
+    return [
+        {params : {title : "Titulo-1"}},
+        {params : {title : "Titulo-2"}},
+        {params : {title : "Titulo-3"}},
+        {params : {title : "Titulo-4"}},
+    ];
+}) satisfies GetStaticPaths;
+
+const {title} = Astro.params;
+---
+
+    <div class="flex flex-col justify-center items-center">
+
+        <section class="w-full max-w-[640px] h-[272px]  ">
+    
+            <h1 class="text-center bg-verdeabitacolo">{title}</h1>
+            
+            <p class="text-sm  mt-5 leading-8"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean pharetra quis lacus at viverra.  </p>
+                
+                    <h2 class="text-3xl mt-5 font-bold text-black">Lorem Ipsum</h2>
+               
+                
+                <p class="text-sm mt-5 leading-8">Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean pharetra quis lacus at viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+                    
+                    Morbi efficitur auctor metus, id mollis lorem pellentesque id. Nullam posuere maximus dui et fringilla. </p>
+                    
+                    
+                <p class="text-sm mt-5 leading-8">Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean pharetra quis lacus at viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>   
+                <p class="text-sm mt-5 leading-8">Morbi efficitur auctor metus, id mollis lorem pellentesque id. Nullam posuere maximus dui et fringilla.</p>    
+                
+            
+        </section>
+    </div>
