@@ -1,33 +1,43 @@
 ---
+
 import { Image } from "astro:assets";
+
+interface Props {
+  title : string;
+}
+
+const {title} = Astro.props;
 
 const productInfo = [
   {
-    title: "Titulo 1",
+    title: "Titulo-1",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
     image: "https://via.placeholder.com/320x208",
   },
   {
-    title: "Titulo 2",
+    title: "Titulo-2",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
     image: "https://via.placeholder.com/320x208",
   },
   {
-    title: "Titulo 3",
+    title: "Titulo-3",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
     image: "https://via.placeholder.com/320x208",
   },
   {
-    title: "Titulo 4",
+    title: "Titulo-4",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
     image: "https://via.placeholder.com/320x208",
   },
 ];
 ---
+
+
+
 
 <div
   id="products"
@@ -53,12 +63,15 @@ const productInfo = [
               alt={product.title}
             />
             <div class="flex flex-col p-4 gap-8">
-              <h3 class="text-white text-xl font-semibold  uppercase">
+              <h3 class="text-white text-xl font-semibold  capitalize">
                 {product.title}
               </h3>
               <p class="text-white/40 text-base font-normal  uppercase">
                 {product.description}
               </p>
+              <button class="w-full max-w-[80px] text-white bg-verdeAbitacolo">
+                <a href={`/products/${product.title}`}>Ver mas</a>
+              </button>
             </div>
           </div>
         ))

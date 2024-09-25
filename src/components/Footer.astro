@@ -1,0 +1,71 @@
+---
+const scrollToSection = (id) => {
+  if (typeof window !== "undefined") {
+    const section = document.getElementById(id);
+    section?.scrollIntoView({ behavior: "smooth" });
+  }
+};
+--- 
+
+<footer class="w-full min-h-[240px] flex justify-center bg-[#919e32]">
+  <div class="max-w-[1440px] w-full p-4">
+    <div class="md:flex items-center justify-between">
+      <a href="/" aria-label="Inicio">
+        <img
+          class="max-w-[329px] max-h-[93px] max-md:w-[135px] h-auto"
+          src="/src/image/logos/AbitacoloBlanco.webp"
+          alt="Logo Abitacolo"
+        />
+      </a>
+      <div class="flex gap-6 items-center max-md:flex-col-reverse">
+        <p class="text-white cursor-pointer text-sm">POLÍTICA DE PRIVACIDAD</p>
+        <p class="text-white cursor-pointer text-sm">POLÍTICA DE COOKIES</p>
+        <div class="flex gap-5">
+          <img class="w-6 h-6" src="/src/image/logos/instagramNegro.webp" alt="Instagram" />
+          <img class="w-6 h-6" src="/src/image/logos/LinkedInNegro.webp" alt="LinkedIn" />
+        </div>
+      </div>
+    </div>
+
+    <hr class="border-white mt-2 mx-5" />
+
+    <div class="flex flex-col mt-5 gap-4">
+      <div class="flex gap-7 max-md:flex-col">
+        
+        <button
+          onclick="scrollToSection('#AboutUs')"
+          class="text-white text-sm"
+        >
+         <a href="#AboutUs">¿ Que es Abitacolo?</a>
+        </button>
+        <button
+        onclick="scrollToSection('#team')"
+          class="text-white text-sm"
+        >
+        <a href="#team">Nuestro Equipo</a>
+        </button>
+        <button
+        onclick="scrollToSection('#hitos')"
+          class="text-white text-sm"
+        >
+        <a href="#hitos">Hitos Abitacolo</a>
+        </button>
+        <button
+        onclick="scrollToSection('#products')"
+          class="text-white text-sm"
+        >
+        <a href="#products">Nuestros Productos</a>
+        </button>
+        <button
+        onclick="scrollToSection('#contacto')"
+          class="text-white text-sm"
+        >
+          Contactos
+        </button>
+      </div>
+      <p class="text-white text-sm mt-1">
+        © 2024 Abitacolo. Todos los derechos reservados.
+      </p>
+    </div>
+  </div>
+</footer>
