@@ -17,6 +17,7 @@ const TeamCard = ({
         className="w-[427px] h-[292px] object-scale-down"
         src={linkImage}
         alt="Team member"
+        loading="lazy"
       />
       <div className="flex flex-col gap-4">
         <div>

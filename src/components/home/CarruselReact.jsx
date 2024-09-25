@@ -3,11 +3,20 @@ import TeamCard from "./TeamCard.jsx";
 import FlechaIzq from "../../image/FlechaIzq.webp";
 import FlechaDrch from "../../image/FlechaDrch.webp";
 
+import ACG from "../../image/equipo/ACG.webp";
+import CA from "../../image/equipo/CA.webp";
+import GCG from "../../image/equipo/GCG.webp";
+import GPC from "../../image/equipo/GPC.webp";
+import JCM from "../../image/equipo/JCM.webp";
+import MBR from "../../image/equipo/MBR.webp";
+import MPR from "../../image/equipo/MPR.webp";
+import XLD from "../../image/equipo/XLD.webp";
+
 const team = [
   {
     person: "Juliette C. Mallen",
     position: "Founder & CEO",
-    linkImage: "https://via.placeholder.com/430x300",
+    linkImage: JCM.src,
     description:
       "Soy Cathy, arquitecta con especialización en comunicación arquitectónica y experiencia en la dirección creativa de eventos culturales.",
     linkedin: "https://www.linkedin.com/in/juanperez",
@@ -16,16 +25,16 @@ const team = [
   {
     person: "Guillermo Perales",
     position: "Co-Founder",
-    linkImage: "https://via.placeholder.com/430x300",
+    linkImage: GPC.src,
     description:
       "¡Hola! Soy Guille, madrileño y arquitecto habilitado por la Escuela Técnica Superior de Arquitectura de Madrid (ETSAM), con estudios...",
     linkedin: "https://www.linkedin.com/in/anarodriguez",
     instagram: "https://www.instagram.com/anarodriguez",
   },
   {
-    person: "Manuel Ben R.",
+    person: "Manuel Ben",
     position: "UX Product Designer Specialist",
-    linkImage: "https://via.placeholder.com/430x300",
+    linkImage: MBR.src,
     description:
       "Soy Diseñador de Productos Digitales con más de 2 años de experiencia en el ecosistema digital, donde he demostrado una sólida capacidad...",
     linkedin: "https://www.linkedin.com/in/carlosgomez",
@@ -34,7 +43,7 @@ const team = [
   {
     person: "María Fernández",
     position: "COO",
-    linkImage: "https://via.placeholder.com/430x300",
+    linkImage: ACG.src,
     description:
       "María coordina las operaciones internas para garantizar la eficiencia en todos los procesos.",
     linkedin: "https://www.linkedin.com/in/mariafernandez",
@@ -43,7 +52,7 @@ const team = [
   {
     person: "Pedro Sánchez",
     position: "CMO",
-    linkImage: "https://via.placeholder.com/430x300",
+    linkImage: CA.src,
     description:
       "Pedro lidera las estrategias de marketing, ayudando a la empresa a llegar a nuevos mercados.",
     linkedin: "https://www.linkedin.com/in/pedrosanchez",
@@ -52,7 +61,25 @@ const team = [
   {
     person: "Laura Martínez",
     position: "HR Manager",
-    linkImage: "https://via.placeholder.com/430x300",
+    linkImage: MPR.src,
+    description:
+      "Laura gestiona el talento humano y se encarga de los procesos de contratación y bienestar.",
+    linkedin: "https://www.linkedin.com/in/lauramartinez",
+    instagram: "https://www.instagram.com/lauramartinez",
+  },
+  {
+    person: "Laura Martínez",
+    position: "HR Manager",
+    linkImage: XLD.src,
+    description:
+      "Laura gestiona el talento humano y se encarga de los procesos de contratación y bienestar.",
+    linkedin: "https://www.linkedin.com/in/lauramartinez",
+    instagram: "https://www.instagram.com/lauramartinez",
+  },
+  {
+    person: "Laura Martínez",
+    position: "HR Manager",
+    linkImage: GCG.src,
     description:
       "Laura gestiona el talento humano y se encarga de los procesos de contratación y bienestar.",
     linkedin: "https://www.linkedin.com/in/lauramartinez",
