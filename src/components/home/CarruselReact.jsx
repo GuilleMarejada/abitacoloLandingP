@@ -82,8 +82,8 @@ const team = [
     linkImage: GCG.src,
     description:
       "Laura gestiona el talento humano y se encarga de los procesos de contratación y bienestar.",
-    linkedin: "https://www.linkedin.com/in/lauramartinez",
-    instagram: "https://www.instagram.com/lauramartinez",
+    linkedin: "https://www.linkedin.com/in/guillermocg8/",
+    instagram: "https://www.instagram.com/guiller.gc/",
   },
 ];
 
@@ -135,11 +135,16 @@ const TeamCarousel = () => {
 
       <div className="flex justify-center items-center mt-6 space-x-4">
         <button
-          className="p-2"
+          className=""
           onClick={prevSlide}
           aria-label="Ver el miembro anterior del equipo"
         >
-          <img src={FlechaIzq.src} alt="Anterior" loading="lazy" />
+          <img
+            src={FlechaIzq.src}
+            className="w-16"
+            alt="Anterior"
+            loading="lazy"
+          />
         </button>
 
         <div className="flex space-x-2">
@@ -156,11 +161,16 @@ const TeamCarousel = () => {
         </div>
 
         <button
-          className="p-2"
+          className=""
           onClick={nextSlide}
           aria-label="Ver el siguiente miembro del equipo"
         >
-          <img src={FlechaDrch.src} alt="Siguiente" loading="lazy" />
+          <img
+            src={FlechaDrch.src}
+            className="w-16"
+            alt="Siguiente"
+            loading="lazy"
+          />
         </button>
       </div>
     </div>
