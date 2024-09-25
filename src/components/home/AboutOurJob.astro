@@ -1,9 +1,15 @@
+---
+import rescatamos from "../../image/ourJob/rescatamos.webp";
+import restauramos from "../../image/ourJob/restauramos.webp";
+import entregamos from "../../image/ourJob/entregamos.webp";
+---
+
 <section class="w-full grid justify-center bg-[#d9d9d9]">
   <div
     class="min-h-[748px] max-sm:px-2 px-8 py-24 flex-col justify-start items-center gap-24 inline-flex max-w-[1376px]"
   >
     <header
-      class="max-w-[796px] text-center text-black/90 md:text-[56px] max-md:text-[32px] font-normal uppercase leading-[64px]"
+      class="max-w-[796px] text-center text-black/90 md:text-[56px] max-md:text-[32px] uppercase leading-[64px]"
     >
       <h1>¿Cómo trabajamos?</h1>
     </header>
@@ -13,20 +19,19 @@
     >
       <!-- Rescatamos -->
       <article
-        class="max-w-[448px] h-[400px] px-8 pt-60 pb-12 bg-black/20 rounded shadow flex-col justify-start items-start gap-8 inline-flex"
+        class="max-w-[448px] h-[400px] px-8 pt-60 pb-12 rounded shadow flex-col justify-start items-start gap-8 inline-flex bg-cover bg-center"
+        style={{ backgroundImage: `url(${rescatamos.src})` }}
       >
         <header
           class="self-stretch h-[108px] flex-col justify-start items-start gap-4 flex"
         >
           <h2
-            class="self-stretch text-white text-[28px] font-normal uppercase leading-loose"
+            class="self-stretch text-white text-[28px] uppercase leading-loose"
           >
             Rescatamos
           </h2>
         </header>
-        <p
-          class="self-stretch text-white text-sm font-normal uppercase leading-tight"
-        >
+        <p class="self-stretch text-white text-sm uppercase leading-tight">
           Nos ocupamos de recoger muebles desechados, buscamos esos tesoros que
           ya no quiere y les damos una segunda vida.
         </p>
@@ -34,20 +39,19 @@
 
       <!-- Restauramos -->
       <article
-        class="max-w-[448px] h-[400px] px-8 pt-60 pb-12 bg-gradient-to-b from-[#1a1d18] to-[#242b1f] rounded shadow flex-col justify-start items-start gap-8 inline-flex"
+        class="max-w-[448px] h-[400px] px-8 pt-60 pb-12 rounded shadow flex-col justify-start items-start gap-8 inline-flex bg-cover bg-center"
+        style={{ backgroundImage: `url(${restauramos.src})` }}
       >
         <header
           class="self-stretch h-[108px] flex-col justify-start items-start gap-4 flex"
         >
           <h2
-            class="self-stretch text-white text-[28px] font-normal uppercase leading-loose"
+            class="self-stretch text-white text-[28px] uppercase leading-loose"
           >
             Restauramos
           </h2>
         </header>
-        <p
-          class="self-stretch text-white text-sm font-normal uppercase leading-tight"
-        >
+        <p class="self-stretch text-white text-sm uppercase leading-tight">
           Nuestro equipo restaura y reinventa cada pieza con pasión, devolviendo
           la vida a cada una.
         </p>
@@ -55,20 +59,19 @@
 
       <!-- Entregamos -->
       <article
-        class="max-w-[448px] h-[400px] px-8 pt-60 pb-12 bg-gradient-to-b from-[#350302] to-[#350302] rounded shadow flex-col justify-start items-start gap-8 inline-flex"
+        class="max-w-[448px] h-[400px] px-8 pt-60 pb-12 rounded shadow flex-col justify-start items-start gap-8 inline-flex bg-cover bg-center"
+        style={{ backgroundImage: `url(${entregamos.src})` }}
       >
         <header
           class="self-stretch h-[108px] flex-col justify-start items-start gap-4 flex"
         >
           <h2
-            class="self-stretch text-white text-[28px] font-normal uppercase leading-loose"
+            class="self-stretch text-white text-[28px] uppercase leading-loose"
           >
             Entregamos
           </h2>
         </header>
-        <p
-          class="self-stretch text-white text-sm font-normal uppercase leading-tight"
-        >
+        <p class="self-stretch text-white text-sm uppercase leading-tight">
           Exhibimos nuestras creaciones en nuestra plataforma para que
           encuentres tu favorita, listas para tu hogar.
         </p>
