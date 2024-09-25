@@ -107,7 +107,7 @@ const TeamCarousel = () => {
 
       <div className="flex justify-center items-center mt-6 space-x-4">
         <button className="p-2" onClick={prevSlide} aria-label="Ver anterior">
-          <img src={FlechaIzq.src} alt="Anterior" />
+          <img src={FlechaIzq.src} alt="Anterior" loading="lazy" />
         </button>
 
         <div className="flex space-x-2">
@@ -123,7 +123,7 @@ const TeamCarousel = () => {
         </div>
 
         <button className="p-2" onClick={nextSlide} aria-label="Ver siguiente">
-          <img src={FlechaDrch.src} alt="Siguiente" />
+          <img src={FlechaDrch.src} alt="Siguiente" loading="lazy" />
         </button>
       </div>
     </div>

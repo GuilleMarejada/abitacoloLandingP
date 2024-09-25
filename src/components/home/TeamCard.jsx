@@ -33,7 +33,12 @@ const TeamCard = ({
         <div className="flex items-center gap-4">
           {linkedin && (
             <a href={linkedin} target="_blank" rel="noopener noreferrer">
-              <img src={LinkedInNegro.src} alt="LinkedIn" className="h-6 w-6" />
+              <img
+                src={LinkedInNegro.src}
+                alt="LinkedIn"
+                className="h-6 w-6"
+                loading="lazy"
+              />
             </a>
           )}
           {instagram && (
@@ -42,6 +47,7 @@ const TeamCard = ({
                 className="h-6 w-6"
                 src={InstagramNegro.src}
                 alt="Instagram"
+                loading="lazy"
               />
             </a>
           )}

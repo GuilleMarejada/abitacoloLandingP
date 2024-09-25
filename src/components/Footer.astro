@@ -5,7 +5,7 @@ const scrollToSection = (id) => {
     section?.scrollIntoView({ behavior: "smooth" });
   }
 };
---- 
+---
 
 <footer class="w-full min-h-[240px] flex justify-center bg-[#919e32]">
   <div class="max-w-[1440px] w-full p-4">
@@ -15,54 +15,50 @@ const scrollToSection = (id) => {
           class="max-w-[329px] max-h-[93px] max-md:w-[135px] h-auto"
           src="/src/image/logos/AbitacoloBlanco.webp"
           alt="Logo Abitacolo"
+          loading="lazy"
         />
       </a>
       <div class="flex gap-6 items-center max-md:flex-col-reverse">
         <p class="text-white cursor-pointer text-sm">POLÍTICA DE PRIVACIDAD</p>
         <p class="text-white cursor-pointer text-sm">POLÍTICA DE COOKIES</p>
         <div class="flex gap-5">
-          <img class="w-6 h-6" src="/src/image/logos/instagramNegro.webp" alt="Instagram" />
-          <img class="w-6 h-6" src="/src/image/logos/LinkedInNegro.webp" alt="LinkedIn" />
+          <img
+            class="w-6 h-6"
+            src="/src/image/logos/instagramNegro.webp"
+            alt="Instagram"
+            loading="lazy"
+          />
+          <img
+            class="w-6 h-6"
+            src="/src/image/logos/LinkedInNegro.webp"
+            alt="LinkedIn"
+            loading="lazy"
+          />
         </div>
       </div>
     </div>
 
     <hr class="border-white mt-2 mx-5" />
 
-    <div class="flex flex-col mt-5 gap-4">
+    <div class="flex flex-col mt-5 gap-4 justify-center">
       <div class="flex gap-7 max-md:flex-col">
-        
-        <button
-          onclick="scrollToSection('#AboutUs')"
-          class="text-white text-sm"
-        >
-         <a href="#AboutUs">¿ Que es Abitacolo?</a>
-        </button>
-        <button
-        onclick="scrollToSection('#team')"
-          class="text-white text-sm"
-        >
-        <a href="#team">Nuestro Equipo</a>
-        </button>
-        <button
-        onclick="scrollToSection('#hitos')"
-          class="text-white text-sm"
-        >
-        <a href="#hitos">Hitos Abitacolo</a>
-        </button>
-        <button
-        onclick="scrollToSection('#products')"
-          class="text-white text-sm"
-        >
-        <a href="#products">Nuestros Productos</a>
-        </button>
-        <button
-        onclick="scrollToSection('#contacto')"
-          class="text-white text-sm"
-        >
-          Contactos
-        </button>
+        <a href="#AboutUs">
+          <button class="text-white text-sm">¿Qué es Abitacolo?</button>
+        </a>
+        <a href="#team">
+          <button class="text-white text-sm">Nuestro Equipo</button>
+        </a>
+        <a href="#hitos">
+          <button class="text-white text-sm">Hitos Abitacolo</button>
+        </a>
+        <a href="#products">
+          <button class="text-white text-sm">Nuestros Productos</button>
+        </a>
+        <a href="#contacto">
+          <button class="text-white text-sm">Contactos</button>
+        </a>
       </div>
+
       <p class="text-white text-sm mt-1">
         © 2024 Abitacolo. Todos los derechos reservados.
       </p>
