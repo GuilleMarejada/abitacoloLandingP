@@ -11,6 +11,9 @@ import XLD from "../../image/equipo/XLD.webp";
 import InstagramNegro from "../../image/logos/instagramNegro.webp";
 import LinkedInNegro from "../../image/logos/LinkedInNegro.webp";
 
+import FlechaIzq from "../../image/FlechaIzq.webp";
+import FlechaDrch from "../../image/FlechaDrch.webp";
+
 const team = [
   {
     person: "Juliette C. Mallen",
@@ -147,50 +150,38 @@ const team = [
       ))
     }
   </div>
-  <button
-    id="prevBtn"
-    class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
-  >
-    <svg
-      class="w-6 h-6"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+
+  <div class="flex justify-center items-center mt-6 space-x-4">
+    <button
+      id="prevBtn"
+      class=""
+      aria-label="Ver el miembro anterior del equipo"
     >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M15 19l-7-7 7-7"></path>
-    </svg>
-  </button>
-  <button
-    id="nextBtn"
-    class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
-  >
-    <svg
-      class="w-6 h-6"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+      <img src={FlechaIzq.src} class="w-16" alt="Anterior" loading="lazy" />
+    </button>
+
+    <div id="dotContainer" class="flex space-x-2">
+      <!-- Dots will be dynamically added here -->
+    </div>
+
+    <button
+      id="nextBtn"
+      class=""
+      aria-label="Ver el siguiente miembro del equipo"
     >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M9 5l7 7-7 7"></path>
-    </svg>
-  </button>
+      <img src={FlechaDrch.src} class="w-16" alt="Siguiente" loading="lazy" />
+    </button>
+  </div>
 </div>
 
 <script>
   const carousel = document.getElementById("carousel") as HTMLElement;
   const prevBtn = document.getElementById("prevBtn") as HTMLButtonElement;
   const nextBtn = document.getElementById("nextBtn") as HTMLButtonElement;
+  const dotContainer = document.getElementById("dotContainer") as HTMLElement;
   let currentIndex = 0;
   let cardsToShow = 3;
+  const totalCards = carousel.children.length;
 
   function updateCardsToShow() {
     if (window.innerWidth < 640) {
@@ -200,15 +191,17 @@ const team = [
     } else {
       cardsToShow = 3;
     }
+    updateDots();
   }
 
   function showCards(index: number) {
     const cardWidth = carousel.children[0].getBoundingClientRect().width;
     carousel.style.transform = `translateX(-${index * cardWidth}px)`;
+    updateDots();
   }
 
   function nextSlide() {
-    if (currentIndex < carousel.children.length - cardsToShow) {
+    if (currentIndex < totalCards - cardsToShow) {
       currentIndex++;
     } else {
       currentIndex = 0;
@@ -220,9 +213,36 @@ const team = [
     if (currentIndex > 0) {
       currentIndex--;
     } else {
-      currentIndex = carousel.children.length - cardsToShow;
+      currentIndex = totalCards - cardsToShow;
     }
     showCards(currentIndex);
+  }
+
+  function createDots() {
+    dotContainer.innerHTML = "";
+    for (let i = 0; i <= totalCards - cardsToShow; i++) {
+      const dot = document.createElement("button");
+      dot.className = `w-4 h-4 rounded-full bg-gray-300`;
+      dot.setAttribute("aria-label", `Ir al miembro ${i + 1} del equipo`);
+      dot.addEventListener("click", () => {
+        currentIndex = i;
+        showCards(currentIndex);
+      });
+      dotContainer.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    const dots = dotContainer.children;
+    for (let i = 0; i < dots.length; i++) {
+      if (i === currentIndex) {
+        dots[i].classList.remove("bg-gray-300");
+        dots[i].classList.add("bg-[#919e32]");
+      } else {
+        dots[i].classList.remove("bg-[#919e32]");
+        dots[i].classList.add("bg-gray-300");
+      }
+    }
   }
 
   prevBtn.addEventListener("click", prevSlide);
@@ -235,5 +255,6 @@ const team = [
 
   // Initialize
   updateCardsToShow();
+  createDots();
   showCards(currentIndex);
 </script>
