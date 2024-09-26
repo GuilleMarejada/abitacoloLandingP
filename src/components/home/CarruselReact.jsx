@@ -173,6 +173,46 @@ const TeamCarousel = () => {
           />
         </button>
       </div>
+      <div className="flex justify-center items-center mt-6 space-x-4">
+        <button
+          className=""
+          onClick={prevSlide}
+          aria-label="Ver el miembro anterior del equipo"
+        >
+          <img
+            src={FlechaIzq.src}
+            className="w-16"
+            alt="Anterior"
+            loading="lazy"
+          />
+        </button>
+
+        <div className="flex space-x-2">
+          {team.map((_, index) => (
+            <button
+              key={index}
+              className={`w-4 h-4 rounded-full ${
+                index === currentIndex ? "bg-[#919e32]" : "bg-gray-300"
+              }`}
+              onClick={() => setCurrentIndex(index)}
+              aria-label={`Ir al miembro ${index + 1} del equipo`}
+            />
+          ))}
+        </div>
+
+        <button
+          className=""
+          onClick={nextSlide}
+          aria-label="Ver el siguiente miembro del equipo"
+        >
+          <img
+            src={FlechaDrch.src}
+            className="w-16"
+            alt="Siguiente"
+            loading="lazy"
+          />
+        </button>
+      </div>
     </div>
   );
 };
