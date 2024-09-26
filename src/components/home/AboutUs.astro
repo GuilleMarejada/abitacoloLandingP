@@ -1,7 +1,3 @@
----
-
----
-
 <section id="AboutUs" class="w-full bg-white grid justify-center">
   <div class="max-w-[1440px] px-8 py-32 xl:flex gap-4">
     <h1
@@ -33,6 +29,8 @@
         </p>
       </div>
       <button
+        id="moreInfoButton"
+        data-target="contacto"
         class="max-w-[543px] max-h-12 px-6 py-4 bg-[#919e32] rounded-[10px] backdrop-blur-xl justify-center items-center gap-1 inline-flex text-white text-2xl"
       >
         ¡Quiero saber más!
@@ -40,3 +38,13 @@
     </div>
   </div>
 </section>
+
+<script>
+  import { scrollToSection } from "../../Functions.js";
+
+  document
+    .getElementById("moreInfoButton")
+    .addEventListener("click", function () {
+      scrollToSection(this.dataset.target);
+    });
+</script>

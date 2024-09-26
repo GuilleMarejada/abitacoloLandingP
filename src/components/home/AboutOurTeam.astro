@@ -31,7 +31,8 @@ import CarruselReact from "../../components/home/CarruselReact.jsx";
         <h2 class="text-black text-[40px]">Expertos a tu servicio</h2>
 
         <button
-          onclick="scrollTo('#contacto')"
+          id="buttonTeam"
+          data-target="contacto"
           class="h-14 px-6 py-4 bg-[#919e32] rounded-[10px] w-full text-xl font-semibold text-white uppercase"
         >
           Contáctanos
@@ -40,3 +41,11 @@ import CarruselReact from "../../components/home/CarruselReact.jsx";
     </section>
   </article>
 </section>
+
+<script>
+  import { scrollToSection } from "../../Functions.js";
+
+  document.getElementById("buttonTeam").addEventListener("click", function () {
+    scrollToSection(this.dataset.target);
+  });
+</script>
