@@ -14,7 +14,7 @@ const TeamCard = ({
   return (
     <div className="w-full h-[540px] max-w-sm bg-white flex flex-col gap-6 p-4">
       <img
-        className="w-[427px] h-[292px] object-scale-down"
+        className="w-fit h-[292px] object-scale-down"
         src={linkImage}
         alt="Team member"
         loading="lazy"
