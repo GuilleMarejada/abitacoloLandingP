@@ -55,3 +55,18 @@ import ModalMenuMovil from "./ModalMenuMovil.astro";
   </div>
   <div class="min-[1030px]:hidden grid content-center"><ModalMenuMovil /></div>
 </nav>
+
+<script>
+  import { scrollToSection } from "../Functions.js";
+
+  // Usar querySelectorAll para manejar varios botones
+  document.querySelectorAll("[data-target]").forEach((button) => {
+    button.addEventListener("click", function () {
+      // Verificar si el atributo data-target existe
+      const target = this.dataset.target;
+      if (target) {
+        scrollToSection(target);
+      }
+    });
+  });
+</script>
