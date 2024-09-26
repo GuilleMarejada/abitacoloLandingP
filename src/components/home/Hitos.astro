@@ -34,7 +34,9 @@ const articulosHitos = [
     id="hitos"
     class="bg-[#919e32] grid justify-center max-w-[1376px] rounded-lg"
   >
-    <header class="h-[350px] px-8 py-24 flex justify-center items-center">
+    <header
+      class="min-h-[350px] px-8 py-24 max-md:py-12 flex justify-center items-center"
+    >
       <div class="grid justify-center">
         <h1
           class="max-w-[528px] justify-self-center text-white/90 text-[56px] font-semibold leading-[64px]"
@@ -42,7 +44,7 @@ const articulosHitos = [
           Hitos Abitacolo
         </h1>
         <p
-          class="max-w-[956px] text-white/90 text-2xl uppercase leading-[42px]"
+          class="max-w-[956px] text-white/90 text-2xl uppercase leading-[42px] pt-8"
         >
           Únete a nosotros en esta emocionante etapa de crecimiento y forma
           parte de nuestra historia.
@@ -58,11 +60,11 @@ const articulosHitos = [
     />
 
     <section class="relative flex justify-center">
-      <div class="px-8 pb-24 bg-black/5 flex gap-4">
+      <div class="px-8 pb-24 max-md:pb-12 bg-black/5 flex gap-4">
         {
           articulosHitos.map((articulo, index) => (
             <article
-              class={`h-72 w-full p-12 relative grow bg-[#333333] hover:bg-[#202023] flex-col justify-start items-start gap-6 inline-flex top-[-20px] ${articulo.clases}`}
+              class={`min-h-72 w-full p-12 relative grow bg-[#333333] hover:bg-[#202023] flex-col justify-start items-start gap-6 inline-flex top-[-20px] ${articulo.clases}`}
               data-index={index}
               data-image-src={articulo.image.src}
               data-image-srcset={articulo.image.src}
@@ -89,9 +91,9 @@ const articulosHitos = [
     </div>
 
     <footer
-      class="min-h-[408px] px-8 py-24 border-t border-black/10 flex max-lg:flex-col-reverse items-center gap-4"
+      class="min-h-[408px] px-8 max-md:py-8 py-24 border-t border-black/10 flex max-lg:flex-col-reverse items-center gap-7"
     >
-      <div class="flex-1 pr-32">
+      <div class="flex-1 pr-32 max-md:pr-0">
         <p class="text-white/60 text-[28px] leading-9">
           En Abitacolo, cada día damos pasos firmes hacia el éxito. Estamos
           buscando inversores visionarios que quieran ser parte de nuestra
@@ -104,7 +106,9 @@ const articulosHitos = [
           ¡Empieza tu historia con nosotros!
         </h2>
         <button
-          class="h-14 px-6 py-4 bg-[#333333] rounded-sm text-white uppercase"
+          id="buttonHitos"
+          data-target="contacto"
+          class="h-14 px-6 py-4 border-solid border-2 rounded-[10px] text-white text-xl font-semibold"
           aria-label="Contáctanos"
         >
           Contáctanos
@@ -134,5 +138,11 @@ const articulosHitos = [
         });
       });
     }
+  });
+
+  import { scrollToSection } from "../../Functions.js";
+
+  document.getElementById("buttonHitos").addEventListener("click", function () {
+    scrollToSection(this.dataset.target);
   });
 </script>

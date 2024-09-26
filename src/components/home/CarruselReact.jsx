@@ -68,8 +68,8 @@ const team = [
     instagram: "https://www.instagram.com/lauramartinez",
   },
   {
-    person: "Laura Martínez",
-    position: "HR Manager",
+    person: "Xavier Longo",
+    position: "Web Developer",
     linkImage: XLD.src,
     description:
       "Laura gestiona el talento humano y se encarga de los procesos de contratación y bienestar.",
@@ -77,8 +77,8 @@ const team = [
     instagram: "https://www.instagram.com/lauramartinez",
   },
   {
-    person: "Laura Martínez",
-    position: "HR Manager",
+    person: "Guillermo Correa",
+    position: "Web Developer",
     linkImage: GCG.src,
     description:
       "Laura gestiona el talento humano y se encarga de los procesos de contratación y bienestar.",
