@@ -67,34 +67,33 @@ import Close from "../image/X.webp";
       </div>
     </div>
   </div>
+</div>
+<!-- Script para abrir y cerrar el modal -->
+<script>
+  const menuButton = document.getElementById("menuButton");
+  const menuModal = document.getElementById("menuModal");
+  const closeButton = document.getElementById("closeButton");
+  const links = menuModal.querySelectorAll("a"); // Selecciona todos los enlaces
 
-  <!-- Script para abrir y cerrar el modal -->
-  <script>
-    const menuButton = document.getElementById("menuButton");
-    const menuModal = document.getElementById("menuModal");
-    const closeButton = document.getElementById("closeButton");
-    const links = menuModal.querySelectorAll("a"); // Selecciona todos los enlaces
+  menuButton.addEventListener("click", () => {
+    menuModal.classList.remove("hidden");
+  });
 
-    menuButton.addEventListener("click", () => {
-      menuModal.classList.remove("hidden");
-    });
+  closeButton.addEventListener("click", () => {
+    menuModal.classList.add("hidden");
+  });
 
-    closeButton.addEventListener("click", () => {
+  // Cierra el modal si el usuario hace clic fuera de él
+  menuModal.addEventListener("click", (event) => {
+    if (event.target === menuModal) {
+      menuModal.classList.add("hidden");
+    }
+  });
+
+  // Cierra el modal al hacer clic en un enlace
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
       menuModal.classList.add("hidden");
     });
-
-    // Cierra el modal si el usuario hace clic fuera de él
-    menuModal.addEventListener("click", (event) => {
-      if (event.target === menuModal) {
-        menuModal.classList.add("hidden");
-      }
-    });
-
-    // Cierra el modal al hacer clic en un enlace
-    links.forEach((link) => {
-      link.addEventListener("click", () => {
-        menuModal.classList.add("hidden");
-      });
-    });
-  </script>
-</div>
+  });
+</script>

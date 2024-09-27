@@ -41,7 +41,7 @@ const team = [
     instagram: "https://www.instagram.com/carlosgomez",
   },
   {
-    person: "María Fernández",
+    person: "Alba",
     position: "COO",
     linkImage: ACG.src,
     description:
@@ -59,7 +59,7 @@ const team = [
     instagram: "https://www.instagram.com/pedrosanchez",
   },
   {
-    person: "Laura Martínez",
+    person: "Maria",
     position: "HR Manager",
     linkImage: MPR.src,
     description:
@@ -127,7 +127,7 @@ const TeamCarousel = () => {
                 cardsToShow === 3 ? "w-1/3" : "w-full"
               }`}
             >
-              <TeamCard {...member} />
+              <TeamCard {...member} client:load />
             </div>
           ))}
         </div>
