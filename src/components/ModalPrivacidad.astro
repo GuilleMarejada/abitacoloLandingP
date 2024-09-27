@@ -6,7 +6,7 @@ import logoA from "../image/logos/ANegra.webp";
 
 <div
   id="cookieModal"
-  class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center w-full h-full p-10"
+  class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center w-full h-full p-10"
 >
   <div
     class="max-w-[1207px] min-h-[89px] px-8 pt-4 pb-3.5 bg-white rounded-2xl border-2 border-[#919e32] grid items-center gap-5 min-[1205px]:flex"
@@ -57,7 +57,7 @@ import logoA from "../image/logos/ANegra.webp";
       <div class="w-4 h-4 relative">
         <Image
           src={ajustes}
-          alt="Icono de información"
+          alt="Icono de ajustes"
           width="16"
           height="16"
           loading="eager"
@@ -80,11 +80,19 @@ import logoA from "../image/logos/ANegra.webp";
 </div>
 
 <script>
+  const STORAGE_KEY = "cookieConsent";
+
+  function getStoredConsent() {
+    return localStorage.getItem(STORAGE_KEY);
+  }
+
+  function setStoredConsent(value) {
+    localStorage.setItem(STORAGE_KEY, value);
+  }
+
   function showModal() {
-    if (
-      typeof localStorage !== "undefined" &&
-      !localStorage.getItem("cookieConsent")
-    ) {
+    const storedConsent = getStoredConsent();
+    if (!storedConsent || storedConsent === "rejected") {
       document.getElementById("cookieModal").classList.remove("hidden");
     }
   }
@@ -94,9 +102,7 @@ import logoA from "../image/logos/ANegra.webp";
   }
 
   function setConsent(value) {
-    if (typeof localStorage !== "undefined") {
-      localStorage.setItem("cookieConsent", value);
-    }
+    setStoredConsent(value);
     closeModal();
   }
 

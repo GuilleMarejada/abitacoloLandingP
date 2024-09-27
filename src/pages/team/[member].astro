@@ -3,7 +3,6 @@ import Layout from "../../layouts/Layout.astro";
 import Nav from "../../components/Nav.astro";
 import Footer from "../../components/Footer.astro";
 
-
 import ACG from "../../image/equipo/ACG.webp";
 import CA from "../../image/equipo/CA.webp";
 import GCG from "../../image/equipo/GCG.webp";
@@ -19,7 +18,7 @@ const team = [
   {
     person: "Juliette C. Mallen",
     position: "Founder & CEO",
-    linkImage: JCM.src,
+    linkImage: JCM,
     description:
       "Soy Cathy, arquitecta con especialización en comunicación arquitectónica y experiencia en la dirección creativa de eventos culturales.",
     linkedin: "https://www.linkedin.com/in/juanperez",
@@ -28,7 +27,7 @@ const team = [
   {
     person: "Guillermo Perales",
     position: "Co-Founder",
-    linkImage: GPC.src,
+    linkImage: GPC,
     description:
       "¡Hola! Soy Guille, madrileño y arquitecto habilitado por la Escuela Técnica Superior de Arquitectura de Madrid (ETSAM), con estudios...",
     linkedin: "https://www.linkedin.com/in/anarodriguez",
@@ -37,34 +36,34 @@ const team = [
   {
     person: "Manuel Ben",
     position: "UX Product Designer Specialist",
-    linkImage: MBR.src,
+    linkImage: MBR,
     description:
       "Soy Diseñador de Productos Digitales con más de 2 años de experiencia en el ecosistema digital, donde he demostrado una sólida capacidad...",
     linkedin: "https://www.linkedin.com/in/carlosgomez",
     instagram: "https://www.instagram.com/carlosgomez",
   },
   {
-    person: "María Fernández",
+    person: "Alba",
     position: "COO",
-    linkImage: ACG.src,
+    linkImage: ACG,
     description:
       "María coordina las operaciones internas para garantizar la eficiencia en todos los procesos.",
     linkedin: "https://www.linkedin.com/in/mariafernandez",
     instagram: "https://www.instagram.com/mariafernandez",
   },
   {
-    person: "Pedro Sánchez",
+    person: "Cristica Allende",
     position: "CMO",
-    linkImage: CA.src,
+    linkImage: CA,
     description:
       "Pedro lidera las estrategias de marketing, ayudando a la empresa a llegar a nuevos mercados.",
     linkedin: "https://www.linkedin.com/in/pedrosanchez",
     instagram: "https://www.instagram.com/pedrosanchez",
   },
   {
-    person: "Laura Martínez",
+    person: "Maria Para",
     position: "HR Manager",
-    linkImage: MPR.src,
+    linkImage: MPR,
     description:
       "Laura gestiona el talento humano y se encarga de los procesos de contratación y bienestar.",
     linkedin: "https://www.linkedin.com/in/lauramartinez",
@@ -73,7 +72,7 @@ const team = [
   {
     person: "Xavier Longo",
     position: "Web Developer",
-    linkImage: XLD.src,
+    linkImage: XLD,
     description:
       "Laura gestiona el talento humano y se encarga de los procesos de contratación y bienestar.",
     linkedin: "https://www.linkedin.com/in/lauramartinez",
@@ -87,34 +86,47 @@ const team = [
       "Me llamo Guillermo Gil, soy Full Stack Developer con experiencia en liderar proyectos y trabajar en equipos multifuncionales.En mi rol más reciente con Abitacolo, coordiné el equipo de desarrollo WEB en la creación de la plataforma e-commerce y el catálogo digital, así aseguré una integración eficiente entre el frontend y el backend",
     linkedin: "https://www.linkedin.com/in/guillermocg8/",
     instagram: "https://www.instagram.com/guiller.gc/",
-    semblanza1: "Me llamo Guillermo Gil, soy Full Stack Developer con experiencia en liderar proyectos y trabajar en equipos multifuncionales. Tengo sólidas habilidades en JavaScript, Python y React, y un historial demostrado en el desarrollo de plataformas ECommerce y la entrega exitosa de MVPs.",
-    semblanza2: "En mi rol más reciente con Abitacolo, coordiné el equipo de desarrollo WEB en la creación de la plataforma e-commerce y el catálogo digital, así aseguré una integración eficiente entre el frontend y el backend.Puedo afirmar que Abitacolo está en buenas manos y podrá resolver futuros retos. Mi enfoque se centra en la planificación de tareas, la gestión de proyectos y la resolución de problemas técnicos, lo que me permite cumplir con los plazos y objetivos establecidos.",
-    semblanza3: "Antes de enfocarme en el desarrollo web, trabajé en la coordinación de contenidos en COPE y como técnico de reparación y mantenimiento de equipos electrónicos, donde desarrollé habilidades valiosas en la solución de problemas y la atención al cliente. Estoy entusiasmado por seguir creciendo en el campo del desarrollo, ahora que participo en proyectos innovadores, donde los acertijos aparecen, estoy convencido de mis destrezas y campos de acción para hacer crecer mis conocimientos y los de mi equipo."
+    semblanza1:
+      "Me llamo Guillermo Gil, soy Full Stack Developer con experiencia en liderar proyectos y trabajar en equipos multifuncionales. Tengo sólidas habilidades en JavaScript, Python y React, y un historial demostrado en el desarrollo de plataformas ECommerce y la entrega exitosa de MVPs.",
+    semblanza2:
+      "En mi rol más reciente con Abitacolo, coordiné el equipo de desarrollo WEB en la creación de la plataforma e-commerce y el catálogo digital, así aseguré una integración eficiente entre el frontend y el backend.Puedo afirmar que Abitacolo está en buenas manos y podrá resolver futuros retos. Mi enfoque se centra en la planificación de tareas, la gestión de proyectos y la resolución de problemas técnicos, lo que me permite cumplir con los plazos y objetivos establecidos.",
+    semblanza3:
+      "Antes de enfocarme en el desarrollo web, trabajé en la coordinación de contenidos en COPE y como técnico de reparación y mantenimiento de equipos electrónicos, donde desarrollé habilidades valiosas en la solución de problemas y la atención al cliente. Estoy entusiasmado por seguir creciendo en el campo del desarrollo, ahora que participo en proyectos innovadores, donde los acertijos aparecen, estoy convencido de mis destrezas y campos de acción para hacer crecer mis conocimientos y los de mi equipo.",
   },
 ];
 const pepe = team.find((e) => e.person === member);
 ---
 
-<Layout  title={pepe.person}>
+<Layout title={pepe.person}>
   <div class="h-screen">
-  <Nav/> 
-  <div class="member-info p-10 h-full grid place-content-center">
-    <h1 class="  text-4xl text-center font-semibold">{pepe.person}</h1>
-    <div class="flex w-full max-lg:flex-col   gap-10 justify-center items-center mt-10">
-      <Image width="400" height="100" src={pepe.linkImage} alt={pepe.person} />
-      <div class="flex flex-col ">
+    <Nav />
+    <div class="member-info p-10 h-full grid place-content-center">
+      <h1 class="text-4xl text-center font-semibold">{pepe.person}</h1>
+      <div
+        class="flex w-full max-lg:flex-col gap-10 justify-center items-center mt-10"
+      >
+        <Image
+          width="400"
+          height="100"
+          src={pepe.linkImage}
+          alt={pepe.person}
+        />
+        <div class="flex flex-col">
+          <p class="font-semibold text-2xl text-black text-center">
+            {pepe.position}
+          </p>
 
-        <p class="font-semibold text-2xl text-black text-center">
-          
-          {pepe.position}
-        </p>
-
-        <p class=" text-black text-start p-2 text-xl max-sm:text-lg mt-2 ">{pepe.semblanza1} </p>
-        <p class=" text-black text-start p-2 text-xl max-sm:text-lg   ">{pepe.semblanza2} </p>
-        <p class=" text-black text-start p-2 text-xl max-sm:text-lg   ">{pepe.semblanza3} </p>
-       
-      </div>
-     <!--  <div class="social-links flex-col text-white ">
+          <p class="text-black text-start p-2 text-xl max-sm:text-lg mt-2">
+            {pepe.semblanza1}
+          </p>
+          <p class="text-black text-start p-2 text-xl max-sm:text-lg">
+            {pepe.semblanza2}
+          </p>
+          <p class="text-black text-start p-2 text-xl max-sm:text-lg">
+            {pepe.semblanza3}
+          </p>
+        </div>
+        <!--  <div class="social-links flex-col text-white ">
         <a href={pepe.linkedin} target="_blank" rel="noopener noreferrer">
           LinkedIn
         </a>
@@ -122,10 +134,9 @@ const pepe = team.find((e) => e.person === member);
           Instagram
         </a>
       </div> -->
+      </div>
     </div>
-    
+
+    <Footer />
   </div>
-  
-  <Footer/>
-</div>
 </Layout>
