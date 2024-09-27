@@ -50,7 +50,7 @@ const team = [
     instagram: "https://www.instagram.com/mariafernandez",
   },
   {
-    person: "Pedro Sánchez",
+    person: "Cristica Allende",
     position: "CMO",
     linkImage: CA.src,
     description:
@@ -59,7 +59,7 @@ const team = [
     instagram: "https://www.instagram.com/pedrosanchez",
   },
   {
-    person: "Maria",
+    person: "Maria Para",
     position: "HR Manager",
     linkImage: MPR.src,
     description:
