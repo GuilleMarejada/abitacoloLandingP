@@ -6,13 +6,15 @@ import ModalMenuMovil from "./ModalMenuMovil.astro";
 
 <nav class="w-full absolute flex justify-center">
   <div class="max-w-[1440px] w-full h-[65px] px-8 py-4 flex items-center">
-    <Image
-      src={AbitacoloBlanco}
-      width={108}
-      alt="Logotipo de Abitacolo"
-      class="h-10"
-      loading="eager"
-    />
+    <a href="/" aria-label="Inicio">
+      <Image
+        src={AbitacoloBlanco}
+        width={108}
+        alt="Logotipo de Abitacolo"
+        class="h-10"
+        loading="eager"
+      /></a
+    >
 
     <div class="max-[1030px]:hidden flex justify-between items-center w-full">
       <ul class="h-8 flex items-center gap-1 ml-4">
