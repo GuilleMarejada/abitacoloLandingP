@@ -138,4 +138,10 @@ const articulosHitos = [
       });
     }
   });
+
+  import { scrollToSection } from "../../Functions.js";
+
+  document.getElementById("buttonHitos").addEventListener("click", function () {
+    scrollToSection(this.dataset.target);
+  });
 </script>
