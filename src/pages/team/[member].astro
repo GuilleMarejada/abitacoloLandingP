@@ -1,0 +1,109 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import ACG from "../../image/equipo/ACG.webp";
+import CA from "../../image/equipo/CA.webp";
+import GCG from "../../image/equipo/GCG.webp";
+import GPC from "../../image/equipo/GPC.webp";
+import JCM from "../../image/equipo/JCM.webp";
+import MBR from "../../image/equipo/MBR.webp";
+import MPR from "../../image/equipo/MPR.webp";
+import XLD from "../../image/equipo/XLD.webp";
+
+const { member } = Astro.params;
+const team = [
+  {
+    person: "Juliette C. Mallen",
+    position: "Founder & CEO",
+    linkImage: JCM.src,
+    description:
+      "Soy Cathy, arquitecta con especialización en comunicación arquitectónica y experiencia en la dirección creativa de eventos culturales.",
+    linkedin: "https://www.linkedin.com/in/juanperez",
+    instagram: "https://www.instagram.com/juanperez",
+  },
+  {
+    person: "Guillermo Perales",
+    position: "Co-Founder",
+    linkImage: GPC.src,
+    description:
+      "¡Hola! Soy Guille, madrileño y arquitecto habilitado por la Escuela Técnica Superior de Arquitectura de Madrid (ETSAM), con estudios...",
+    linkedin: "https://www.linkedin.com/in/anarodriguez",
+    instagram: "https://www.instagram.com/anarodriguez",
+  },
+  {
+    person: "Manuel Ben",
+    position: "UX Product Designer Specialist",
+    linkImage: MBR.src,
+    description:
+      "Soy Diseñador de Productos Digitales con más de 2 años de experiencia en el ecosistema digital, donde he demostrado una sólida capacidad...",
+    linkedin: "https://www.linkedin.com/in/carlosgomez",
+    instagram: "https://www.instagram.com/carlosgomez",
+  },
+  {
+    person: "María Fernández",
+    position: "COO",
+    linkImage: ACG.src,
+    description:
+      "María coordina las operaciones internas para garantizar la eficiencia en todos los procesos.",
+    linkedin: "https://www.linkedin.com/in/mariafernandez",
+    instagram: "https://www.instagram.com/mariafernandez",
+  },
+  {
+    person: "Pedro Sánchez",
+    position: "CMO",
+    linkImage: CA.src,
+    description:
+      "Pedro lidera las estrategias de marketing, ayudando a la empresa a llegar a nuevos mercados.",
+    linkedin: "https://www.linkedin.com/in/pedrosanchez",
+    instagram: "https://www.instagram.com/pedrosanchez",
+  },
+  {
+    person: "Laura Martínez",
+    position: "HR Manager",
+    linkImage: MPR.src,
+    description:
+      "Laura gestiona el talento humano y se encarga de los procesos de contratación y bienestar.",
+    linkedin: "https://www.linkedin.com/in/lauramartinez",
+    instagram: "https://www.instagram.com/lauramartinez",
+  },
+  {
+    person: "Xavier Longo",
+    position: "Web Developer",
+    linkImage: XLD.src,
+    description:
+      "Laura gestiona el talento humano y se encarga de los procesos de contratación y bienestar.",
+    linkedin: "https://www.linkedin.com/in/lauramartinez",
+    instagram: "https://www.instagram.com/lauramartinez",
+  },
+  {
+    person: "Guillermo Correa",
+    position: "Web Developer",
+    linkImage: GCG.src,
+    description:
+      "Laura gestiona el talento humano y se encarga de los procesos de contratación y bienestar.",
+    linkedin: "https://www.linkedin.com/in/guillermocg8/",
+    instagram: "https://www.instagram.com/guiller.gc/",
+  },
+];
+const pepe = team.find((e) => e.person === member);
+---
+
+<Layout title={pepe.person}>
+  <div class="member-info">
+    <h1 class="bg-black text-white">{pepe.person}</h1>
+    <img src={pepe.linkImage} alt={pepe.person} />
+    <p>
+      <strong>Posición:</strong>
+      {pepe.position}
+    </p>
+    <p>{pepe.description}</p>
+    <div class="social-links">
+      <a href={pepe.linkedin} target="_blank" rel="noopener noreferrer">
+        LinkedIn
+      </a>
+      <a href={pepe.instagram} target="_blank" rel="noopener noreferrer">
+        Instagram
+      </a>
+    </div>
+  </div>
+</Layout>

@@ -1,10 +1,5 @@
 ---
-const scrollToSection = (id) => {
-  if (typeof window !== "undefined") {
-    const section = document.getElementById(id);
-    section?.scrollIntoView({ behavior: "smooth" });
-  }
-};
+import Image from "astro/components/Image.astro";
 import AbitacoloBlanco from "../image/logos/AbitacoloBlanco.webp";
 import instagramBlanco from "../image/logos/instagramBlanco.webp";
 import linkedinBlanco from "../image/logos/LinkedInBlanco.webp";
@@ -14,9 +9,9 @@ import linkedinBlanco from "../image/logos/LinkedInBlanco.webp";
   <div class="max-w-[1440px] h-auto w-full p-4">
     <div class="md:flex items-center justify-between">
       <a href="/" aria-label="Inicio">
-        <img
+        <Image
           class="max-w-[329px] max-h-[93px] max-md:w-[135px] h-auto"
-          src={AbitacoloBlanco.src}
+          src={AbitacoloBlanco}
           alt="Logo Abitacolo"
           loading="lazy"
         />
@@ -25,15 +20,15 @@ import linkedinBlanco from "../image/logos/LinkedInBlanco.webp";
         <p class="text-white cursor-pointer text-sm">POLÍTICA DE PRIVACIDAD</p>
         <p class="text-white cursor-pointer text-sm">POLÍTICA DE COOKIES</p>
         <div class="flex gap-5">
-          <img
+          <Image
             class="w-6 h-6"
-            src={instagramBlanco.src}
+            src={instagramBlanco}
             alt="Instagram"
             loading="lazy"
           />
-          <img
+          <Image
             class="w-6 h-6"
-            src={linkedinBlanco.src}
+            src={linkedinBlanco}
             alt="LinkedIn"
             loading="lazy"
           />
