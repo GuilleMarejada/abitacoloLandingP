@@ -1,12 +1,6 @@
 ---
 import { Image } from "astro:assets";
 
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
-
 const productInfo = [
   {
     title: "Titulo-1",
@@ -57,6 +51,7 @@ const productInfo = [
               class="w-full h-fit"
               src={product.image}
               alt={product.title}
+              loading="lazy"
             />
             <div class="flex flex-col p-4 gap-8">
               <h3 class="text-white text-xl font-semibold  capitalize">
@@ -65,12 +60,6 @@ const productInfo = [
               <p class="text-white/40 text-base   uppercase">
                 {product.description}
               </p>
-
-              <a class="w-fit" href={`/products/${product.title}`}>
-                <button class="w-[80px] text-white bg-verdeAbitacolo">
-                  Ver mas
-                </button>
-              </a>
             </div>
           </div>
         ))
