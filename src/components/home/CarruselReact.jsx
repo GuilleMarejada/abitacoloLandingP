@@ -127,7 +127,7 @@ const TeamCarousel = () => {
                 cardsToShow === 3 ? "w-1/3" : "w-full"
               }`}
             >
-              <TeamCard {...member} />
+              <TeamCard {...member} client:load />
             </div>
           ))}
         </div>
