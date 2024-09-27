@@ -1,12 +1,6 @@
 ---
 import { Image } from "astro:assets";
 
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
-
 const productInfo = [
   {
     title: "Titulo-1",
@@ -50,13 +44,14 @@ const productInfo = [
     <div class="grid xl:grid-cols-2 gap-8">
       {
         productInfo.map((product) => (
-          <div class="bg-white/5 md:flex items-center max-w-[680px] max-md:max-w-[398px]">
+          <div class="bg-white/5 md:flex items-center max-w-[680px] max-md:max-w-[398px] rounded-2xl">
             <Image
               width="1600"
               height="900"
-              class="w-full"
+              class="w-full h-fit"
               src={product.image}
               alt={product.title}
+              loading="lazy"
             />
             <div class="flex flex-col p-4 gap-8">
               <h3 class="text-white text-xl font-semibold  capitalize">
@@ -65,12 +60,6 @@ const productInfo = [
               <p class="text-white/40 text-base   uppercase">
                 {product.description}
               </p>
-
-              <a class="w-fit" href={`/products/${product.title}`}>
-                <button class="w-[80px] text-white bg-verdeAbitacolo">
-                  Ver mas
-                </button>
-              </a>
             </div>
           </div>
         ))
