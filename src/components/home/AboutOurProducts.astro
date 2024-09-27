@@ -44,11 +44,11 @@ const productInfo = [
     <div class="grid xl:grid-cols-2 gap-8">
       {
         productInfo.map((product) => (
-          <div class="bg-white/5 md:flex items-center max-w-[680px] max-md:max-w-[398px] rounded-2xl">
+          <div class="bg-white/5 md:flex items-center max-w-[680px] max-md:max-w-[398px] max-md:rounded-b-lg">
             <Image
               width="1600"
               height="900"
-              class="w-full h-fit"
+              class="w-full h-fit max-md:rounded-t-lg"
               src={product.image}
               alt={product.title}
               loading="lazy"
