@@ -143,6 +143,8 @@ const TeamCarousel = () => {
             className="w-16"
             alt="Anterior"
             loading="lazy"
+            width={16}
+            height={16}
           />
         </button>
 
@@ -168,6 +170,8 @@ const TeamCarousel = () => {
             className="w-16"
             alt="Siguiente"
             loading="lazy"
+            width={16}
+            height={16}
           />
         </button>
       </div>
