@@ -6,7 +6,7 @@ import logoA from "../image/logos/ANegra.webp";
 
 <div
   id="cookieModal"
-  class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center w-full h-full p-10"
+  class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center w-full h-full p-10"
 >
   <div
     class="max-w-[1207px] min-h-[89px] px-8 pt-4 pb-3.5 bg-white rounded-2xl border-2 border-[#919e32] grid items-center gap-5 min-[1205px]:flex"
@@ -94,6 +94,7 @@ import logoA from "../image/logos/ANegra.webp";
     const storedConsent = getStoredConsent();
     if (!storedConsent || storedConsent === "rejected") {
       document.getElementById("cookieModal").classList.remove("hidden");
+      document.getElementById("cookieModal").classList.add("flex");
     }
   }
 
