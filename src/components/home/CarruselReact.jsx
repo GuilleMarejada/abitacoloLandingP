@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import TeamCard from "./TeamCard.jsx";
 import FlechaIzq from "../../image/FlechaIzq.webp";
 import FlechaDrch from "../../image/FlechaDrch.webp";
@@ -107,27 +107,27 @@ const TeamCarousel = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const getVisibleCards = () => {
+  const visibleCards = useMemo(() => {
     const visible = team.slice(currentIndex, currentIndex + cardsToShow);
     const extra = team.slice(
       0,
       Math.max(0, currentIndex + cardsToShow - team.length)
     );
     return visible.concat(extra);
-  };
+  }, [currentIndex, cardsToShow]);
 
   return (
     <div className="relative w-full max-w-7xl mx-auto p-8 bg-[#0000000A] rounded-sm">
       <div className="overflow-hidden">
         <div className="flex transition-transform duration-300 ease-in-out">
-          {getVisibleCards().map((member, index) => (
+          {visibleCards.map((member, index) => (
             <div
-              key={index}
+              key={`${member.person}-${index}`}
               className={`flex justify-center ${
                 cardsToShow === 3 ? "w-1/3" : "w-full"
               }`}
             >
-              <TeamCard {...member} client:load />
+              <TeamCard {...member} />
             </div>
           ))}
         </div>
@@ -135,7 +135,6 @@ const TeamCarousel = () => {
 
       <div className="flex justify-center items-center mt-6 space-x-4">
         <button
-          className=""
           onClick={prevSlide}
           aria-label="Ver el miembro anterior del equipo"
         >
@@ -161,7 +160,6 @@ const TeamCarousel = () => {
         </div>
 
         <button
-          className=""
           onClick={nextSlide}
           aria-label="Ver el siguiente miembro del equipo"
         >
