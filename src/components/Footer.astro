@@ -45,12 +45,12 @@ const navItems = [
 
     <hr class="border-white mt-2 mx-5" />
 
-    <div class="flex items-center flex-col mt-5 gap-4">
+    <div class="flex items-center flex-col mt-5 gap-2">
       <div class="flex gap-7 max-md:gap-2 items-center max-md:flex-col">
         {
           navItems.map(({ href, label }) => (
-            <a class="p-2" {href}>
-              <button class="text-white text-sm">{label}</button>
+            <a class="p-3" {href}>
+              <button class="text-white p-2 font-semibold">{label}</button>
             </a>
           ))
         }
