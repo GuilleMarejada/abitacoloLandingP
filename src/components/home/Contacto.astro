@@ -5,17 +5,15 @@ if (Astro.request.method === "POST") {
     const name = data.get("username");
     const email = data.get("email");
     const password = data.get("password");
-    // Do something with the data
+    // Procesar los datos
   } catch (error) {
-    if (error instanceof Error) {
-      console.error(error.message);
-    }
+    console.error(error instanceof Error ? error.message : error);
   }
 }
 ---
 
 <div id="contacto" class="grid justify-items-center pt-12 bg-white pb-6 px-3">
-  <div class="grid gap-10 mb-10">
+  <div class="grid gap-10 mb-10 text-center">
     <p class="text-[42px] font-semibold leading-[52px]">
       Ponte en Contacto con Nosotros
     </p>
@@ -32,52 +30,70 @@ if (Astro.request.method === "POST") {
   <form
     action="https://formsubmit.co/8ef3a12491cf88e883476dae52fd2893"
     method="POST"
-    class="h-[516px] w-full grid justify-center flex-col gap-[35px]"
+    class="grid justify-center gap-[35px] h-[516px] w-full px-3"
   >
-    <div class="max-w-[783.71px] flex gap-2 justify-between items-center">
+    <div class="max-w-[783.71px] flex gap-2">
+      <div class="flex flex-col">
+        <label for="nombre" class="sr-only">Nombre</label>
+        <input
+          id="nombre"
+          type="text"
+          name="nombre"
+          placeholder="Nombre"
+          autocomplete="name"
+          class="w-full max-w-[476px] h-[50px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="telefono" class="sr-only">Teléfono (Opcional)</label>
+        <input
+          id="telefono"
+          type="tel"
+          name="telefono"
+          placeholder="Teléfono (Opcional)"
+          autocomplete="tel"
+          class="max-w-[270px] h-[50px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
+        />
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <label for="email" class="sr-only">Email</label>
       <input
-        type="text"
-        name="nombre"
-        placeholder="Nombre"
-        autocomplete="name"
-        class="max-w-[476px] w-full h-[50px] rounded-sm border border-[#666666] px-6 text-lg font-medium leading-relaxed placeholder-[#151438]/40"
-      />
-      <input
-        type="tel"
-        name="telefono"
-        placeholder="Teléfono(Opcional)"
-        autocomplete="tel"
-        class="max-w-[270px] h-[50px] rounded-sm border border-[#666666] px-6 text-lg font-medium leading-relaxed placeholder-[#151438]/40"
+        id="email"
+        type="email"
+        name="email"
+        placeholder="Email"
+        autocomplete="email"
+        class="max-w-[792px] h-[50px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
       />
     </div>
-    <input
-      type="email"
-      name="email"
-      placeholder="Email"
-      autocomplete="email"
-      class="max-w-[792px] h-[50px] rounded-sm border border-[#666666] px-6 text-lg font-medium leading-relaxed placeholder-[#151438]/40"
-    />
-    <select
-      name="motivo"
-      autocomplete="off"
-      class="max-w-[792px] h-[50px] rounded-sm border border-[#666666] px-6 text-lg font-medium leading-relaxed text-[#151438]/40"
-    >
-      <option value="">Indícanos el motivo del contacto</option>
-      <option value="consulta">Consulta</option>
-      <option value="soporte">Soporte</option>
-      <option value="otros">Otros</option>
-    </select>
-    <textarea
-      name="mensaje"
-      placeholder="Tu mensaje"
-      autocomplete="off"
-      class="max-w-[792px] h-[170px] rounded-sm border border-[#666666] p-4 text-lg font-medium leading-relaxed placeholder-[#151438]/40 resize-none"
-    ></textarea>
+    <div class="flex flex-col">
+      <label for="motivo" class="sr-only">Motivo del contacto</label>
+      <select
+        id="motivo"
+        name="motivo"
+        class="max-w-[792px] h-[50px] rounded-sm border border-[#666666] px-6 text-lg font-medium text-[#151438]/40"
+      >
+        <option value="">Indícanos el motivo del contacto</option>
+        <option value="consulta">Consulta</option>
+        <option value="soporte">Soporte</option>
+        <option value="otros">Otros</option>
+      </select>
+    </div>
+    <div class="flex flex-col">
+      <label for="mensaje" class="sr-only">Tu mensaje</label>
+      <textarea
+        id="mensaje"
+        name="mensaje"
+        placeholder="Tu mensaje"
+        class="max-w-[792px] h-[170px] rounded-sm border border-[#666666] p-4 text-lg font-medium placeholder-[#151438]/40 resize-none"
+      ></textarea>
+    </div>
     <button
       type="submit"
       class="w-60 h-14 bg-[#919e32]/60 rounded-sm text-white text-base uppercase hover:bg-[#919e32]/80 transition-colors"
     >
-      ENVIAR
+      Enviar
     </button>
   </form>
 </div>
