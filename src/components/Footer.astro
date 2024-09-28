@@ -3,10 +3,18 @@ import Image from "astro/components/Image.astro";
 import AbitacoloBlanco from "../image/logos/AbitacoloBlanco.webp";
 import instagramBlanco from "../image/logos/instagramBlanco.webp";
 import linkedinBlanco from "../image/logos/LinkedInBlanco.webp";
+
+const navItems = [
+  { href: "#AboutUs", label: "¿Qué es Abitacolo?" },
+  { href: "#team", label: "Nuestro Equipo" },
+  { href: "#hitos", label: "Hitos Abitacolo" },
+  { href: "#products", label: "Nuestros Productos" },
+  { href: "#contacto", label: "Contactos" },
+];
 ---
 
 <footer class="w-full flex justify-center bg-[#919e32]">
-  <div class="max-w-[1440px] h-auto w-full p-4">
+  <div class="max-w-[1440px] w-full p-4">
     <div class="md:flex items-center justify-between">
       <a href="/" aria-label="Inicio">
         <Image
@@ -21,18 +29,16 @@ import linkedinBlanco from "../image/logos/LinkedInBlanco.webp";
         <p class="text-white cursor-pointer text-sm">POLÍTICA DE PRIVACIDAD</p>
         <p class="text-white cursor-pointer text-sm">POLÍTICA DE COOKIES</p>
         <div class="flex gap-5">
-          <Image
-            class="w-6 h-6"
-            src={instagramBlanco}
-            alt="Instagram"
-            loading="lazy"
-          />
-          <Image
-            class="w-6 h-6"
-            src={linkedinBlanco}
-            alt="LinkedIn"
-            loading="lazy"
-          />
+          {
+            ["Instagram", "LinkedIn"].map((social) => (
+              <Image
+                class="w-6 h-6"
+                src={social === "Instagram" ? instagramBlanco : linkedinBlanco}
+                alt={social}
+                loading="lazy"
+              />
+            ))
+          }
         </div>
       </div>
     </div>
@@ -41,25 +47,17 @@ import linkedinBlanco from "../image/logos/LinkedInBlanco.webp";
 
     <div class="flex items-center flex-col mt-5 gap-4">
       <div class="flex gap-7 max-md:gap-2 items-center max-md:flex-col">
-        <a class="p-2" href="#AboutUs">
-          <button class="text-white text-sm">¿Qué es Abitacolo?</button>
-        </a>
-        <a class="p-2" href="#team">
-          <button class="text-white text-sm">Nuestro Equipo</button>
-        </a>
-        <a class="p-2" href="#hitos">
-          <button class="text-white text-sm">Hitos Abitacolo</button>
-        </a>
-        <a class="p-2" href="#products">
-          <button class="text-white text-sm">Nuestros Productos</button>
-        </a>
-        <a class="p-2 w-fit" href="#contacto">
-          <button class="text-white text-sm">Contactos</button>
-        </a>
+        {
+          navItems.map(({ href, label }) => (
+            <a class="p-2" {href}>
+              <button class="text-white text-sm">{label}</button>
+            </a>
+          ))
+        }
       </div>
 
       <p class="text-white text-sm mt-1">
-        © 2024 Abitacolo. Todos los derechos reservados.
+        © {new Date().getFullYear()} Abitacolo. Todos los derechos reservados.
       </p>
     </div>
   </div>

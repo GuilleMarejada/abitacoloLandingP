@@ -2,60 +2,49 @@
 import Image from "astro/components/Image.astro";
 import AbitacoloBlanco from "../image/logos/AbitacoloBlanco.webp";
 import ModalMenuMovil from "./ModalMenuMovil.astro";
+
+const navItems = [
+  { href: "#AboutUs", label: "¿Qué es Abitacolo?" },
+  { href: "#team", label: "Nuestro equipo" },
+  { href: "#hitos", label: "Hitos Abitacolo" },
+  { href: "#products", label: "Nuestros productos" },
+];
 ---
 
 <nav class="w-full absolute flex justify-center">
   <div class="max-w-[1440px] w-full h-[65px] px-8 py-4 flex items-center">
     <a href="/" aria-label="Inicio">
       <Image
+        width={150}
+        height={150}
         src={AbitacoloBlanco}
-        width={108}
-        alt="Logotipo de Abitacolo"
-        class="h-10"
-        loading="eager"
-      /></a
-    >
+        alt="Logo Abitacolo"
+        loading="lazy"
+      />
+    </a>
 
     <div class="max-[1030px]:hidden flex justify-between items-center w-full">
       <ul class="h-8 flex items-center gap-1 ml-4">
-        <li>
-          <a
-            href="#AboutUs"
-            class="px-2 py-1.5 rounded-lg text-white bg-[#2e2f32] hover:bg-[#3e3f42]"
-          >
-            ¿Qué es Abitacolo?
-          </a>
-        </li>
-        <li>
-          <a
-            href="#team"
-            class="px-2 py-1.5 rounded-lg text-white bg-[#2e2f32] hover:bg-[#3e3f42]"
-          >
-            Nuestro equipo
-          </a>
-        </li>
-        <li>
-          <a
-            href="#hitos"
-            class="px-2 py-1.5 rounded-lg text-white bg-[#2e2f32] hover:bg-[#3e3f42]"
-          >
-            Hitos Abitacolo
-          </a>
-        </li>
-        <li>
-          <a
-            href="#products"
-            class="px-2 py-1.5 rounded-lg text-white bg-[#2e2f32] hover:bg-[#3e3f42]"
-          >
-            Nuestros productos
-          </a>
-        </li>
+        {
+          navItems.map(({ href, label }) => (
+            <li>
+              <a
+                {href}
+                class="px-2 py-1.5 rounded-lg text-white bg-[#2e2f32] hover:bg-[#3e3f42] transition-colors duration-300"
+                data-nav-link
+              >
+                {label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
       <div class="flex items-center gap-2">
-        <button class="px-2 py-1.5 rounded-lg text-white"> ES </button>
+        <button class="px-2 py-1.5 rounded-lg text-white">ES</button>
         <a
           href="#contacto"
-          class="px-2 py-1.5 bg-[#919e32] rounded-lg text-white font-semibold tracking-tight hover:bg-[#a1b036]"
+          class="px-2 py-1.5 bg-[#919e32] rounded-lg text-white font-semibold tracking-tight hover:bg-[#a1b036] transition-colors duration-300"
+          data-nav-link
         >
           Contáctanos
         </a>
@@ -64,3 +53,25 @@ import ModalMenuMovil from "./ModalMenuMovil.astro";
   </div>
   <div class="min-[1030px]:hidden grid content-center"><ModalMenuMovil /></div>
 </nav>
+
+<script>
+  function handleNavClick(e) {
+    e.preventDefault();
+    const href = e.currentTarget.getAttribute("href");
+    const isHomePage =
+      window.location.pathname === "/" ||
+      window.location.pathname === "/index.html";
+
+    if (isHomePage) {
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.href = "/" + href;
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[data-nav-link]").forEach((link) => {
+      link.addEventListener("click", handleNavClick);
+    });
+  });
+</script>

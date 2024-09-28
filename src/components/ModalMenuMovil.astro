@@ -3,22 +3,29 @@ import { Image } from "astro:assets";
 import MenuMobil from "../image/menuMovil.webp";
 import Close from "../image/X.webp";
 
-// Componente reutilizable con el diseño que proporcionaste
+const menuItems = [
+  { href: "#AboutUs", text: "¿Qué es Abitacolo?", class: "bg-[#333333]" },
+  { href: "#team", text: "Nuestro Equipo", class: "bg-[#333333]" },
+  { href: "#hitos", text: "Hitos Abitacolo", class: "bg-[#333333]" },
+  { href: "#products", text: "Nuestros Productos", class: "bg-[#333333]" },
+  {
+    href: "#contacto",
+    text: "Contáctanos",
+    class: "bg-[#919e32] font-semibold",
+  },
+];
 ---
 
 <div>
-  <!-- Botón para abrir el menú -->
   <button id="menuButton" class="text-white rounded-md pr-8">
     <Image src={MenuMobil} alt="menu" width="40" height="40" loading="eager" />
   </button>
 
-  <!-- Modal con tus enlaces -->
   <div
     id="menuModal"
     class="fixed inset-0 bg-black bg-opacity-50 h-full hidden z-50"
   >
     <div class="grid">
-      <!-- Botón para cerrar el modal -->
       <button
         id="closeButton"
         class="top-4 right-4 px-4 py-2 text-white rounded-md justify-self-end"
@@ -28,72 +35,38 @@ import Close from "../image/X.webp";
       <div
         class="w-[414px] relative bg-transparent place-self-center grid gap-3"
       >
-        <!-- Sección de enlaces -->
-
-        <a
-          href="#AboutUs"
-          class="left-0 top-0 bg-[#333333] rounded-lg justify-center items-center gap-1 inline-flex w-full h-[56px] text-white text-xl leading-normal tracking-tight"
-        >
-          ¿Qué es Abitacolo?
-        </a>
-
-        <a
-          href="#team"
-          class="left-0 top-[62px] bg-[#333333] rounded-lg justify-center items-center gap-1 inline-flex w-full h-[56px] text-white text-xl leading-normal tracking-tight"
-        >
-          Nuestro Equipo
-        </a>
-
-        <a
-          href="#hitos"
-          class="left-0 top-[124px] bg-[#333333] rounded-lg justify-center items-center gap-1 inline-flex w-full h-[56px] text-white text-xl leading-normal tracking-tight"
-        >
-          Hitos Abitacolo
-        </a>
-
-        <a
-          href="#products"
-          class="left-0 top-[186px] bg-[#333333] rounded-lg justify-center items-center gap-1 inline-flex w-full h-[56px] text-white text-xl leading-normal tracking-tight"
-        >
-          Nuestros Productos
-        </a>
-
-        <a
-          href="#contacto"
-          class="left-0 top-[248px] bg-[#919e32] rounded-lg justify-center items-center gap-1 inline-flex w-full h-[56px] text-white text-xl font-semibold leading-normal tracking-tight"
-        >
-          Contáctanos
-        </a>
+        {
+          menuItems.map((item) => (
+            <a
+              href={item.href}
+              class={`${item.class} rounded-lg justify-center items-center gap-1 inline-flex w-full h-[56px] text-white text-xl leading-normal tracking-tight`}
+            >
+              {item.text}
+            </a>
+          ))
+        }
       </div>
     </div>
   </div>
 </div>
-<!-- Script para abrir y cerrar el modal -->
+
 <script>
   const menuButton = document.getElementById("menuButton");
   const menuModal = document.getElementById("menuModal");
   const closeButton = document.getElementById("closeButton");
-  const links = menuModal.querySelectorAll("a"); // Selecciona todos los enlaces
 
-  menuButton.addEventListener("click", () => {
-    menuModal.classList.remove("hidden");
-  });
+  function toggleModal() {
+    menuModal.classList.toggle("hidden");
+  }
 
-  closeButton.addEventListener("click", () => {
-    menuModal.classList.add("hidden");
-  });
+  menuButton.addEventListener("click", toggleModal);
+  closeButton.addEventListener("click", toggleModal);
 
-  // Cierra el modal si el usuario hace clic fuera de él
   menuModal.addEventListener("click", (event) => {
-    if (event.target === menuModal) {
-      menuModal.classList.add("hidden");
-    }
+    if (event.target === menuModal) toggleModal();
   });
 
-  // Cierra el modal al hacer clic en un enlace
-  links.forEach((link) => {
-    link.addEventListener("click", () => {
-      menuModal.classList.add("hidden");
-    });
+  menuModal.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", toggleModal);
   });
 </script>

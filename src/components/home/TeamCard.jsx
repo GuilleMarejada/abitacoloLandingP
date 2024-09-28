@@ -54,7 +54,7 @@ const TeamCard = ({
           )}
           <div className="flex-grow"></div>
           <a href={`/team/${person}`} className="justify-self-end">
-            <button className="bg-[#919e32] rounded-lg text-white px-2 py-1.5 text-sm font-semibold leading-tight">
+            <button className="bg-[#919e32] rounded-lg text-white px-2 py-1.5 text-sm font-semibold leading-tight hover:bg-[#a1b036]">
               Leer más
             </button>
           </a>
