@@ -13,12 +13,15 @@ const TeamCard = ({
 }) => {
   return (
     <div className="w-full h-[540px] max-w-sm bg-white flex flex-col gap-6 p-4">
+      <a href={`/team/${person}`}>
+
       <img
         className="w-fit h-[292px] object-scale-down"
         src={linkImage}
         alt="Team member"
         loading="lazy"
-      />
+        />
+        </a>
       <div className="flex flex-col gap-4">
         <div>
           <h2 className="text-black/90 text-2xl font-semibold uppercase leading-7">
