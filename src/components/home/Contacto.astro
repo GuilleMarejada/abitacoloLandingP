@@ -23,16 +23,16 @@ if (Astro.request.method === "POST") {
       ¿Quieres más información sobre este proyecto? Puedes escribirnos o
       llamarnos, te informaremos encantados.
     </div>
-    <div class="w-[308px] text-black text-base leading-relaxed">
+    <div class="max-w-[308px] text-black text-base leading-relaxed">
       +34 xxx xxx xxx
     </div>
   </div>
   <form
     action="https://formsubmit.co/8ef3a12491cf88e883476dae52fd2893"
     method="POST"
-    class="grid justify-center gap-[35px] h-[516px] w-full px-3"
+    class="grid justify-center gap-[35px] min-h-[516px] w-full px-3"
   >
-    <div class="max-w-[783.71px] flex gap-2">
+    <div class="max-w-[783.71px] md:flex grid md:gap-2 gap-[35px]">
       <div class="flex flex-col">
         <label for="nombre" class="sr-only">Nombre</label>
         <input
@@ -52,7 +52,7 @@ if (Astro.request.method === "POST") {
           name="telefono"
           placeholder="Teléfono (Opcional)"
           autocomplete="tel"
-          class="max-w-[270px] h-[50px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
+          class="h-[50px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
         />
       </div>
     </div>
@@ -67,7 +67,7 @@ if (Astro.request.method === "POST") {
         class="max-w-[792px] h-[50px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
       />
     </div>
-    <div class="flex flex-col">
+    <!-- <div class="flex flex-col">
       <label for="motivo" class="sr-only">Motivo del contacto</label>
       <select
         id="motivo"
@@ -79,7 +79,7 @@ if (Astro.request.method === "POST") {
         <option value="soporte">Soporte</option>
         <option value="otros">Otros</option>
       </select>
-    </div>
+    </div> -->
     <div class="flex flex-col">
       <label for="mensaje" class="sr-only">Tu mensaje</label>
       <textarea

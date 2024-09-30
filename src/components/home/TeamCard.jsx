@@ -17,46 +17,41 @@ const TeamCard = ({
   linkedin,
   instagram,
 }) => (
-  <div className="w-full h-[540px] max-w-sm bg-white flex flex-col gap-6 p-4">
-        <a href={`/team/${person}`}>
-
-    <img
-      className="w-fit h-[292px] object-scale-down"
-      src={linkImage}
-      alt={`${person} - Team member`}
-      loading="lazy"
-    />
+  <div className="w-full h-[540px] max-w-sm bg-white flex flex-col p-4">
+    <a href={`/team/${person}`}>
+      <img
+        className="w-fit h-[292px] object-scale-down"
+        src={linkImage}
+        alt={`${person} - Team member`}
+        loading="lazy"
+      />
     </a>
-    <div className="flex flex-col gap-4">
+    <div className="grid gap-4 flex-grow">
       <div>
         <h2 className="text-black/90 text-2xl font-semibold uppercase leading-7">
           {person}
         </h2>
-        <p className="text-black/90 text-xs uppercase leading-tight">
+        <p className="text-black/90 text-xs uppercase leading-tight mt-2">
           {position}
         </p>
+        <p className="text-[#666666] text-sm uppercase leading-tight mt-2">
+          {description}
+        </p>
       </div>
-      <p className="text-[#666666] text-sm uppercase leading-tight">
-        {description}
-      </p>
-      <div className="flex items-center gap-4">
-        {linkedin && (
-          <SocialLink href={linkedin} src={LinkedInNegro.src} alt="LinkedIn" />
-        )}
-        {instagram && (
-          <SocialLink
-            href={instagram}
-            src={InstagramNegro.src}
-            alt="Instagram"
-          />
-        )}
-        <div className="flex-grow" />
-        <a href={`/team/${person}`}>
-          <button className="bg-[#919e32] rounded-lg text-white px-2 py-1.5 text-sm font-semibold leading-tight hover:bg-[#a1b036]">
-            Leer más
-          </button>
-        </a>
-      </div>
+    </div>
+    <div className="flex items-center gap-4 mt-auto">
+      {linkedin && (
+        <SocialLink href={linkedin} src={LinkedInNegro.src} alt="LinkedIn" />
+      )}
+      {instagram && (
+        <SocialLink href={instagram} src={InstagramNegro.src} alt="Instagram" />
+      )}
+      <div className="flex-grow" />
+      <a href={`/team/${person}`}>
+        <button className="bg-[#919e32] rounded-lg text-white px-2 py-1.5 text-sm font-semibold leading-tight hover:bg-[#a1b036]">
+          Leer más
+        </button>
+      </a>
     </div>
   </div>
 );
