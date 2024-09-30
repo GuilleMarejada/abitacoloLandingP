@@ -9,11 +9,12 @@ import AboutOurProducts from "../components/home/AboutOurProducts.astro";
 import Footer from "../components/Footer.astro";
 import Hitos from "../components/home/Hitos.astro";
 import Contacto from "../components/home/Contacto.astro";
+import ModalPrivacidad from "../components/ModalPrivacidad.astro";
 ---
 
 <Layout title="Abitacolo">
+  <Nav />
   <main>
-    <Nav />
     <Banner />
     <AboutUs />
     <AboutOurJob />
@@ -21,6 +22,7 @@ import Contacto from "../components/home/Contacto.astro";
     <Hitos />
     <AboutOurProducts />
     <Contacto />
-    <Footer />
   </main>
+  <Footer />
+  <ModalPrivacidad />
 </Layout>

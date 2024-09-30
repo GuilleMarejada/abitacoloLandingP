@@ -1,0 +1,125 @@
+---
+import Image from "astro/components/Image.astro";
+import ajustes from "../image/iconoAjustes.webp";
+import logoA from "../image/logos/ANegra.webp";
+---
+
+<div
+  id="cookieModal"
+  class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center w-full h-full p-10"
+>
+  <div
+    class="max-w-[1207px] min-h-[89px] px-8 pt-4 pb-3.5 bg-white rounded-2xl border-2 border-[#919e32] grid items-center gap-5 min-[1205px]:flex"
+  >
+    <div class="flex justify-around">
+      <Image
+        src={logoA}
+        alt="Icono de información"
+        width="89"
+        height="89"
+        loading="eager"
+      />
+      <div class="h-[49px]">
+        <div class="leading-7 tracking-wide">Nos preocupa</div>
+        <div class="w-[150px] text-[#222222] text-xl font-bold leading-7">
+          tu privacidad
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="max-w-[342px] min-h-[29px] flex-col justify-start items-start inline-flex"
+    >
+      <div
+        class="self-stretch h-[43px] text-[#37474f] text-xs font-normal leading-none tracking-tight"
+      >
+        Utilizamos cookies para mejorar tu experiencia en nuestra web. Estas
+        almacenan información sobre tus preferencias.
+      </div>
+    </div>
+    <div
+      class="bg-[#919e32] rounded-[10px] justify-center items-center gap-1.5 flex"
+    >
+      <button
+        id="acceptAll"
+        class="text-white text-sm font-semibold leading-[16.80px] grid justify-center px-7 py-2.5 w-full"
+      >
+        Aceptar todas
+      </button>
+    </div>
+    <button
+      id="customize"
+      class="px-7 py-2.5 rounded-[10px] border-2 border-[#666666] justify-center items-center gap-1.5 flex"
+    >
+      <div class="text-[#666666] text-sm font-semibold leading-[16.80px]">
+        Personalizar
+      </div>
+      <div class="w-4 h-4 relative">
+        <Image
+          src={ajustes}
+          alt="Icono de ajustes"
+          width="24"
+          height="26"
+          loading="eager"
+        />
+      </div>
+    </button>
+    <div class="h-10 justify-start items-start gap-4 flex">
+      <button
+        id="rejectAll"
+        class="py-[9px] rounded-lg border justify-center items-center gap-2.5 flex"
+      >
+        <div
+          class="text-center text-[#37474f] text-sm font-medium uppercase tracking-wider"
+        >
+          RECHAZAR TODAS
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const STORAGE_KEY = "cookieConsent";
+
+  function getStoredConsent() {
+    return localStorage.getItem(STORAGE_KEY);
+  }
+
+  function setStoredConsent(value) {
+    localStorage.setItem(STORAGE_KEY, value);
+  }
+
+  function showModal() {
+    const storedConsent = getStoredConsent();
+    if (!storedConsent || storedConsent === "rejected") {
+      document.getElementById("cookieModal").classList.remove("hidden");
+      document.getElementById("cookieModal").classList.add("flex");
+    }
+  }
+
+  function closeModal() {
+    document.getElementById("cookieModal").classList.add("hidden");
+  }
+
+  function setConsent(value) {
+    setStoredConsent(value);
+    closeModal();
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const acceptBtn = document.getElementById("acceptAll");
+    const customizeBtn = document.getElementById("customize");
+    const rejectBtn = document.getElementById("rejectAll");
+
+    acceptBtn.onclick = () => setConsent("accepted");
+    rejectBtn.onclick = () => setConsent("rejected");
+    customizeBtn.onclick = () => {
+      console.log("Open customization settings");
+      // Aquí puedes implementar la lógica para abrir un modal de personalización
+      // Por ahora, no cerramos el modal principal
+    };
+
+    showModal();
+  });
+</script>

@@ -3,7 +3,6 @@ import Layout from "../../layouts/Layout.astro";
 import Nav from "../../components/Nav.astro";
 import Footer from "../../components/Footer.astro";
 
-
 import ACG from "../../image/equipo/ACG.webp";
 import GCG from "../../image/equipo/GCG.webp";
 import GPC from "../../image/equipo/GPC.webp";
@@ -97,48 +96,45 @@ const team = [
       "Me llamo Guillermo Gil, soy Full Stack Developer con experiencia en liderar proyectos y trabajar en equipos multifuncionales.En mi rol más reciente con Abitacolo, coordiné el equipo de desarrollo WEB en la creación de la plataforma e-commerce y el catálogo digital, así aseguré una integración eficiente entre el frontend y el backend",
     linkedin: "https://www.linkedin.com/in/guillermocg8/",
     instagram: "https://www.instagram.com/guiller.gc/",
-    semblanza1: "Me llamo Guillermo Gil, soy Full Stack Developer con experiencia en liderar proyectos y trabajar en equipos multifuncionales. Tengo sólidas habilidades en JavaScript, Python y React, y un historial demostrado en el desarrollo de plataformas ECommerce y la entrega exitosa de MVPs.",
-    semblanza2: "En mi rol más reciente con Abitacolo, coordiné el equipo de desarrollo WEB en la creación de la plataforma e-commerce y el catálogo digital, así aseguré una integración eficiente entre el frontend y el backend.Puedo afirmar que Abitacolo está en buenas manos y podrá resolver futuros retos. Mi enfoque se centra en la planificación de tareas, la gestión de proyectos y la resolución de problemas técnicos, lo que me permite cumplir con los plazos y objetivos establecidos.",
-    semblanza3: "Antes de enfocarme en el desarrollo web, trabajé en la coordinación de contenidos en COPE y como técnico de reparación y mantenimiento de equipos electrónicos, donde desarrollé habilidades valiosas en la solución de problemas y la atención al cliente. Estoy entusiasmado por seguir creciendo en el campo del desarrollo, ahora que participo en proyectos innovadores, donde los acertijos aparecen, estoy convencido de mis destrezas y campos de acción para hacer crecer mis conocimientos y los de mi equipo."
+    semblanza1:
+      "Me llamo Guillermo Gil, soy Full Stack Developer con experiencia en liderar proyectos y trabajar en equipos multifuncionales. Tengo sólidas habilidades en JavaScript, Python y React, y un historial demostrado en el desarrollo de plataformas ECommerce y la entrega exitosa de MVPs.",
+    semblanza2:
+      "En mi rol más reciente con Abitacolo, coordiné el equipo de desarrollo WEB en la creación de la plataforma e-commerce y el catálogo digital, así aseguré una integración eficiente entre el frontend y el backend.Puedo afirmar que Abitacolo está en buenas manos y podrá resolver futuros retos. Mi enfoque se centra en la planificación de tareas, la gestión de proyectos y la resolución de problemas técnicos, lo que me permite cumplir con los plazos y objetivos establecidos.",
+    semblanza3:
+      "Antes de enfocarme en el desarrollo web, trabajé en la coordinación de contenidos en COPE y como técnico de reparación y mantenimiento de equipos electrónicos, donde desarrollé habilidades valiosas en la solución de problemas y la atención al cliente. Estoy entusiasmado por seguir creciendo en el campo del desarrollo, ahora que participo en proyectos innovadores, donde los acertijos aparecen, estoy convencido de mis destrezas y campos de acción para hacer crecer mis conocimientos y los de mi equipo.",
   },
 ];
-const pepe = team.find((e) => e.person === member);
+const teamMember = team.find((e) => e.person === member);
 ---
 
-<Layout  title={pepe.person}>
-  <div class="h-screen">
-  <Nav/> 
-  <div class="member-info p-10 h-full grid place-content-center">
-    <h1 class="  text-4xl text-center font-semibold">{pepe.person}</h1>
-    <div class="flex w-full max-lg:flex-col   gap-10 justify-center items-center mt-10">
-      <Image width="400" height="100" src={pepe.linkImage} alt={pepe.person} />
-      <div class="flex flex-col ">
-
-        <p class="font-semibold text-2xl text-black text-center">
-          
-          {pepe.position}
-        </p>
-
+<Layout title={teamMember.person}>
+  <div class="flex flex-col min-h-screen">
+    <Nav />
+    <main class="flex-grow">
+      <div class="member-info p-10 h-full grid place-content-center pt-20">
+        <h1 class="text-4xl text-center font-semibold">{teamMember.person}</h1>
+        <div
+          class="flex w-full max-lg:flex-col gap-10 justify-center items-center mt-10"
+        >
+          <Image
+            width="400"
+            height="100"
+            src={teamMember.linkImage}
+            alt={teamMember.person}
+            loading="eager"
+          />
+          <div class="flex flex-col">
+            <p class="font-semibold text-2xl text-black text-center">
+              {teamMember.position}
+            </p>
         <p class=" text-black text-start p-2 text-xl max-sm:text-lg mt-2 ">{pepe.semblanza1} </p>
         <p class=" text-black text-start p-2 text-xl max-sm:text-lg   ">{pepe.semblanza2} </p>
         <p class=" text-black text-start p-2 text-xl max-sm:text-lg   ">{pepe.semblanza3} </p>
         <p class=" text-black text-start p-2 text-xl max-sm:text-lg   ">{pepe.semblanza4} </p>
         <p class=" text-black text-start p-2 text-xl max-sm:text-lg   ">{pepe.semblanza5} </p>
         <p class=" text-black text-start p-2 text-xl max-sm:text-lg   ">{pepe.semblanza6} </p>
-       
       </div>
-     <!--  <div class="social-links flex-col text-white ">
-        <a href={pepe.linkedin} target="_blank" rel="noopener noreferrer">
-          LinkedIn
-        </a>
-        <a href={pepe.instagram} target="_blank" rel="noopener noreferrer">
-          Instagram
-        </a>
-      </div> -->
-    </div>
-    
+    </main>
+    <Footer />
   </div>
-  
-  <Footer/>
-</div>
 </Layout>
