@@ -34,7 +34,7 @@ const TeamCard = ({
         <p className="text-black/90 text-xs uppercase leading-tight mt-2">
           {position}
         </p>
-        <p className="text-[#666666] text-sm uppercase leading-tight mt-2">
+        <p className="text-[#666666] text-sm leading-tight mt-2">
           {description}
         </p>
       </div>
