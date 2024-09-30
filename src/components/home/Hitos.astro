@@ -14,7 +14,7 @@ const articulosHitos = [
     clases: "",
   },
   {
-    titulo: "¿Qué Hace Único a Abitacolo?",
+    titulo: "¿Qué hace único a Abitacolo?",
     texto:
       "Innovación: Redefinimos el concepto de mobiliario olvidado, transformándolo en un catálogo de soluciones estéticas y funcionales. Nuestro taller permite la renovación continua de muebles, asegurando que cumplan su propósito...",
     image: placeHolder2,
@@ -33,22 +33,20 @@ const articulosHitos = [
 <div class="w-full py-16 grid justify-center bg-[#333333] px-4" role="main">
   <div
     id="hitos"
-    class="bg-[#919e32] grid justify-center max-w-[1376px] rounded-lg"
+    class="bg-[#d6ff85] grid justify-center max-w-[1376px] rounded-lg"
   >
     <header
-      class="min-h-[350px] px-8 py-24 max-md:py-12 flex justify-center items-center"
+      class="min-h-[350px] px-8 py-12 max-md:py-12 flex justify-center items-center"
     >
-      <div class="grid justify-center">
-        <h1
-          class="max-w-[528px] justify-self-center text-white/90 text-[56px] font-semibold leading-[64px]"
-        >
+      <div class="">
+        <h1 class="justify-self-center text-black text-8xl font-semibold">
           Hitos Abitacolo
         </h1>
         <p
-          class="max-w-[956px] text-white/90 text-2xl uppercase leading-[42px] pt-8"
+          class="max-w-[956px] text-black leading-[42px] pt-8 text-2xl font-semibold"
         >
-          Únete a nosotros en esta emocionante etapa de crecimiento y forma
-          parte de nuestra historia.
+          Únete al emprendimiento en esta emocionante etapa de crecimiento y
+          forma parte de nuestra historia.
         </p>
       </div>
     </header>
@@ -65,50 +63,47 @@ const articulosHitos = [
         {
           articulosHitos.map((articulo, index) => (
             <article
-              class={`min-h-72 w-full p-12 relative grow bg-[#333333] hover:bg-[#202023] flex-col justify-start items-start gap-6 inline-flex top-[-20px] ${articulo.clases}`}
+              class={`min-h-72 w-full p-12 relative grow bg-white text-[#666666] hover:text-black  hover:bg-gray-300 flex-col justify-start items-start gap-6 inline-flex top-[-20px] ${articulo.clases}`}
               data-index={index}
               data-image-src={articulo.image.src}
               data-image-srcset={articulo.image.src}
             >
-              <h2 class="self-stretch opacity-60 text-white/90 text-2xl font-bold uppercase leading-7">
+              <h2 class="self-stretch text-2xl font-bold  leading-7 text-center">
                 {articulo.titulo}
               </h2>
-              <p class="self-stretch opacity-60 text-white text-sm  uppercase leading-tight">
+              <p class="self-stretch text-sm leading-tight text-center">
                 {articulo.texto}
               </p>
+              <a href={``} class="ml-auto mt-auto">
+                <button class="bg-[#919e32] rounded-lg text-white px-2 py-1.5 text-sm font-semibold leading-tight hover:bg-[#a1b036]">
+                  Leer articulo
+                </button>
+              </a>
             </article>
           ))
         }
       </div>
     </section>
 
-    <div class="h-20 flex lg:justify-end px-8 py-4 border-b border-white/10">
-      <button
-        class="px-4 py-3 bg-black/30 rounded-sm border max-lg:justify-self-start border-white/10 backdrop-blur-xl text-white/90 uppercase"
-        aria-label="Ver todos los hitos"
-      >
-        Ver todos
-      </button>
-    </div>
-
     <footer
       class="min-h-[408px] px-8 max-md:py-8 py-24 border-t border-black/10 flex max-lg:flex-col-reverse items-center gap-7"
     >
       <div class="flex-1 pr-32 max-md:pr-0">
-        <p class="text-white/60 text-[28px] leading-9">
-          En Abitacolo, cada día damos pasos firmes hacia el éxito. Estamos
-          buscando inversores visionarios que quieran ser parte de nuestra
-          emocionante trayectoria. Únete a nosotros y sé parte de una historia
-          de innovación y crecimiento imparable.
+        <p class="text-black/90 text-[32px] leading-9">
+          En Abitacolo cada día damos pasos firmes hacia el éxito. Buscamos
+          inversores visionarios, colaboradores capaces y personas curiosas por
+          los servicios, que deseen ser parte de nuestro original ADN. Únete al
+          emprendimiento sostenible y sé parte de una historia de innovación y
+          crecimiento imparable.
         </p>
       </div>
       <div class="flex-1 flex flex-col gap-7">
-        <h2 class="text-white/90 text-[40px]">
+        <h2 class="text-black/90 text-[40px] text-center">
           ¡Empieza tu historia con nosotros!
         </h2>
         <a
           href="#contacto"
-          class="h-14 px-6 py-4 border-solid border-2 rounded-[10px] text-white text-xl font-semibold grid justify-center hover:bg-[#a1b036]"
+          class="h-14 px-6 py-4 rounded-[10px] text-white text-xl font-semibold grid justify-center bg-black hover:bg-[#a1b036]"
           aria-label="Contáctanos"
         >
           Contáctanos
