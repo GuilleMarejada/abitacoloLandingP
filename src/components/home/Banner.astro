@@ -1,14 +1,21 @@
 ---
+import { Image } from "astro:assets";
 import imgBanner from "../../image/home/bannerHome1.webp";
 ---
 
 <div class="w-full h-[800px] bg-black/70 grid justify-center">
-  <div
-    class="max-w-[1440px] w-screen bg-cover bg-center grid"
-    style={{ backgroundImage: `url(${imgBanner.src})` }}
-  >
+  <div class="max-w-[1440px] w-screen relative overflow-hidden">
+    <Image
+      src={imgBanner}
+      alt="Banner de fondo"
+      width={1440}
+      height={800}
+      class="absolute object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-black/50">
+    </div>
     <div
-      class="px-8 max-sm:px-4 py-24 grid gap-2.5 bg-gradient-to-r from-black/80 to-black/50 content-end"
+      class="relative z-10 px-8 max-sm:px-4 py-24 grid gap-2.5 content-end h-full"
     >
       <div class="md:flex h-fit max-md:grid items-end gap-4">
         <h1

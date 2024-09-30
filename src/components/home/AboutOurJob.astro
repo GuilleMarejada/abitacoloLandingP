@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import rescatamos from "../../image/ourJob/rescatamos.webp";
 import restauramos from "../../image/ourJob/restauramos.webp";
 import entregamos from "../../image/ourJob/entregamos.webp";
@@ -7,19 +8,19 @@ const articles = [
   {
     title: "Rescatamos",
     description:
-      "Nos ocupamos de recoger muebles desechados, buscamos esos tesoros que ya no quiere y les damos una segunda vida.",
+      "Realizamos la recogida de muebles de forma eficiente y responsable, ya sea de la calle, áreas designadas para el desecho, o directamente desde viviendas y locales. Nuestro objetivo es facilitar la donación y reciclaje de mobiliario en desuso.",
     image: rescatamos,
   },
   {
     title: "Restauramos",
     description:
-      "Nuestro equipo restaura y reinventa cada pieza con pasión, devolviendo la vida a cada una.",
+      "Transformamos muebles olvidados en objetos únicos y con carácter, utilizando técnicas creativas y sostenibles. Con un enfoque económico, ofrecemos la oportunidad de dar nueva vida a los muebles, convirtiéndolos en piezas originales para el hogar gracias a la recuperación creativa.",
     image: restauramos,
   },
   {
     title: "Entregamos",
     description:
-      "Exhibimos nuestras creaciones en nuestra plataforma para que encuentres tu favorita, listas para tu hogar.",
+      "Ofrecemos un alquiler asequible de muebles de calidad, disponible exclusivamente por el tiempo que los clientes necesiten. Nuestro servicio es domiciliario, lo que significa que entregamos los muebles directamente en su hogar. A través de nuestra plataforma en línea, reciben muebles funcionales y estilosos con una suscripción mensual, disfrutando de una experiencia sin complicaciones y beneficios adicionales para facilitar su uso y mantenimiento.",
     image: entregamos,
   },
 ];
@@ -40,18 +41,25 @@ const articles = [
     >
       {
         articles.map((article) => (
-          <article
-            class="max-w-[448px] h-[400px] px-8 pt-52 pb-12 rounded shadow flex-col justify-start items-start gap-8 inline-flex bg-cover bg-center max-md:max-w-[448px]"
-            style={{ backgroundImage: `url(${article.image.src})` }}
-          >
-            <header class="self-stretch h-[108px] flex-col justify-start items-start gap-4 flex">
-              <h2 class="self-stretch text-white text-[28px] leading-loose">
-                {article.title}
-              </h2>
-            </header>
-            <p class="self-stretch text-white text-sm uppercase leading-tight">
-              {article.description}
-            </p>
+          <article class="relative max-w-[448px] h-[600px] rounded shadow overflow-hidden max-md:max-w-[448px]">
+            <Image
+              src={article.image}
+              alt={`Imagen de ${article.title}`}
+              width={448}
+              height={600}
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-50" />
+            <div class="relative z-10 h-full px-8 pt-52 pb-12 flex flex-col justify-start items-start gap-4">
+              <header class="self-stretch flex-col justify-start items-start flex">
+                <h2 class="self-stretch text-white text-[28px] leading-loose font-bold">
+                  {article.title}
+                </h2>
+              </header>
+              <p class="self-stretch text-white text-lg leading-tight font-semibold">
+                {article.description}
+              </p>
+            </div>
           </article>
         ))
       }
