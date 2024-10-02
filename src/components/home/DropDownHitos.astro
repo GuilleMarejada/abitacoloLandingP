@@ -38,7 +38,7 @@ const hiddenHitos = Hito.filter((hito) => hito.clases.includes("hidden"));
           <p class="self-stretch text-sm leading-tight text-center">
             {hito.texto}
           </p>
-          <a href="#" class="ml-auto mt-auto">
+          <a href={`/hitos/articulo-${index + 2}`} class="ml-auto mt-auto">
             <button class="bg-[#919e32] rounded-lg text-white px-2 py-1.5 text-sm font-semibold leading-tight hover:bg-[#a1b036]">
               Leer articulo
             </button>
