@@ -1,11 +1,19 @@
 ---
 import { Image } from "astro:assets";
+import DropDownHitos from "../../components/home/DropDownHitos.astro";
 import placeHolder1 from "../../image/home/placeholder1.png";
 import placeHolder2 from "../../image/home/placeholder2.png";
 import placeHolder3 from "../../image/home/placeholder3.png";
 
 const {articulos} = Astro.params;
 
+
+type articulosHitos = {
+  titulo: string;
+  texto: string;
+  image: ImageMetadata;
+  clases: string;
+};
 
 const articulosHitos = [
   {
@@ -89,6 +97,7 @@ const articulosHitos = [
         }
       </div>
     </section>
+    <DropDownHitos Hito={articulosHitos} />
 
     <footer
       class="min-h-[408px] px-8 max-md:py-8 py-24 border-t border-black/10 flex max-lg:flex-col-reverse items-center gap-7"
