@@ -5,6 +5,9 @@ import placeHolder1 from "../../image/home/placeholder1.png";
 import placeHolder2 from "../../image/home/placeholder2.png";
 import placeHolder3 from "../../image/home/placeholder3.png";
 
+const {articulos} = Astro.params;
+
+
 type articulosHitos = {
   titulo: string;
   texto: string;
@@ -36,6 +39,8 @@ const articulosHitos = [
     clases: "max-lg:hidden",
   },
 ];
+
+
 ---
 
 <div class="w-full py-16 grid justify-center bg-[#333333] px-4" role="main">
@@ -82,7 +87,7 @@ const articulosHitos = [
               <p class="self-stretch text-sm leading-tight text-center">
                 {articulo.texto}
               </p>
-              <a href={``} class="ml-auto mt-auto">
+              <a href={`/hitos/articulo-${index + 1}`} class="ml-auto mt-auto">
                 <button class="bg-[#919e32] rounded-lg text-white px-2 py-1.5 text-sm font-semibold leading-tight hover:bg-[#a1b036]">
                   Leer articulo
                 </button>
