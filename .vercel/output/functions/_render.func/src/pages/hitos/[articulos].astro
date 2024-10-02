@@ -1,0 +1,29 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "../../layouts/Layout.astro";
+
+export const getStaticPaths = (() => {
+    
+    return [
+        {params : {articulos :"articulo-1"}},
+        {params : {articulos :"articulo-2"}},
+        {params : {articulos :"articulo-3"}}
+    ];
+}) satisfies GetStaticPaths;
+
+
+const {articulos} = Astro.params;
+
+
+
+---
+
+
+
+<Layout title={articulos}>
+
+    <h1 class="text-center text-black ">{articulos}</h1>
+
+
+
+</Layout>
