@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import FlechaAbajo from "../../image/home/FlechaAbajo.webp";
+
+interface Hito {
+  titulo: string;
+  texto: string;
+  image: ImageMetadata;
+  clases: string;
+}
+
+interface Props {
+  Hito: Hito[];
+}
+
+const { Hito = [] } = Astro.props;
+const hiddenHitos = Hito.filter((hito) => hito.clases.includes("hidden"));
+---
+
+<div class="relative inline-block text-left lg:hidden">
+  <div
+    class="origin-top-right mt-2 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 hidden space-y-3"
+    role="menu"
+    aria-orientation="vertical"
+    aria-labelledby="options-menu"
+    id="dropdown-menu"
+  >
+    {
+      hiddenHitos.map((hito, index) => (
+        <article
+          class={`min-h-72 w-full p-12 relative grow bg-white text-[#666666] hover:text-black hover:bg-gray-300 flex flex-col justify-start items-start gap-6 -top-5 ${index === 0 ? "md:hidden" : ""}`}
+          data-image-src={hito.image.src}
+          data-image-srcset={hito.image.src}
+        >
+          <h2 class="self-stretch text-2xl font-bold leading-7 text-center">
+            {hito.titulo}
+          </h2>
+          <p class="self-stretch text-sm leading-tight text-center">
+            {hito.texto}
+          </p>
+          <a href="#" class="ml-auto mt-auto">
+            <button class="bg-[#919e32] rounded-lg text-white px-2 py-1.5 text-sm font-semibold leading-tight hover:bg-[#a1b036]">
+              Leer articulo
+            </button>
+          </a>
+        </article>
+      ))
+    }
+  </div>
+  <button
+    type="button"
+    class="inline-flex justify-center w-full rounded-md border px-4 py-2 text-sm font-medium"
+    id="options-menu"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    <Image src={FlechaAbajo} alt="Flecha abajo" width={26} height={18} />
+  </button>
+</div>
+
+<script>
+  const button = document.querySelector("#options-menu");
+  const menu = document.querySelector("#dropdown-menu");
+
+  button?.addEventListener("click", () => {
+    const expanded = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", String(!expanded));
+    menu?.classList.toggle("hidden");
+  });
+</script>
