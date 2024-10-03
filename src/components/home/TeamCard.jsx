@@ -3,17 +3,17 @@ import PropTypes from "prop-types";
 import LinkedInNegro from "../../image/logos/LinkedInNegro.webp";
 
 const TeamCard = ({ person, position, linkImage, description, linkedin }) => (
-  <div className="w-full h-[540px] max-w-sm bg-white flex flex-col p-4">
+  <div className="max-w-[427px] h-[538px]  bg-white flex flex-col">
     <a href={`/team/${person}`}>
       <img
-        className="w-full h-[292px] object-scale-down"
+        className="w-full h-fit object-scale-down"
         src={linkImage}
         alt={`${person} - Team member`}
         loading="lazy"
       />
     </a>
-    <div className="grid gap-1">
-      <h2 className="text-black/90 text-2xl font-semibold uppercase leading-7">
+    <div className="grid gap-1 p-3">
+      <h2 className="text-black/90 text-2xl font-semibold  leading-7">
         {person}
       </h2>
       <div className="grid gap-4 flex-grow">
@@ -25,7 +25,7 @@ const TeamCard = ({ person, position, linkImage, description, linkedin }) => (
         </p>
       </div>
     </div>
-    <div className="flex items-center gap-4 mt-auto">
+    <div className="flex items-center gap-4 mt-auto p-3">
       {linkedin && (
         <a href={linkedin} target="_blank" rel="noopener noreferrer">
           <img
@@ -37,7 +37,7 @@ const TeamCard = ({ person, position, linkImage, description, linkedin }) => (
         </a>
       )}
       <a href={`/team/${person}`} className="ml-auto">
-        <button className="bg-[#919e32] rounded-lg text-white px-2 py-1.5 text-sm font-semibold leading-tight hover:bg-[#a1b036]">
+        <button className=" rounded-full px-2 py-1.5 text-sm font-semibold leading-tight tracking-tight border-2 border-black hover:bg-black hover:text-white">
           Leer más
         </button>
       </a>

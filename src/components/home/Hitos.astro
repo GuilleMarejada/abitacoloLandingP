@@ -5,8 +5,7 @@ import placeHolder1 from "../../image/home/placeholder1.png";
 import placeHolder2 from "../../image/home/placeholder2.png";
 import placeHolder3 from "../../image/home/placeholder3.png";
 
-const {articulos} = Astro.params;
-
+const { articulos } = Astro.params;
 
 type articulosHitos = {
   titulo: string;
@@ -17,30 +16,41 @@ type articulosHitos = {
 
 const articulosHitos = [
   {
-    titulo:
-      "Abitacolo revoluciona la industria del mueble con soluciones innovadoras.",
+    titulo: "Soluciones innovadoras",
     texto:
-      "Es el año 2023 en Madrid, mientras una mesilla de noche era dejada a su suerte sobre la acera de una calle, otras manos cargaban cuesta abajo del piso reformado una lámpara de pie, unas macetas, unas repisas de madera...",
+      "Ofrecemos una nueva visión en decoración, diseño e interiorismo, manejando conceptos democráticos, accesibles y coherentes con las necesidades actuales.",
     image: placeHolder1,
     clases: "",
   },
   {
-    titulo: "¿Qué hace único a Abitacolo?",
+    titulo: "Lo que nos hace únicos",
     texto:
-      "Innovación: Redefinimos el concepto de mobiliario olvidado, transformándolo en un catálogo de soluciones estéticas y funcionales. Nuestro taller permite la renovación continua de muebles, asegurando que cumplan su propósito...",
+      "Proponemos soluciones  adaptadas a ti porque sabemos que habitar una vivienda temporal requiere de una buena gestión de la incertidumbre a futuro.",
     image: placeHolder2,
     clases: "max-md:hidden",
   },
   {
-    titulo: "¿De dónde? ¿Qué es? ¿por qué Abitacolo? ",
+    titulo: "Superándonos día a día",
     texto:
-      "Abitacolo, lanzada en 1971 por el diseñador y artista italiano Bruno Munari, es una obra fascinante que trasciende los límites del diseño convencional y la arquitectura, ofrece una reflexión profunda sobre la relación entre el espacio...",
+      "Comprometidos con una constante evolución. nos mantenemos siempre a la vanguardia del dinámico mundo del diseño y la economía circular ",
+    image: placeHolder3,
+    clases: "max-lg:hidden",
+  },
+  {
+    titulo: "¿Qué significa Abitacolo?",
+    texto:
+      " Abitacolo es el título que el artista Bruno Munari dio en 1971 a una exploración sobre lo doméstico. Creemos que su visión sigue hoy vigente y por eso tomamos su nombre ",
+    image: placeHolder2,
+    clases: "max-md:hidden",
+  },
+  {
+    titulo: "Únete a esta revolución",
+    texto:
+      "Descubre cómo Abitacolo puede transformar tu experiencia de vida. Visita nuestros recursos, explora nuestras soluciones y únete a nuestra comunidad.",
     image: placeHolder3,
     clases: "max-lg:hidden",
   },
 ];
-
-
 ---
 
 <div class="w-full py-16 grid justify-center bg-[#333333] px-4" role="main">
@@ -53,7 +63,7 @@ const articulosHitos = [
     >
       <div class="">
         <h1 class="justify-self-center text-black text-8xl font-semibold">
-          Hitos Abitacolo
+          Nuestra aventura
         </h1>
         <p
           class="max-w-[956px] text-black leading-[42px] pt-8 text-2xl font-semibold"
@@ -76,7 +86,7 @@ const articulosHitos = [
         {
           articulosHitos.map((articulo, index) => (
             <article
-              class={`min-h-72 w-full p-12 relative grow bg-white text-[#666666] hover:text-black  hover:bg-gray-300 flex-col justify-start items-start gap-6 inline-flex top-[-20px] ${articulo.clases}`}
+              class={`min-h-72 w-full p-10 relative grow bg-white text-[#666666] hover:text-black  hover:bg-gray-100 flex-col justify-start items-start gap-6 inline-flex top-[-20px] ${articulo.clases}`}
               data-index={index}
               data-image-src={articulo.image.src}
               data-image-srcset={articulo.image.src}
@@ -87,8 +97,8 @@ const articulosHitos = [
               <p class="self-stretch text-sm leading-tight text-center">
                 {articulo.texto}
               </p>
-              <a href={`/hitos/articulo-${index + 1}`} class="ml-auto mt-auto">
-                <button class="bg-[#919e32] rounded-lg text-white px-2 py-1.5 text-sm font-semibold leading-tight hover:bg-[#a1b036]">
+              <a href={`/hitos/articulo-${index + 1}`} class="m-auto">
+                <button class="rounded-full border-2 border-black px-7 py-2.5 font-semibold hover:bg-black hover:text-white">
                   Leer articulo
                 </button>
               </a>
