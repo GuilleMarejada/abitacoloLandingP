@@ -1,9 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import DropDownHitos from "../../components/home/DropDownHitos.astro";
-import placeHolder1 from "../../image/home/placeholder1.png";
-import placeHolder2 from "../../image/home/placeholder2.png";
-import placeHolder3 from "../../image/home/placeholder3.png";
+import hito1Portada from "../../image/hitos/hito1portada.webp";
+import hito2Portada from "../../image/hitos/hito2Portada.webp";
+import hito3Portada from "../../image/hitos/hito3Portada.webp";
+import hito4Portada from "../../image/hitos/hito4Portada.webp";
+import hito5Portada from "../../image/hitos/hito5Portada.webp";
 
 const { articulos } = Astro.params;
 
@@ -19,35 +21,35 @@ const articulosHitos = [
     titulo: "Soluciones innovadoras",
     texto:
       "Ofrecemos una nueva visión en decoración, diseño e interiorismo, manejando conceptos democráticos, accesibles y coherentes con las necesidades actuales.",
-    image: placeHolder1,
+    image: hito1Portada,
     clases: "",
   },
   {
     titulo: "Lo que nos hace únicos",
     texto:
       "Proponemos soluciones  adaptadas a ti porque sabemos que habitar una vivienda temporal requiere de una buena gestión de la incertidumbre a futuro.",
-    image: placeHolder2,
+    image: hito2Portada,
     clases: "max-md:hidden",
   },
   {
     titulo: "Superándonos día a día",
     texto:
       "Comprometidos con una constante evolución. nos mantenemos siempre a la vanguardia del dinámico mundo del diseño y la economía circular ",
-    image: placeHolder3,
+    image: hito3Portada,
     clases: "max-lg:hidden",
   },
   {
     titulo: "¿Qué significa Abitacolo?",
     texto:
       " Abitacolo es el título que el artista Bruno Munari dio en 1971 a una exploración sobre lo doméstico. Creemos que su visión sigue hoy vigente y por eso tomamos su nombre ",
-    image: placeHolder2,
+    image: hito4Portada,
     clases: "max-md:hidden",
   },
   {
     titulo: "Únete a esta revolución",
     texto:
       "Descubre cómo Abitacolo puede transformar tu experiencia de vida. Visita nuestros recursos, explora nuestras soluciones y únete a nuestra comunidad.",
-    image: placeHolder3,
+    image: hito5Portada,
     clases: "max-lg:hidden",
   },
 ];
@@ -79,6 +81,7 @@ const articulosHitos = [
       class="w-full max-w-[1376px] h-[400px] object-cover"
       src={articulosHitos[0].image}
       alt="Imagen destacada de Hitos Abitacolo"
+      loading="lazy"
     />
 
     <section class="relative flex justify-center">
