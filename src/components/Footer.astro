@@ -1,39 +1,42 @@
 ---
 import Image from "astro/components/Image.astro";
 import AbitacoloBlanco from "../image/logos/AbitacoloBlanco.webp";
-import instagramBlanco from "../image/logos/instagramBlanco.webp";
-import linkedinBlanco from "../image/logos/LinkedInBlanco.webp";
+import InstagramNegro from "../image/logos/InstagramNegro.webp";
+import LinkedinNegro from "../image/logos/LinkedinNegro.webp";
+
 
 const navItems = [
   { href: "#AboutUs", label: "¿Qué es Abitacolo?" },
-  { href: "#team", label: "Nuestro Equipo" },
-  { href: "#hitos", label: "Hitos Abitacolo" },
-  { href: "#products", label: "Nuestros Productos" },
-  { href: "#contacto", label: "Contactos" },
+  { href: "#team", label: "Equipo" },
+  { href: "#hitos", label: "Hitos" },
+  { href: "#products", label: "Lo que hacemos" },
+  { href: "#contacto", label: "Contacto" },
 ];
 ---
 
-<footer class="w-full flex justify-center bg-[#919e32]">
+<footer class="w-full flex justify-center bg-[#d6ff85]">
   <div class="max-w-[1440px] w-full p-4">
-    <div class="md:flex items-center justify-between">
-      <a href="/" aria-label="Inicio">
-        <Image
+    <div class="md:flex max-md:justify-center items-center justify-between">
+
+        <a href="/" aria-label="Inicio" >
+          <Image
           width={150}
           height={150}
           src={AbitacoloBlanco}
           alt="Logo Abitacolo"
           loading="lazy"
-        />
-      </a>
+          />
+        </a>
+      
       <div class="flex gap-6 items-center max-md:flex-col-reverse">
-        <p class="text-white cursor-pointer text-sm">POLÍTICA DE PRIVACIDAD</p>
-        <p class="text-white cursor-pointer text-sm">POLÍTICA DE COOKIES</p>
+        <p class="text-black font-semibold cursor-pointer text-sm ">POLÍTICA DE PRIVACIDAD</p>
+        <p class="text-black font-semibold cursor-pointer text-sm">POLÍTICA DE COOKIES</p>
         <div class="flex gap-5">
           {
             ["Instagram", "LinkedIn"].map((social) => (
               <Image
                 class="w-6 h-6"
-                src={social === "Instagram" ? instagramBlanco : linkedinBlanco}
+                src={social === "Instagram" ? InstagramNegro : LinkedinNegro}
                 alt={social}
                 loading="lazy"
               />
@@ -43,21 +46,21 @@ const navItems = [
       </div>
     </div>
 
-    <hr class="border-white mt-2 mx-5" />
+    <hr class="border-black border-[1px] mt-2" />
 
-    <div class="flex items-center flex-col mt-5">
-      <div class="flex items-center max-md:flex-col">
+    <div class="flex flex-col mt-2">
+      <div class="flex max-md:items-center justify-between  max-md:flex-col">
         {
           navItems.map(({ href, label }) => (
-            <a class="p-3" {href}>
-              <button class="text-white p-2 font-semibold">{label}</button>
+            <a  {href}>
+              <button class="text-black text-xl p-2 leading-relaxed ">{label}</button>
             </a>
           ))
         }
       </div>
 
-      <p class="text-white text-sm mt-1">
-        © {new Date().getFullYear()} Abitacolo. Todos los derechos reservados.
+      <p class="text-black text-center text-sm mt-2 uppercase leading-relaxed tracking-[8px] ">
+        © {new Date().getFullYear()} Abitacolo - All rights reserved  
       </p>
     </div>
   </div>
