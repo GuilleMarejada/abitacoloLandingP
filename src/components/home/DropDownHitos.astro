@@ -14,6 +14,13 @@ interface Props {
 }
 
 const { Hitos = [] } = Astro.props;
+
+// Mapeo de clases condicionales
+const hiddenClasses = {
+  "max-lg:hidden": "lg:hidden",
+  "max-md:hidden": "md:hidden",
+  "max-sm:hidden": "sm:hidden",
+};
 ---
 
 <div class="relative text-left xl:hidden px-8">
@@ -26,26 +33,29 @@ const { Hitos = [] } = Astro.props;
     aria-labelledby="options-menu"
   >
     {
-      Hitos.map((hito, index) => (
-        <article
-          class={`min-h-72 w-full p-12 bg-white text-[#666666] hover:text-black hover:bg-gray-300 flex flex-col gap-6 -top-5 ${hito.clases}`}
-          data-image-src={hito.image.src}
-          data-image-srcset={hito.image.src}
-        >
-          <h2 class="text-2xl font-bold leading-7 text-center">
-            {hito.titulo}
-          </h2>
-          <p class="text-sm leading-tight text-center">{hito.texto}</p>
-          <a
-            href={`/hitos/articulo-${Hitos.indexOf(hito) + 1}`}
-            class="ml-auto mt-auto"
+      Hitos.map((hito, index) => {
+        const appliedClass = hiddenClasses[hito.clases] || "";
+        return (
+          <article
+            class={`min-h-72 w-full p-12 bg-white text-[#666666] hover:text-black hover:bg-gray-300 flex flex-col gap-6 -top-5 ${appliedClass}`}
+            data-image-src={hito.image.src}
+            data-image-srcset={hito.image.src}
           >
-            <button class="rounded-full border-2 border-black h-[37px] w-fit px-2  py-2.5 font-semibold hover:bg-black hover:text-white flex place-items-center">
-              Leer articulo
-            </button>
-          </a>
-        </article>
-      ))
+            <h2 class="text-2xl font-bold leading-7 text-center">
+              {hito.titulo}
+            </h2>
+            <p class="text-sm leading-tight text-center">{hito.texto}</p>
+            <a
+              href={`/hitos/articulo-${Hitos.indexOf(hito) + 1}`}
+              class="ml-auto mt-auto"
+            >
+              <button class="rounded-full border-2 border-black h-[37px] w-fit px-2 py-2.5 font-semibold hover:bg-black hover:text-white flex place-items-center">
+                Leer articulo
+              </button>
+            </a>
+          </article>
+        );
+      })
     }
   </div>
 
