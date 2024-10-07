@@ -16,8 +16,10 @@ const navItems = [
 
 <footer class="w-full flex justify-center bg-[#d6ff85]">
   <div class="max-w-[1440px] w-full p-4">
-    <div class="md:flex max-md:justify-center items-center justify-between">
+    <div class="md:flex items-center justify-between">
+      <div class= " max-md:flex max-md:justify-center  ">
 
+        
         <a href="/" aria-label="Inicio" >
           <Image
           width={150}
@@ -27,8 +29,9 @@ const navItems = [
           loading="lazy"
           />
         </a>
+      </div>
       
-      <div class="flex gap-6 items-center max-md:flex-col-reverse">
+      <div class="flex gap-6 items-center max-md:flex-col-reverse max-md: mt-10">
         <p class="text-black font-semibold cursor-pointer text-sm ">POLÍTICA DE PRIVACIDAD</p>
         <p class="text-black font-semibold cursor-pointer text-sm">POLÍTICA DE COOKIES</p>
         <div class="flex gap-5">
@@ -46,7 +49,7 @@ const navItems = [
       </div>
     </div>
 
-    <hr class="border-black border-[1px] mt-2" />
+    <hr class="border-black border-[1px] mt-2 max-md:mx-32" />
 
     <div class="flex flex-col mt-2">
       <div class="flex max-md:items-center justify-between  max-md:flex-col">
