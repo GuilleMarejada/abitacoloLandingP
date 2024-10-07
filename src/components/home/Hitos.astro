@@ -27,28 +27,28 @@ const articulosHitos = [
     texto:
       "Proponemos soluciones  adaptadas a ti porque sabemos que habitar una vivienda temporal requiere de una buena gestión de la incertidumbre a futuro.",
     image: hito2Portada,
-    clases: "md:hidden",
+    clases: "max-md:hidden",
   },
   {
     titulo: "Superándonos día a día",
     texto:
       "Comprometidos con una constante evolución. nos mantenemos siempre a la vanguardia del dinámico mundo del diseño y la economía circular ",
     image: hito3Portada,
-    clases: "md:hidden",
+    clases: "max-md:hidden",
   },
   {
     titulo: "¿Qué significa Abitacolo?",
     texto:
       " Abitacolo es el título que el artista Bruno Munari dio en 1971 a una exploración sobre lo doméstico. Creemos que su visión sigue hoy vigente y por eso tomamos su nombre ",
     image: hito4Portada,
-    clases: "lg:hidden",
+    clases: "max-lg:hidden",
   },
   {
     titulo: "Únete a esta revolución",
     texto:
       "Descubre cómo Abitacolo puede transformar tu experiencia de vida. Visita nuestros recursos, explora nuestras soluciones y únete a nuestra comunidad.",
     image: hito5Portada,
-    clases: "xl:hidden",
+    clases: "max-xl:hidden",
   },
 ];
 ---
@@ -89,7 +89,7 @@ const articulosHitos = [
         {
           articulosHitos.map((articulo, index) => (
             <article
-              class={`min-h-72 p-10 min-w-52 w-full relative bg-white text-[#666666] hover:text-black  hover:bg-gray-100 flex-col  gap-6 transition-colors inline-flex top-[-20px] max-${articulo.clases}`}
+              class={`min-h-72 p-10 w-full min-w-48 relative bg-white text-[#666666] hover:text-black  hover:bg-gray-100 flex-col  gap-6 transition-colors inline-flex top-[-20px] ${articulo.clases}`}
               data-index={index}
               data-image-src={articulo.image.src}
               data-image-srcset={articulo.image.src}
