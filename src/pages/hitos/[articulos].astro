@@ -7,7 +7,7 @@ import BannerHome from "../../image/hitos/hito1portada.webp";
 import Contacto from "../../components/home/Contacto.astro";
 import Hito1 from "../../image/hitos/img_contenido.jpg";
 
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 export const getStaticPaths = (() => {
   return [
     { params: { articulos: "articulo-1" } },

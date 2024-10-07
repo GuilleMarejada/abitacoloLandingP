@@ -12,9 +12,14 @@ if (Astro.request.method === "POST") {
 }
 ---
 
-<div id="contacto" class="flex justify-center pt-12 bg-white pb-6 px-3  w-full max-md:flex-col">
-  <div class="flex flex-col  gap-3 mb-10 text-start w-[450px] max-md:ml-5">
-    <p class="text-[90px] font-normal text-black  leading-[85.50px] max-md:text-[64px]">
+<div
+  id="contacto"
+  class="flex justify-center pt-12 bg-white pb-6 px-3 w-full max-md:flex-col"
+>
+  <div class="flex flex-col gap-3 mb-10 text-start w-[450px] max-md:ml-5">
+    <p
+      class="text-[90px] font-normal text-black leading-[85.50px] max-md:text-[64px]"
+    >
       Ponte en Contacto con Nosotros
     </p>
     <div
@@ -29,42 +34,35 @@ if (Astro.request.method === "POST") {
   </div>
 
   <!--Separacion entre formulario y texto -->
-  
 
-   <form
+  <form
     action="https://formsubmit.co/8ef3a12491cf88e883476dae52fd2893"
     method="POST"
-    class="w-full max-w-[700px] min-h-[516px]  px-3"
+    class="w-full max-w-[700px] min-h-[516px] px-3"
   >
-    <div class="flex flex-col  max-w-[783.71px] md:flex  md:gap-5 justify-center mt-5 gap-3 ">
-    
-        
-          <label for="nombre" class="sr-only">Nombre</label>
-          <input
-          id="nombre"
-          type="text"
-          name="nombre"
-          placeholder="Nombre"
-          autocomplete="name"
-          class=" max-w-[488px] h-[50px] max-md:h-[65px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
-          />
-       
-      
-  
-    
-     
-        <label for="telefono" class="sr-only">Teléfono (Opcional)</label>
-        <input
-          id="telefono"
-          type="tel"
-          name="telefono"
-          placeholder="Teléfono (Opcional)"
-          autocomplete="tel"
-          class="max-w-[488px] h-[50px] max-md:h-[65px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
-        />
-    
-   
-   
+    <div
+      class="flex flex-col max-w-[783.71px] md:flex md:gap-5 justify-center mt-5 gap-3"
+    >
+      <label for="nombre" class="sr-only">Nombre</label>
+      <input
+        id="nombre"
+        type="text"
+        name="nombre"
+        placeholder="Nombre"
+        autocomplete="name"
+        class="max-w-[488px] h-[50px] max-md:h-[65px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
+      />
+
+      <label for="telefono" class="sr-only">Teléfono (Opcional)</label>
+      <input
+        id="telefono"
+        type="tel"
+        name="telefono"
+        placeholder="Teléfono (Opcional)"
+        autocomplete="tel"
+        class="max-w-[488px] h-[50px] max-md:h-[65px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
+      />
+
       <label for="email" class="sr-only">Email</label>
       <input
         id="email"
@@ -74,9 +72,7 @@ if (Astro.request.method === "POST") {
         autocomplete="email"
         class="max-w-[488px] h-[50px] max-md:h-[65px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
       />
-  
-   
-   
+
       <label for="mensaje" class="sr-only">Tu mensaje</label>
       <textarea
         id="mensaje"
@@ -84,20 +80,20 @@ if (Astro.request.method === "POST") {
         placeholder="Tu mensaje"
         class="max-w-[488px] h-[170px] max-md:h-[159px] rounded-sm border border-[#666666] p-4 text-lg font-medium placeholder-[#151438]/40 resize-none"
       ></textarea>
-   
-    <button
-      type="submit"
-      class="w-60 max-md:w-full max-md:mt-2 h-14  bg-[#919e32]/60 rounded-3xl font-semibold leading-normal tracking-wide  text-white text-2xl hover:bg-[#919e32]/80 transition-colors"
-    >
-      Enviar
-    </button>
-    <div class="flex  items-center gap-3 mt-5">
-      <input type="checkbox" class="w-[19px] h-[19px] max-w-[400px] rounded border border-[#919e32] "></input>
+
+      <button
+        type="submit"
+        class="w-60 max-md:w-full max-md:mt-2 h-14 bg-[#333333]/70 rounded-3xl font-semibold leading-normal tracking-wide text-white text-2xl hover:bg-[#333333] transition-colors"
+      >
+        Enviar
+      </button>
+      <div class="flex items-center gap-3 mt-5">
+        <input
+          type="checkbox"
+          class="w-[19px] h-[19px] max-w-[400px] rounded border border-[#919e32]"
+        />
+      </div>
       <span class="text-center">Acepto los términos y condiciones</span>
-
     </div>
-   </div>
   </form>
-  </div>
-  
-
+</div>

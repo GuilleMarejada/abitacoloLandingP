@@ -1,9 +1,9 @@
 ---
-import Image from "astro/components/Image.astro";
-import AbitacoloBlanco from "../image/logos/AbitacoloBlanco.webp";
+// Importaciones de imágenes
+import { Image } from "astro:assets";
+import AbitacoloNegro from "../image/logos/AbitacoloNegro.webp";
 import InstagramNegro from "../image/logos/InstagramNegro.webp";
 import LinkedinNegro from "../image/logos/LinkedinNegro.webp";
-
 
 const navItems = [
   { href: "#AboutUs", label: "¿Qué es Abitacolo?" },
@@ -12,37 +12,45 @@ const navItems = [
   { href: "#products", label: "Lo que hacemos" },
   { href: "#contacto", label: "Contacto" },
 ];
+
+const socialLinks = [
+  {
+    href: "https://www.instagram.com",
+    image: InstagramNegro,
+    alt: "Instagram",
+  },
+  { href: "https://www.linkedin.com", image: LinkedinNegro, alt: "LinkedIn" },
+];
 ---
 
 <footer class="w-full flex justify-center bg-[#d6ff85]">
   <div class="max-w-[1440px] w-full p-4">
     <div class="md:flex items-center justify-between">
-      <div class= " max-md:flex max-md:justify-center  ">
-
-        
-        <a href="/" aria-label="Inicio" >
+      <div class="max-md:flex max-md:justify-center">
+        <a href="/" aria-label="Inicio">
           <Image
-          width={150}
-          height={150}
-          src={AbitacoloBlanco}
-          alt="Logo Abitacolo"
-          loading="lazy"
+            width={150}
+            height={150}
+            src={AbitacoloNegro}
+            alt="Logo Abitacolo"
+            loading="lazy"
           />
         </a>
       </div>
-      
-      <div class="flex gap-6 items-center max-md:flex-col-reverse max-md: mt-10">
-        <p class="text-black font-semibold cursor-pointer text-sm ">POLÍTICA DE PRIVACIDAD</p>
-        <p class="text-black font-semibold cursor-pointer text-sm">POLÍTICA DE COOKIES</p>
+
+      <div class="flex gap-6 items-center max-md:flex-col-reverse max-md:mt-10">
+        <p class="text-black font-semibold cursor-pointer text-sm">
+          POLÍTICA DE PRIVACIDAD
+        </p>
+        <p class="text-black font-semibold cursor-pointer text-sm">
+          POLÍTICA DE COOKIES
+        </p>
         <div class="flex gap-5">
           {
-            ["Instagram", "LinkedIn"].map((social) => (
-              <Image
-                class="w-6 h-6"
-                src={social === "Instagram" ? InstagramNegro : LinkedinNegro}
-                alt={social}
-                loading="lazy"
-              />
+            socialLinks.map(({ href, image, alt }) => (
+              <a href={href} target="_blank" rel="noopener noreferrer">
+                <Image class="w-6 h-6" src={image} alt={alt} loading="lazy" />
+              </a>
             ))
           }
         </div>
@@ -52,18 +60,22 @@ const navItems = [
     <hr class="border-black border-[1px] mt-2 max-md:mx-32" />
 
     <div class="flex flex-col mt-2">
-      <div class="flex max-md:items-center justify-between  max-md:flex-col">
+      <div class="flex max-md:items-center justify-between max-md:flex-col">
         {
           navItems.map(({ href, label }) => (
-            <a  {href}>
-              <button class="text-black text-xl p-2 leading-relaxed ">{label}</button>
+            <a href={href}>
+              <button class="text-black text-xl p-2 leading-relaxed">
+                {label}
+              </button>
             </a>
           ))
         }
       </div>
 
-      <p class="text-black text-center text-sm mt-2 uppercase leading-relaxed tracking-[8px] ">
-        © {new Date().getFullYear()} Abitacolo - All rights reserved  
+      <p
+        class="text-black text-center text-sm mt-2 uppercase leading-relaxed tracking-[8px]"
+      >
+        © {new Date().getFullYear()} Abitacolo - All rights reserved
       </p>
     </div>
   </div>
