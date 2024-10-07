@@ -8,7 +8,7 @@ import CarruselReact from "../../components/home/CarruselReact.jsx";
       class="px-8 py-24 max-md:py-12 flex lg:gap-48 items-center rounded-sm w-full max-lg:flex-col-reverse max-lg:gap-8"
     >
       <div class="grid gap-10">
-        <p class="text-center text-xl leading-[27px]">
+        <p class="lg:text-center text-xl leading-[27px]">
           Abitacolo cuenta con un equipo de profesionales dedicados a hacer de
           tu experiencia algo <strong>extraordinario</strong>. Cada miembro del
           equipo está comprometido con tu satisfacción. ¿Listo para comenzar tu
@@ -16,26 +16,27 @@ import CarruselReact from "../../components/home/CarruselReact.jsx";
         </p>
         <a
           href="#contacto"
-          class="h-14 px-6 py-2 bg-[#d6ff85] border-2 border-black rounded-full w-fit text-xl font-semibold hover:bg-[#a1b036] place-self-center max-lg:hidden"
+          class="h-14 px-3 py-2 bg-[#d6ff85] border-2 border-black rounded-full w-fit text-xl font-semibold hover:bg-[#a1b036] place-self-center max-lg:hidden flex place-items-center"
         >
           Habla con nuestro equipo
         </a>
       </div>
 
-      <h1 class="text-9xl leading-[121.60px] max-w-[376px]">Un gran equipo</h1>
+      <h1
+        class="lg:text-9xl text-7xl lg:leading-[121.60px] leading-[70px] max-w-[376px]"
+      >
+        Un gran equipo
+      </h1>
     </header>
     <CarruselReact client:load />
-    <section
-      class="min-h-[408px] px-8 py-24 max-md:py-12 flex items-center gap-4 rounded-e-sm max-lg:flex-col-reverse"
-    >
-      <div class="flex-1 flex flex-col gap-7 max-lg:mb-4 lg:hidden">
-        <a
-          href="#contacto"
-          class="h-14 px-6 py-4 bg-[#d6ff85] border-2 border-black rounded-full w-full text-xl font-semibold grid justify-center hover:bg-[#a1b036]"
-        >
-          Habla con nuestro equipo
-        </a>
-      </div>
-    </section>
+
+    <div class="max-lg:m-4 lg:hidden flex justify-center">
+      <a
+        href="#contacto"
+        class="h-14 px-3 py-4 bg-[#d6ff85] border-2 border-black rounded-full w-full text-xl font-semibold justify-center hover:bg-[#a1b036] flex items-center max-w-[282px]"
+      >
+        Habla con nuestro equipo
+      </a>
+    </div>
   </article>
 </section>
