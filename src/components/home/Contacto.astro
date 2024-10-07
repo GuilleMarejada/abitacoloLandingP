@@ -14,21 +14,22 @@ if (Astro.request.method === "POST") {
 
 <div
   id="contacto"
-  class="flex justify-center pt-12 bg-white pb-6 px-3 w-full max-md:flex-col"
+  class="flex justify-start pt-12 bg-white pb-6 px-3 w-full max-md:flex-col lg:justify-center"
 >
-  <div class="flex flex-col gap-3 mb-10 text-start w-[450px] max-md:ml-5">
+  <div class="flex flex-col  gap-3  text-start w-full max-w-[450px] max-md:ml-5">
     <p
-      class="text-[90px] font-normal text-black leading-[85.50px] max-md:text-[64px]"
+      class="text-[90px] font-normal text-black leading-[85.50px] max-md:text-[64px] max-sm:text-[75px] mx-auto"
     >
-      Ponte en Contacto con Nosotros
+      Ponte en contacto con  Abitacolo
     </p>
+    
     <div
-      class="max-w-[714px] text-[#151438]/40 text-[22px] font-medium leading-loose max-md:text-lg"
+      class="w-full text-[#151438]/40 text-[22px] font-medium leading-loose max-md:text-lg max-sm:text-[20px] mx-auto"
     >
       ¿Quieres más información sobre este proyecto? Puedes escribirnos o
-      llamarnos, nos encantará informarte.
+      llamarnos y te informaremos encantados
     </div>
-    <div class="max-w-[308px] text-black text-base leading-relaxed">
+    <div class="max-w-[308px] text-black  leading-relaxed font-semibold text-xl">
       +34 xxx xxx xxx
     </div>
   </div>
@@ -41,7 +42,7 @@ if (Astro.request.method === "POST") {
     class="w-full max-w-[700px] min-h-[516px] px-3"
   >
     <div
-      class="flex flex-col max-w-[783.71px] md:flex md:gap-5 justify-center mt-5 gap-3"
+      class="flex flex-col max-w-[783.71px] md:flex items-center md:gap-5 justify-center mt-5 gap-3"
     >
       <label for="nombre" class="sr-only">Nombre</label>
       <input
@@ -50,7 +51,7 @@ if (Astro.request.method === "POST") {
         name="nombre"
         placeholder="Nombre"
         autocomplete="name"
-        class="max-w-[488px] h-[50px] max-md:h-[65px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
+        class="w-full max-w-[488px] h-[50px] max-md:h-[65px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
       />
 
       <label for="telefono" class="sr-only">Teléfono (Opcional)</label>
@@ -60,7 +61,7 @@ if (Astro.request.method === "POST") {
         name="telefono"
         placeholder="Teléfono (Opcional)"
         autocomplete="tel"
-        class="max-w-[488px] h-[50px] max-md:h-[65px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
+        class="w-full max-w-[488px] h-[50px] max-md:h-[65px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
       />
 
       <label for="email" class="sr-only">Email</label>
@@ -70,7 +71,7 @@ if (Astro.request.method === "POST") {
         name="email"
         placeholder="Email"
         autocomplete="email"
-        class="max-w-[488px] h-[50px] max-md:h-[65px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
+        class="w-full max-w-[488px] h-[50px] max-md:h-[65px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
       />
 
       <label for="mensaje" class="sr-only">Tu mensaje</label>
@@ -78,7 +79,7 @@ if (Astro.request.method === "POST") {
         id="mensaje"
         name="mensaje"
         placeholder="Tu mensaje"
-        class="max-w-[488px] h-[170px] max-md:h-[159px] rounded-sm border border-[#666666] p-4 text-lg font-medium placeholder-[#151438]/40 resize-none"
+        class="w-full max-w-[488px] h-[170px] max-md:h-[159px] rounded-sm border border-[#666666] p-4 text-lg font-medium placeholder-[#151438]/40 resize-none"
       ></textarea>
 
       <button
@@ -89,11 +90,11 @@ if (Astro.request.method === "POST") {
       </button>
       <div class="flex items-center gap-3 mt-5">
         <input
-          type="checkbox"
+          type="checkbox" id="terms"
           class="w-[19px] h-[19px] max-w-[400px] rounded border border-[#919e32]"
         />
+        <label for="terms"  class="text-center">Acepto los términos y condiciones</label>
       </div>
-      <span class="text-center">Acepto los términos y condiciones</span>
     </div>
   </form>
 </div>
