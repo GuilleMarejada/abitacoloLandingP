@@ -10,36 +10,37 @@ interface Hito {
 }
 
 interface Props {
-  Hito: Hito[];
+  Hitos: Hito[];
 }
 
-const { Hito = [] } = Astro.props;
-const hiddenHitos = Hito.filter((hito) => hito.clases.includes("hidden"));
+const { Hitos = [] } = Astro.props;
 ---
 
-<div class="relative inline-block text-left lg:hidden">
+<div class="relative inline-block text-left">
+  <!-- Dropdown menú -->
   <div
     class="origin-top-right mt-2 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 hidden space-y-3"
+    id="dropdown-menu"
     role="menu"
     aria-orientation="vertical"
     aria-labelledby="options-menu"
-    id="dropdown-menu"
   >
     {
-      hiddenHitos.map((hito, index) => (
+      Hitos.map((hito, index) => (
         <article
-          class={`min-h-72 w-full p-12 relative grow bg-white text-[#666666] hover:text-black hover:bg-gray-300 flex flex-col justify-start items-start gap-6 -top-5 ${index === 0 ? "md:hidden" : ""}`}
+          class="min-h-72 w-full p-12 bg-white text-[#666666] hover:text-black hover:bg-gray-300 flex flex-col gap-6 -top-5"
           data-image-src={hito.image.src}
           data-image-srcset={hito.image.src}
         >
-          <h2 class="self-stretch text-2xl font-bold leading-7 text-center">
+          <h2 class="text-2xl font-bold leading-7 text-center">
             {hito.titulo}
           </h2>
-          <p class="self-stretch text-sm leading-tight text-center">
-            {hito.texto}
-          </p>
-          <a href={`/hitos/articulo-${index + 2}`} class="ml-auto mt-auto">
-            <button class="bg-[#919e32] rounded-lg text-white px-2 py-1.5 text-sm font-semibold leading-tight hover:bg-[#a1b036]">
+          <p class="text-sm leading-tight text-center">{hito.texto}</p>
+          <a
+            href={`/hitos/articulo-${Hitos.indexOf(hito) + 1}`}
+            class="ml-auto mt-auto"
+          >
+            <button class="rounded-full border-2 border-black h-[37px] w-fit px-2  py-2.5 font-semibold hover:bg-black hover:text-white flex items-center">
               Leer articulo
             </button>
           </a>
@@ -47,6 +48,7 @@ const hiddenHitos = Hito.filter((hito) => hito.clases.includes("hidden"));
       ))
     }
   </div>
+
   <button
     type="button"
     class="inline-flex justify-center w-full rounded-md border px-4 py-2 text-sm font-medium"
@@ -59,12 +61,12 @@ const hiddenHitos = Hito.filter((hito) => hito.clases.includes("hidden"));
 </div>
 
 <script>
-  const button = document.querySelector("#options-menu");
-  const menu = document.querySelector("#dropdown-menu");
-
-  button?.addEventListener("click", () => {
-    const expanded = button.getAttribute("aria-expanded") === "true";
-    button.setAttribute("aria-expanded", String(!expanded));
-    menu?.classList.toggle("hidden");
-  });
+  document
+    .querySelector("#options-menu")
+    ?.addEventListener("click", function () {
+      const menu = document.querySelector("#dropdown-menu");
+      const expanded = this.getAttribute("aria-expanded") === "true";
+      this.setAttribute("aria-expanded", (!expanded).toString());
+      menu?.classList.toggle("hidden");
+    });
 </script>

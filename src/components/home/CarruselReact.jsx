@@ -167,7 +167,7 @@ const TeamCarousel = () => {
   }, [currentIndex, cardsToShow]);
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto p-8 bg-[#0000000A] rounded-sm">
+    <div className="relative w-full mx-auto rounded-sm">
       <div className="overflow-hidden">
         <div className="flex transition-transform duration-300 ease-in-out">
           {visibleCards.map((member, index) => (
