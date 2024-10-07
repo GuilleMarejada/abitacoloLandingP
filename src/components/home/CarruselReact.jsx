@@ -18,9 +18,8 @@ const team = [
     position: "Founder & CEO",
     linkImage: JCM.src,
     description:
-      "Soy Cathy, arquitecta con especialización en comunicación arquitectónica y experiencia en la dirección creativa de eventos culturales.",
-    linkedin: "https://www.linkedin.com/in/juanperez",
-    instagram: "https://www.instagram.com/juanperez",
+      "Construir mundos desde cero es mi pasión. Si los convierto en proyectos tangibles, entiendo que mi papel en el mundo ya lleva un camino y un propósito significativo. ",
+    linkedin: "https://www.linkedin.com/in/juliette-mallen-a001a2125/",
     semblanza1:
       "Soy Cathy, arquitecta con especialización en comunicación arquitectónica y experiencia en la dirección creativa de eventos culturales. He combinado mi práctica arquitectónica con la exploración del impacto social y cultural del espacio urbano. ",
     semblanza2:
@@ -36,12 +35,11 @@ const team = [
   },
   {
     person: "Guillermo Perales",
-    position: "Co-Founder",
+    position: "Co-Founder & Creative Director",
     linkImage: GPC.src,
     description:
-      "¡Hola! Soy Guille, madrileño y arquitecto habilitado por la Escuela Técnica Superior de Arquitectura de Madrid (ETSAM), con estudios...",
-    linkedin: "https://www.linkedin.com/in/anarodriguez",
-    instagram: "https://www.instagram.com/anarodriguez",
+      "Además de mi carácter, el desempeño profesional y mis capacidades organizativas, me convierten en un arquitecto todo terreno. Ahora soy pilar en la startup de diseño regenerativo de mobiliario. Convertimos la basura en tesoros únicos.",
+    linkedin: "https://www.linkedin.com/in/gperalesc/",
     semblanza1:
       "¡Hola! Soy Guille, madrileño y arquitecto habilitado por la Escuela Técnica Superior de Arquitectura de Madrid (ETSAM), con estudios complementarios en el University College de Dublín (Irlanda). También me he formado en diseño gráfico en el Istituto Marangoni de Milán (Italia) y cuento con el Máster en Comunicación Arquitectónica de la Universidad Politécnica de Madrid (UPM). ",
     semblanza2:
@@ -55,8 +53,7 @@ const team = [
     linkImage: MBR.src,
     description:
       "Diseñador de Productos con más de 3 años de experiencia en investigación de usuarios y desarrollo de soluciones que impulsan el crecimiento empresarial, complementado con 8 años en producción audiovisual y gestión de proyectos.",
-    linkedin: "https://www.linkedin.com/in/carlosgomez",
-    instagram: "https://www.instagram.com/carlosgomez",
+    linkedin: "https://www.linkedin.com/in/benmanuel/",
     semblanza1:
       "Soy Diseñador de Productos Designer con más de 3 años de experiencia en el ecosistema digital, especializado en la investigación de usuarios, centrándome en datos cualitativos y cuantitativos para así desarrollar el mejor plan de acción. He demostrado una sólida capacidad para desarrollar soluciones centradas en el usuario que se alinean con los objetivos empresariales y generan ingresos. Mi enfoque está en crear diseños que resuelvan problemas reales y mejoren la experiencia del usuario.",
     semblanza2:
@@ -67,50 +64,46 @@ const team = [
       "Creo firmemente que mi combinación de habilidades en diseño digital y producción audiovisual, me convierte en un perfil ideal para una posición donde aporte perspectivas únicas y valiosas, mucho más si me encuentro en un proyecto donde mis aportaciones sean recibidas con el entusiasmo que merecen. Abitacolo es uno de ellos.",
   },
   {
-    person: "Alba",
-    position: "Marketing",
+    person: "Alba Caldito G.",
+    position: "Content Manager",
 
     linkImage: ACG.src,
     description:
-      "Hola, soy Alba. Lo que más me gusta en el mundo es cocinar y escribir, porque ambas son la mejor expresión de mi creatividad.",
-    linkedin: "https://www.linkedin.com/in/mariafernandez",
-    instagram: "https://www.instagram.com/mariafernandez",
+      "Hablar es mi pasión y puedo hacerlo desde cualquier canal, lo que se podría definir como “ser una comunicadora 360”. Casi sin querer, le puse voz a Abitacolo.",
+    linkedin: "https://www.linkedin.com/in/albacalditogutierrez/",
     semblanza1:
       "Hola, soy Alba. Lo que más me gusta en el mundo es cocinar y escribir, porque ambas son la mejor expresión de mi creatividad. Si te preguntas por qué estoy aquí, es porque sé cómo encontrar el equilibrio perfecto, ya sea en la cocina o al elegir las palabras. Nunca me paso de sal, ni en los platos ni en las frases.",
   },
 
   {
-    person: "María",
+    person: "Maria Para R.",
     position: "Marketing",
 
     linkImage: MPR.src,
     description:
-      "¡Hola!! Soy María y me dedico a la gestión de proyectos creativos. Disfruto ordenar y reorganizar espacios, algo que aplico en mi trabajo. ",
-    linkedin: "https://www.linkedin.com/in/lauramartinez",
-    instagram: "https://www.instagram.com/lauramartinez",
+      "Pienso, organizo y ejecuto ideas de todo tipo. Desde campañas de publicidad a nivel nacional a eventos en locales del barrio. Y eso hago con ABITACOLO, sacar un proyecto con espíritu de barrio a nivel intergaláctico.",
+    linkedin: "https://www.linkedin.com/in/mariapararodriguez/",
     semblanza1:
       "¡Hola!! Soy María y me dedico a la gestión de proyectos creativos. Disfruto ordenar y reorganizar espacios, algo que aplico en mi trabajo. Cada proyecto es una oportunidad para crear algo único, estructurando ideas y entornos. Me encanta transformar el caos en orden y hacer que todo fluya. ",
   },
   {
-    person: "María",
-    position: "Marketing",
+    person: "Cristina Allen Casal",
+    position: "Marketing expert Content & Brand",
 
-    linkImage: MPR.src,
+    linkImage: CA.src,
     description:
-      "¡Hola!! Soy María y me dedico a la gestión de proyectos creativos. Disfruto ordenar y reorganizar espacios, algo que aplico en mi trabajo. ",
-    linkedin: "https://www.linkedin.com/in/lauramartinez",
-    instagram: "https://www.instagram.com/lauramartinez",
+      "Creo marcas, resuelvo problemas y me especializo en el marketing en entornos innovadores. En resumen, me encargo de que conozcas Abitacolo y te enamores.",
+    linkedin: "https://www.linkedin.com/in/cristina-allende-casal/",
     semblanza1:
       "¡Hola!! Soy María y me dedico a la gestión de proyectos creativos. Disfruto ordenar y reorganizar espacios, algo que aplico en mi trabajo. Cada proyecto es una oportunidad para crear algo único, estructurando ideas y entornos. Me encanta transformar el caos en orden y hacer que todo fluya. ",
   },
   {
     person: "Xavier Longo",
-    position: "Web Developer",
+    position: "Full Stack Developer",
     linkImage: XLD.src,
     description:
       "Soy Xavi, desarrollador Full Stack con exp en proyectos innovadores.Mi habilidad más contundente sin duda es aportar soluciones creativas y eficientes en el desarrollo web.",
     linkedin: "www.linkedin.com/in/xavierlongo",
-    instagram: "https://www.instagram.com/xaby1993",
     semblanza1:
       "Soy Xavi, un apasionado desarrollador Full Stack con experiencia en proyectos innovadores y dominio de tecnologías como React, Astro , Python , MySQL  y Flask. Mi habilidad más contundente sin duda es aportar soluciones creativas y eficientes en el desarrollo web.",
     semblanza2:
@@ -120,12 +113,11 @@ const team = [
   },
   {
     person: "Guillermo Correa",
-    position: "Web Developer",
+    position: "Desarrollador de Software Full Stack",
     linkImage: GCG.src,
     description:
-      "Me llamo Guillermo, soy Full Stack Developer con experiencia en liderar proyectos y trabajar en equipos multifuncionales, me encanta aprovechar los retos que van surgiendo en el desarrollo para aprender nuesvas tecnologías...",
+      "Soy escalador y programador, mi selección de deporte define parte de lo que se ve en mi trabajo. Llegar a la cima, disfrutar el proceso, y ver el paisaje reservado para quienes nos aventuramos.",
     linkedin: "https://www.linkedin.com/in/guillermocg8/",
-    instagram: "https://www.instagram.com/guiller.gc/",
     semblanza1:
       "Soy Desarrollador Full Stack con una experiencia liderando y colaborando en equipos multifuncionales. Mi enfoque está en crear soluciones efectivas tanto en el frontend como en el backend, con un dominio en tecnologías como JavaScript, Python, React , Astro, TailwindCSS, SQLAlchemy y Flask. He trabajado en el desarrollo de plataformas Ecommerce, gestionando y coordinando equipos para asegurar la entrega de proyectos y MVPs.",
     semblanza2:
