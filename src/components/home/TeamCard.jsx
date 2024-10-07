@@ -7,7 +7,7 @@ const TeamCard = ({ person, position, linkImage, description, linkedin }) => (
     <a href={`/team/${person}`}>
       <img
         className="w-full h-fit object-scale-down"
-        src={linkImage}
+        src={linkImage.src}
         alt={`${person} - Team member`}
         loading="lazy"
       />
@@ -26,16 +26,14 @@ const TeamCard = ({ person, position, linkImage, description, linkedin }) => (
       </div>
     </div>
     <div className="flex items-center gap-4 mt-auto p-3">
-      {linkedin && (
-        <a href={linkedin} target="_blank" rel="noopener noreferrer">
-          <img
-            src={LinkedInNegro.src}
-            alt="LinkedIn"
-            className="h-6 w-6"
-            loading="lazy"
-          />
-        </a>
-      )}
+      <a href={linkedin} target="_blank" rel="noopener noreferrer">
+        <img
+          src={LinkedInNegro.src}
+          alt="LinkedIn"
+          className="h-6 w-6"
+          loading="lazy"
+        />
+      </a>
       <a href={`/team/${person}`} className="ml-auto">
         <button className=" rounded-full px-2 py-1.5 text-sm font-semibold leading-tight tracking-tight border-2 border-black hover:bg-black hover:text-white">
           Leer más
@@ -48,7 +46,7 @@ const TeamCard = ({ person, position, linkImage, description, linkedin }) => (
 TeamCard.propTypes = {
   person: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
-  linkImage: PropTypes.string.isRequired,
+  linkImage: PropTypes.object.isRequired,
   description: PropTypes.string.isRequired,
   linkedin: PropTypes.string,
 };
