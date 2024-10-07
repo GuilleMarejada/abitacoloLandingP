@@ -16,7 +16,7 @@ const team = [
   {
     person: "Juliette C. Mallen",
     position: "Founder & CEO",
-    linkImage: JCM.src,
+    linkImage: JCM,
     description:
       "Construir mundos desde cero es mi pasión. Si los convierto en proyectos tangibles, entiendo que mi papel en el mundo ya lleva un camino y un propósito significativo. ",
     linkedin: "https://www.linkedin.com/in/juliette-mallen-a001a2125/",
@@ -36,7 +36,7 @@ const team = [
   {
     person: "Guillermo Perales",
     position: "Co-Founder & Creative Director",
-    linkImage: GPC.src,
+    linkImage: GPC,
     description:
       "Además de mi carácter, el desempeño profesional y mis capacidades organizativas, me convierten en un arquitecto todo terreno. Ahora soy pilar en la startup de diseño regenerativo de mobiliario. Convertimos la basura en tesoros únicos.",
     linkedin: "https://www.linkedin.com/in/gperalesc/",
@@ -50,7 +50,7 @@ const team = [
   {
     person: "Manuel Ben",
     position: "UX Product Designer Specialist",
-    linkImage: MBR.src,
+    linkImage: MBR,
     description:
       "Diseñador de Productos con más de 3 años de experiencia en investigación de usuarios y desarrollo de soluciones que impulsan el crecimiento empresarial, complementado con 8 años en producción audiovisual y gestión de proyectos.",
     linkedin: "https://www.linkedin.com/in/benmanuel/",
@@ -67,7 +67,7 @@ const team = [
     person: "Alba Caldito G.",
     position: "Content Manager",
 
-    linkImage: ACG.src,
+    linkImage: ACG,
     description:
       "Hablar es mi pasión y puedo hacerlo desde cualquier canal, lo que se podría definir como “ser una comunicadora 360”. Casi sin querer, le puse voz a Abitacolo.",
     linkedin: "https://www.linkedin.com/in/albacalditogutierrez/",
@@ -79,7 +79,7 @@ const team = [
     person: "Maria Para R.",
     position: "Marketing",
 
-    linkImage: MPR.src,
+    linkImage: MPR,
     description:
       "Pienso, organizo y ejecuto ideas de todo tipo. Desde campañas de publicidad a nivel nacional a eventos en locales del barrio. Y eso hago con ABITACOLO, sacar un proyecto con espíritu de barrio a nivel intergaláctico.",
     linkedin: "https://www.linkedin.com/in/mariapararodriguez/",
@@ -90,7 +90,7 @@ const team = [
     person: "Cristina Allen Casal",
     position: "Marketing expert Content & Brand",
 
-    linkImage: CA.src,
+    linkImage: CA,
     description:
       "Creo marcas, resuelvo problemas y me especializo en el marketing en entornos innovadores. En resumen, me encargo de que conozcas Abitacolo y te enamores.",
     linkedin: "https://www.linkedin.com/in/cristina-allende-casal/",
@@ -100,7 +100,7 @@ const team = [
   {
     person: "Xavier Longo",
     position: "Full Stack Developer",
-    linkImage: XLD.src,
+    linkImage: XLD,
     description:
       "Soy Xavi, desarrollador Full Stack con exp en proyectos innovadores.Mi habilidad más contundente sin duda es aportar soluciones creativas y eficientes en el desarrollo web.",
     linkedin: "www.linkedin.com/in/xavierlongo",
@@ -114,7 +114,7 @@ const team = [
   {
     person: "Guillermo Correa",
     position: "Desarrollador de Software Full Stack",
-    linkImage: GCG.src,
+    linkImage: GCG,
     description:
       "Soy escalador y programador, mi selección de deporte define parte de lo que se ve en mi trabajo. Llegar a la cima, disfrutar el proceso, y ver el paisaje reservado para quienes nos aventuramos.",
     linkedin: "https://www.linkedin.com/in/guillermocg8/",

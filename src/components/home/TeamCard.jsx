@@ -7,7 +7,7 @@ const TeamCard = ({ person, position, linkImage, description, linkedin }) => (
     <a href={`/team/${person}`}>
       <img
         className="w-full h-fit object-scale-down"
-        src={linkImage}
+        src={linkImage.src}
         alt={`${person} - Team member`}
         loading="lazy"
       />
