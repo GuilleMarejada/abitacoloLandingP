@@ -2,7 +2,7 @@
 // Importaciones de imágenes
 import { Image } from "astro:assets";
 import AbitacoloNegro from "../image/logos/AbitacoloNegro.webp";
-import InstagramNegro from "../image/logos/instagramBlanco.webp";
+import InstagramNegro from "../image/logos/InstagramNegro.webp";
 import LinkedinNegro from "../image/logos/LinkedinNegro.webp";
 
 const navItems = [
@@ -11,15 +11,6 @@ const navItems = [
   { href: "#hitos", label: "Hitos" },
   { href: "#products", label: "Lo que hacemos" },
   { href: "#contacto", label: "Contacto" },
-];
-
-const socialLinks = [
-  {
-    href: "https://www.instagram.com",
-    image: InstagramNegro,
-    alt: "Instagram",
-  },
-  { href: "https://www.linkedin.com", image: LinkedinNegro, alt: "LinkedIn" },
 ];
 ---
 
@@ -47,10 +38,13 @@ const socialLinks = [
         </p>
         <div class="flex gap-5">
           {
-            socialLinks.map(({ href, image, alt }) => (
-              <a href={href} target="_blank" rel="noopener noreferrer">
-                <Image class="w-6 h-6" src={image} alt={alt} loading="lazy" />
-              </a>
+            ["Instagram", "LinkedIn"].map((social) => (
+              <Image
+                class="w-6 h-6"
+                src={social === "Instagram" ? InstagramNegro : LinkedinNegro}
+                alt={social}
+                loading="lazy"
+              />
             ))
           }
         </div>
