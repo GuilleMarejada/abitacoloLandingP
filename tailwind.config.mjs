@@ -9,6 +9,7 @@ export default {
 				gris2: "#666666",
 				gris3: "#333333",
 				verdeAbitacolo: "#919e32",
+				verdeLimaAbitacolo: "#d6ff85"
 			  },
 		},
 	},

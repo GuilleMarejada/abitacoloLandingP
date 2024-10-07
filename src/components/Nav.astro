@@ -1,12 +1,12 @@
 ---
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import AbitacoloNegro from "../image/logos/AbitacoloNegro.webp";
 import ModalMenuMovil from "./ModalMenuMovil.astro";
 
 const navItems = [
   { href: "#AboutUs", label: "¿Qué es Abitacolo?" },
   { href: "#team", label: "Equipo" },
-  { href: "#hitos", label: "Nuestra aventura" },
+  { href: "#hitos", label: "Claves Abitacolo" },
   { href: "#products", label: "Lo que hacemos" },
   { href: "#contacto", label: "Contacto" },
 ];
@@ -21,6 +21,7 @@ const navItems = [
         src={AbitacoloNegro}
         alt="Logo Abitacolo"
         loading="eager"
+        class="max-sm:w-[95px]"
       />
     </a>
 
