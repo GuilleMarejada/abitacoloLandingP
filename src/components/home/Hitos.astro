@@ -7,8 +7,6 @@ import hito3Portada from "../../image/hitos/hito3Portada.webp";
 import hito4Portada from "../../image/hitos/hito4Portada.webp";
 import hito5Portada from "../../image/hitos/hito5Portada.webp";
 
-const { articulos } = Astro.params;
-
 type articulosHitos = {
   titulo: string;
   texto: string;
@@ -36,21 +34,21 @@ const articulosHitos = [
     texto:
       "Comprometidos con una constante evolución. nos mantenemos siempre a la vanguardia del dinámico mundo del diseño y la economía circular ",
     image: hito3Portada,
-    clases: "max-lg:hidden",
+    clases: "max-md:hidden",
   },
   {
     titulo: "¿Qué significa Abitacolo?",
     texto:
       " Abitacolo es el título que el artista Bruno Munari dio en 1971 a una exploración sobre lo doméstico. Creemos que su visión sigue hoy vigente y por eso tomamos su nombre ",
     image: hito4Portada,
-    clases: "max-md:hidden",
+    clases: "max-lg:hidden",
   },
   {
     titulo: "Únete a esta revolución",
     texto:
       "Descubre cómo Abitacolo puede transformar tu experiencia de vida. Visita nuestros recursos, explora nuestras soluciones y únete a nuestra comunidad.",
     image: hito5Portada,
-    clases: "max-lg:hidden",
+    clases: "max-xl:hidden",
   },
 ];
 ---
@@ -89,7 +87,7 @@ const articulosHitos = [
         {
           articulosHitos.map((articulo, index) => (
             <article
-              class={`min-h-72 w-full p-10 relative grow bg-white text-[#666666] hover:text-black  hover:bg-gray-100 flex-col justify-start items-start gap-6 inline-flex top-[-20px] ${articulo.clases}`}
+              class={`min-h-72 w-full p-10 relative bg-white text-[#666666] hover:text-black  hover:bg-gray-100 flex-col justify-start items-start gap-6 inline-flex top-[-20px] ${articulo.clases}`}
               data-index={index}
               data-image-src={articulo.image.src}
               data-image-srcset={articulo.image.src}
@@ -100,8 +98,8 @@ const articulosHitos = [
               <p class="self-stretch text-sm leading-tight text-center">
                 {articulo.texto}
               </p>
-              <a href={`/hitos/articulo-${index + 1}`} class="m-auto">
-                <button class="rounded-full border-2 border-black px-7 py-2.5 font-semibold hover:bg-black hover:text-white">
+              <a href={`/hitos/articulo-${index + 1}`} class="m-auto ">
+                <button class="rounded-full border-2 border-black h-[37px] w-fit px-2  py-2.5 font-semibold hover:bg-black hover:text-white flex items-center">
                   Leer articulo
                 </button>
               </a>
@@ -110,7 +108,9 @@ const articulosHitos = [
         }
       </div>
     </section>
-    <DropDownHitos Hito={articulosHitos} />
+    <DropDownHitos
+      Hitos={articulosHitos.filter((hito) => hito.clases.includes("hidden"))}
+    />
 
     <footer
       class="min-h-[408px] px-8 max-md:py-8 py-24 border-t border-black/10 flex max-lg:flex-col-reverse items-center gap-7"
