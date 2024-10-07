@@ -27,28 +27,28 @@ const articulosHitos = [
     texto:
       "Proponemos soluciones  adaptadas a ti porque sabemos que habitar una vivienda temporal requiere de una buena gestión de la incertidumbre a futuro.",
     image: hito2Portada,
-    clases: "max-md:hidden",
+    clases: "md:hidden",
   },
   {
     titulo: "Superándonos día a día",
     texto:
       "Comprometidos con una constante evolución. nos mantenemos siempre a la vanguardia del dinámico mundo del diseño y la economía circular ",
     image: hito3Portada,
-    clases: "max-md:hidden",
+    clases: "md:hidden",
   },
   {
     titulo: "¿Qué significa Abitacolo?",
     texto:
       " Abitacolo es el título que el artista Bruno Munari dio en 1971 a una exploración sobre lo doméstico. Creemos que su visión sigue hoy vigente y por eso tomamos su nombre ",
     image: hito4Portada,
-    clases: "max-lg:hidden",
+    clases: "lg:hidden",
   },
   {
     titulo: "Únete a esta revolución",
     texto:
       "Descubre cómo Abitacolo puede transformar tu experiencia de vida. Visita nuestros recursos, explora nuestras soluciones y únete a nuestra comunidad.",
     image: hito5Portada,
-    clases: "max-xl:hidden",
+    clases: "xl:hidden",
   },
 ];
 ---
@@ -89,7 +89,7 @@ const articulosHitos = [
         {
           articulosHitos.map((articulo, index) => (
             <article
-              class={`min-h-72 w-full p-10 relative bg-white text-[#666666] hover:text-black  hover:bg-gray-100 flex-col justify-start items-start gap-6 inline-flex top-[-20px] ${articulo.clases}`}
+              class={`min-h-72 p-10 min-w-52 w-full relative bg-white text-[#666666] hover:text-black  hover:bg-gray-100 flex-col  gap-6 transition-colors inline-flex top-[-20px] max-${articulo.clases}`}
               data-index={index}
               data-image-src={articulo.image.src}
               data-image-srcset={articulo.image.src}
@@ -100,8 +100,11 @@ const articulosHitos = [
               <p class="self-stretch text-sm leading-tight text-center">
                 {articulo.texto}
               </p>
-              <a href={`/hitos/articulo-${index + 1}`} class="m-auto ">
-                <button class="rounded-full border-2 border-black h-[37px] w-fit px-2  py-2.5 font-semibold hover:bg-black hover:text-white flex items-center">
+              <a
+                href={`/hitos/articulo-${index + 1}`}
+                class="m-auto mb-0 self-end"
+              >
+                <button class="rounded-full border-2 border-black h-[37px] w-fit px-2 self-end  py-2.5 font-semibold hover:bg-black hover:text-white transition-colors flex items-center">
                   Leer articulo
                 </button>
               </a>
@@ -131,7 +134,7 @@ const articulosHitos = [
         </h2>
         <a
           href="#contacto"
-          class="h-14 px-6 py-4 rounded-full text-white text-xl font-semibold grid justify-center bg-black hover:bg-[#a1b036]"
+          class="h-14 px-6 py-4 rounded-full text-white text-xl font-semibold flex justify-center place-items-center bg-black hover:bg-white hover:text-black border-2 border-black transition-colors"
           aria-label="Contáctanos"
         >
           Contáctanos
