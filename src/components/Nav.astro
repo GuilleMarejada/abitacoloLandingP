@@ -1,13 +1,14 @@
 ---
 import Image from "astro/components/Image.astro";
-import AbitacoloBlanco from "../image/logos/AbitacoloBlanco.webp";
+import AbitacoloNegro from "../image/logos/AbitacoloNegro.webp";
 import ModalMenuMovil from "./ModalMenuMovil.astro";
 
 const navItems = [
   { href: "#AboutUs", label: "¿Qué es Abitacolo?" },
-  { href: "#team", label: "Nuestro equipo" },
-  { href: "#hitos", label: "Hitos Abitacolo" },
-  { href: "#products", label: "Nuestros productos" },
+  { href: "#team", label: "Equipo" },
+  { href: "#hitos", label: "Nuestra aventura" },
+  { href: "#products", label: "Lo que hacemos" },
+  { href: "#contacto", label: "Contacto" },
 ];
 ---
 
@@ -17,20 +18,20 @@ const navItems = [
       <Image
         width={225}
         height={69}
-        src={AbitacoloBlanco}
+        src={AbitacoloNegro}
         alt="Logo Abitacolo"
         loading="eager"
       />
     </a>
 
-    <div class="max-[1030px]:hidden flex justify-between items-center w-full">
+    <div class="max-[950px]:hidden flex justify-between items-center w-full">
       <ul class="h-8 flex items-center gap-1 ml-4">
         {
           navItems.map(({ href, label }) => (
             <li>
               <a
                 {href}
-                class="px-2 py-1.5 rounded-lg text-white bg-[#2e2f32] hover:bg-[#3e3f42] transition-colors duration-300"
+                class={`px-3 py-1.5 rounded-full  text-white bg-[#2e2f32] hover:bg-[#3e3f42] transition-colors duration-300 ${href === "#contacto" ? "bg-[#919e32]" : ""}`}
                 data-nav-link
               >
                 {label}
@@ -41,17 +42,10 @@ const navItems = [
       </ul>
       <div class="flex items-center gap-2">
         <button class="px-2 py-1.5 rounded-lg text-white">ES</button>
-        <a
-          href="#contacto"
-          class="px-2 py-1.5 bg-[#919e32] rounded-lg text-white font-semibold tracking-tight hover:bg-[#a1b036] transition-colors duration-300"
-          data-nav-link
-        >
-          Contáctanos
-        </a>
       </div>
     </div>
   </div>
-  <div class="min-[1030px]:hidden grid content-center"><ModalMenuMovil /></div>
+  <div class="min-[951px]:hidden grid content-center"><ModalMenuMovil /></div>
 </nav>
 
 <script>
