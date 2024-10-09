@@ -3,21 +3,25 @@ import { Image } from "astro:assets";
 import imgBanner from "../../image/home/placeHolderBanner.webp";
 ---
 
-<div class="grid justify-center bg-[#cccccc] pt-24 px-4 lg:px-8">
-  <div class="">
+<section
+  class="grid justify-center bg-[#cccccc] pt-24 px-4 lg:px-8 min-h-[600px]"
+  aria-label="Banner principal"
+>
+  <div class="max-w-[1440px] w-full">
     <div
-      class="flex gap-[50px] max-[1200px]:flex-col-reverse max-[1200px]:gap-[25px] max-[1200px]:mt-4"
+      class="flex gap-[50px] max-[1200px]:flex-col-reverse max-[1200px]:gap-[25px] max-[1200px]:mt-4 items-center"
     >
       <Image
         src={imgBanner}
-        alt="Imagen de muebles"
+        alt="Muebles únicos y transformadores para tu hogar"
         width={651}
         height={565}
         loading="eager"
+        class="w-full max-w-[651px] h-auto"
       />
       <div class="max-sm:flex place-content-center">
         <h1
-          class="text-[#333333] max-sm:text-[32px] max-sm:w-[284px] text-[64px] leading-[60.80px] max-w-[700px] xl:max-w-[500px] max-sm:leading-[30.40px]"
+          class="text-[#333333] max-sm:text-[32px] max-sm:w-[284px] text-[64px] leading-[1.1] max-w-[700px] xl:max-w-[500px] max-sm:leading-[1.1]"
         >
           Transforma tu hogar con <span class="font-semibold"
             >muebles únicos</span
@@ -26,4 +30,4 @@ import imgBanner from "../../image/home/placeHolderBanner.webp";
       </div>
     </div>
   </div>
-</div>
+</section>

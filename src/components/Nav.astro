@@ -32,7 +32,7 @@ const navItems = [
             <li>
               <a
                 {href}
-                class={`px-3 py-1.5 rounded-full  text-white bg-[#2e2f32] hover:bg-[#3e3f42] transition-colors duration-300 ${href === "#contacto" ? "bg-[#919e32]" : ""}`}
+                class={`px-3 py-1.5 rounded-full text-white bg-[#2e2f32] hover:bg-[#3e3f42] transition-colors duration-300 ${href === "#contacto" ? "bg-[#919e32]" : ""}`}
                 data-nav-link
               >
                 {label}
@@ -50,23 +50,26 @@ const navItems = [
 </nav>
 
 <script>
-  function handleNavClick(e) {
-    e.preventDefault();
-    const href = e.currentTarget.getAttribute("href");
-    const isHomePage =
-      window.location.pathname === "/" ||
-      window.location.pathname === "/index.html";
-
-    if (isHomePage) {
-      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      window.location.href = "/" + href;
-    }
-  }
-
   document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("[data-nav-link]").forEach((link) => {
-      link.addEventListener("click", handleNavClick);
+    const navLinks = document.querySelectorAll("[data-nav-link]");
+    const isHomePage = ["", "/", "/index.html"].includes(
+      window.location.pathname
+    );
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (e: Event) => {
+        e.preventDefault();
+        const target = e.currentTarget as HTMLAnchorElement;
+        const href = target.getAttribute("href");
+        if (!href) return;
+
+        if (isHomePage) {
+          const targetElement = document.querySelector(href);
+          targetElement?.scrollIntoView({ behavior: "smooth" });
+        } else {
+          window.location.href = `/${href}`;
+        }
+      });
     });
   });
 </script>

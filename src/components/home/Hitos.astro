@@ -93,7 +93,7 @@ const articulosHitos = [
         {
           articulosHitos.map((articulo, index) => (
             <article
-              class={`min-h-72 p-10 w-full min-w-48 relative bg-white text-[#666666] hover:text-black  hover:bg-gray-100 flex-col  gap-6 transition-colors inline-flex top-[-20px] ${articulo.clases}`}
+              class={`min-h-72 p-10 w-full min-w-48 relative bg-white text-[#666666] hover:text-black focus:rounded-lg focus-within:text-black focus-within:bg-gray-100  hover:bg-gray-100 flex-col  gap-6 transition-colors inline-flex top-[-20px] ${articulo.clases}`}
               data-index={index}
               data-image-src={articulo.image.src}
               data-image-srcset={articulo.image.src}
@@ -105,10 +105,11 @@ const articulosHitos = [
                 {articulo.texto}
               </p>
               <a
-                href={`/hitos/articulo-${index + 1}`}
+                href={`/hitos/${index + 1}`}
                 class="m-auto mb-0 self-end"
+                aria-label={`Leer artículo: ${articulo.titulo}`}
               >
-                <button class="rounded-full border-2 border-black h-[37px] w-fit px-2 self-end  py-2.5 font-semibold hover:bg-black hover:text-white transition-colors flex items-center">
+                <button class="rounded-full border-2 border-black h-[37px] w-fit px-2 self-end  py-2.5 font-semibold hover:bg-black hover:text-white transition-colors flex items-center focus:bg-black focus:text-white">
                   Leer articulo
                 </button>
               </a>
@@ -138,7 +139,7 @@ const articulosHitos = [
         </h2>
         <a
           href="#contacto"
-          class="h-14 px-6 py-4 rounded-full text-white text-xl font-semibold flex justify-center place-items-center bg-black hover:bg-white hover:text-black border-2 border-black transition-colors"
+          class="h-14 px-6 py-4 rounded-full text-white text-xl font-semibold flex justify-center place-items-center bg-black hover:bg-white hover:text-black border-2 border-black transition-colors focus:bg-white focus:text-black"
           aria-label="Contáctanos"
         >
           Contáctanos

@@ -1,40 +1,30 @@
 ---
-if (Astro.request.method === "POST") {
-  try {
-    const data = await Astro.request.formData();
-    const name = data.get("username");
-    const email = data.get("email");
-    const password = data.get("password");
-    // Procesar los datos
-  } catch (error) {
-    console.error(error instanceof Error ? error.message : error);
-  }
-}
+
 ---
 
-<div
+<section
   id="contacto"
   class="flex justify-start pt-12 bg-white pb-6 px-4 lg:px-8 w-full max-md:flex-col lg:justify-center"
+  aria-labelledby="contact-heading"
 >
-  <div class="flex flex-col gap-3 text-start w-full max-w-[450px] ">
-    <p
-      class="text-[90px] text-black leading-[85.50px] max-md:text-[64px]  max-sm:text-[50px] mx-auto"
+  <div class="flex flex-col gap-3 text-start w-full max-w-[450px]">
+    <h2
+      id="contact-heading"
+      class="text-[90px] text-black leading-[1.1] max-md:text-[64px] max-sm:text-[50px] mx-auto"
     >
       Ponte en contacto con Abitacolo
-    </p>
+    </h2>
 
-    <div
-      class="w-full text-[#151438]/40 text-[22px] font-medium leading-loose max-md:text-lg max-sm:text-base mx-auto"
+    <p
+      class="w-full text-[#151438]/80 text-[22px] font-medium leading-loose max-md:text-lg max-sm:text-base mx-auto"
     >
       ¿Quieres más información sobre este proyecto? Puedes escribirnos o
       llamarnos y te informaremos encantados
-    </div>
-    <div class="max-w-[308px] text-black leading-relaxed font-semibold text-xl">
+    </p>
+    <p class="max-w-[308px] text-black leading-relaxed font-semibold text-xl">
       +34 xxx xxx xxx
-    </div>
+    </p>
   </div>
-
-  <!--Separacion entre formulario y texto -->
 
   <form
     action="https://formsubmit.co/8ef3a12491cf88e883476dae52fd2893"
@@ -87,8 +77,8 @@ if (Astro.request.method === "POST") {
         
         <button
         type="submit"
-        class="w-60  max-md:w-full max-md:mt-2 h-14 bg-[#333333]/70 rounded-3xl font-semibold leading-normal tracking-wide text-white text-2xl hover:bg-[#333333] transition-colors"
-        >
+        class="w-60 max-md:w-full max-md:mt-2 h-14 bg-[#333333]/70 rounded-3xl font-semibold leading-normal tracking-wide text-white text-2xl hover:bg-[#333333] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#333333]"
+      >
         Enviar
       </button>
 
@@ -96,6 +86,7 @@ if (Astro.request.method === "POST") {
         <input
           type="checkbox"
           id="terms"
+          name="terms"
           class="w-[19px] h-[19px] max-w-[400px] rounded border border-[#919e32]"
           required
         />
@@ -103,6 +94,8 @@ if (Astro.request.method === "POST") {
           >Acepto los términos y condiciones</label
         >
       </div>
+
+      <input type="hidden" name="_captcha" value="false" />
     </div>
   </form>
-</div>
+</section>
