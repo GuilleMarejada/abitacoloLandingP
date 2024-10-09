@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import DropDownHitos from "../../components/home/DropDownHitos.astro";
-import hito1Portada from "../../image/hitos/hito1portada.webp";
+import hito1Portada from "../../image/hitos/hito1Portada.webp";
 import hito2Portada from "../../image/hitos/hito2Portada.webp";
 import hito3Portada from "../../image/hitos/hito3Portada.webp";
 import hito4Portada from "../../image/hitos/hito4Portada.webp";
@@ -104,7 +104,7 @@ const articulosHitos = [
                 {articulo.texto}
               </p>
               <a
-                href={`/hitos/${index + 1}`}
+                href={`/hitos/articulo-${index + 1}`}
                 class="m-auto mb-0 self-end"
                 aria-label={`Leer artículo: ${articulo.titulo}`}
               >
