@@ -13,6 +13,58 @@ import ModalPrivacidad from "../components/ModalPrivacidad.astro";
 ---
 
 <Layout title="Abitacolo">
+  <head>
+    <!-- Meta Title y Description -->
+    <meta
+      name="description"
+      content="Abitacolo ofrece muebles en alquiler para eventos, oficinas y hogares. Flexibilidad en tiempos y entrega rápida."
+    />
+
+    <!-- Open Graph para redes sociales -->
+    <meta
+      property="og:title"
+      content="Alquiler de Muebles Abitacolo | Calidad y Flexibilidad"
+    />
+    <meta
+      property="og:description"
+      content="Muebles en alquiler para hogares, oficinas y eventos. Servicio flexible y con entrega rápida."
+    />
+    <meta property="og:image" content="---" /><!-- TODO: Cambiar -->
+    <meta property="og:url" content="---" /><!-- TODO: Cambiar -->
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Alquiler de Muebles Abitacolo | Flexibilidad y Estilo"
+    />
+    <meta
+      name="twitter:description"
+      content="Muebles en alquiler para cualquier ocasión. Calidad y servicio garantizado."
+    />
+    <meta name="twitter:image" content="---" />
+    <!-- TODO: Cambiar -->
+
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="---" />
+    <!-- JSON-LD Structured Data --><!-- TODO: Cambiar -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Abitacolo",
+        "url": "---",
+        "logo": "---",
+        "description": "Alquiler de muebles para eventos, oficinas y hogares con flexibilidad en tiempos y entrega rápida.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+34-XXX-XXX-XXX",
+          "contactType": "Customer Service"
+        }
+      }
+    </script>
+  </head>
   <Nav />
   <main>
     <Banner />
