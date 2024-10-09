@@ -32,6 +32,7 @@ const productInfo = [
 <section
   id="products"
   class="w-full bg-[#1c1c1e] grid justify-center min-h-[700px] pb-6 px-4 lg:px-8"
+  aria-label="Nuestros productos"
 >
   <div class="max-w-[1440px] w-full pt-12 flex flex-col gap-8">
     <header class="py-4 border-b border-white/10 grid justify-center">
@@ -48,7 +49,7 @@ const productInfo = [
               height={208}
               class="w-full h-auto max-md:rounded-t-lg"
               src={product.image}
-              alt={product.title}
+              alt={`Imagen de ${product.title}`}
               loading="lazy"
             />
             <div class="flex flex-col p-4 gap-8">
