@@ -59,7 +59,7 @@ const navItems = [
       >
         {
           navItems.map(({ href, label }) => (
-            <a href={href}>
+            <a href={href} data-nav-link>
               <button class="text-black text-xl p-2 leading-relaxed">
                 {label}
               </button>
@@ -76,3 +76,31 @@ const navItems = [
     </div>
   </div>
 </footer>
+
+<script>
+  function handleNavClick(e) {
+    e.preventDefault();
+    const href = e.currentTarget.getAttribute("href");
+    if (!href) return;
+
+    const isHomePage =
+      window.location.pathname === "/" ||
+      window.location.pathname === "/index.html";
+
+    if (isHomePage) {
+      const targetElement = document.querySelector(href);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.location.href = "/" + href;
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll("[data-nav-link]");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", handleNavClick);
+    });
+  });
+</script>

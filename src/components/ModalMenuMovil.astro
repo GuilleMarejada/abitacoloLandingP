@@ -44,6 +44,7 @@ const menuItems = [
             <a
               href={item.href}
               class={`${item.class} rounded-full justify-center items-center gap-1 inline-flex w-full h-[56px] text-white text-xl leading-normal tracking-tight`}
+              data-nav-link
             >
               {item.text}
             </a>
@@ -55,22 +56,49 @@ const menuItems = [
 </div>
 
 <script>
-  const menuButton = document.getElementById("menuButton");
-  const menuModal = document.getElementById("menuModal");
-  const closeButton = document.getElementById("closeButton");
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuButton = document.getElementById(
+      "menuButton"
+    ) as HTMLButtonElement;
+    const menuModal = document.getElementById("menuModal") as HTMLDivElement;
+    const closeButton = document.getElementById(
+      "closeButton"
+    ) as HTMLButtonElement;
+    const navLinks = document.querySelectorAll(
+      "[data-nav-link]"
+    ) as NodeListOf<HTMLAnchorElement>;
+    const isHomePage = ["", "/", "/index.html"].includes(
+      window.location.pathname
+    );
 
-  function toggleModal() {
-    menuModal.classList.toggle("hidden");
-  }
+    function toggleModal() {
+      menuModal.classList.toggle("hidden");
+    }
 
-  menuButton.addEventListener("click", toggleModal);
-  closeButton.addEventListener("click", toggleModal);
+    function handleNavClick(e: Event) {
+      e.preventDefault();
+      const target = e.currentTarget as HTMLAnchorElement;
+      const href = target.getAttribute("href");
+      if (!href) return;
 
-  menuModal.addEventListener("click", (event) => {
-    if (event.target === menuModal) toggleModal();
-  });
+      if (isHomePage) {
+        const targetElement = document.querySelector(href);
+        targetElement?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.location.href = `/${href}`;
+      }
+      toggleModal();
+    }
 
-  menuModal.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", toggleModal);
+    menuButton.addEventListener("click", toggleModal);
+    closeButton.addEventListener("click", toggleModal);
+
+    menuModal.addEventListener("click", (event: MouseEvent) => {
+      if (event.target === menuModal) toggleModal();
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", handleNavClick);
+    });
   });
 </script>
