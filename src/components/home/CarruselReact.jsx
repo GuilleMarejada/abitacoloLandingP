@@ -145,7 +145,7 @@ const TeamCarousel = () => {
           <img
             src={FlechaIzq.src}
             className="w-8 h-8"
-            alt=""
+            alt="Desplazar Izquierda"
             width={32}
             height={32}
           />
@@ -160,6 +160,7 @@ const TeamCarousel = () => {
               }`}
               onClick={() => setCurrentIndex(index)}
               aria-label={`Ir al miembro ${index + 1} del equipo`}
+              alt={index + 1}
               aria-selected={index === currentIndex}
               role="tab"
             />
@@ -174,6 +175,7 @@ const TeamCarousel = () => {
           <img
             src={FlechaDrch.src}
             className="w-8 h-8"
+            alt="Desplazar Derecha"
             loading="lazy"
             width={32}
             height={32}
