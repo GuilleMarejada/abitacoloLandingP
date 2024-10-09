@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import TeamCard from "./TeamCard.jsx";
 import FlechaIzq from "../../image/FlechaIzq.webp";
 import FlechaDrch from "../../image/FlechaDrch.webp";
@@ -87,10 +87,13 @@ const TeamCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(3);
 
-  const nextSlide = () =>
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % team.length);
-  const prevSlide = () =>
+  }, []);
+
+  const prevSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + team.length) % team.length);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -113,7 +116,11 @@ const TeamCarousel = () => {
   }, [currentIndex, cardsToShow]);
 
   return (
-    <div className="relative w-full mx-auto rounded-sm">
+    <div
+      className="relative w-full mx-auto rounded-sm"
+      role="region"
+      aria-label="Carrusel de equipo"
+    >
       <div className="overflow-hidden">
         <div className="flex transition-transform duration-300 ease-in-out">
           {visibleCards.map((member, index) => (
@@ -133,26 +140,28 @@ const TeamCarousel = () => {
         <button
           onClick={prevSlide}
           aria-label="Ver el miembro anterior del equipo"
+          className="p-2 focus:outline-none focus:ring-2 focus:ring-[#d6ff85]"
         >
           <img
             src={FlechaIzq.src}
-            className="w-16"
-            alt="Anterior"
-            loading="lazy"
-            width={16}
-            height={16}
+            className="w-8 h-8"
+            alt=""
+            width={32}
+            height={32}
           />
         </button>
 
-        <div className="flex space-x-2">
+        <div className="flex space-x-2" role="tablist">
           {team.map((_, index) => (
             <button
               key={index}
-              className={`w-4 h-4 rounded-full ${
+              className={`w-4 h-4 rounded-full focus:outline-none focus:ring-2 focus:ring-[#d6ff85] ${
                 index === currentIndex ? "bg-[#919e32]" : "bg-gray-300"
               }`}
               onClick={() => setCurrentIndex(index)}
               aria-label={`Ir al miembro ${index + 1} del equipo`}
+              aria-selected={index === currentIndex}
+              role="tab"
             />
           ))}
         </div>
@@ -160,14 +169,14 @@ const TeamCarousel = () => {
         <button
           onClick={nextSlide}
           aria-label="Ver el siguiente miembro del equipo"
+          className="p-2 focus:outline-none focus:ring-2 focus:ring-[#d6ff85]"
         >
           <img
             src={FlechaDrch.src}
-            className="w-16"
-            alt="Siguiente"
+            className="w-8 h-8"
             loading="lazy"
-            width={16}
-            height={16}
+            width={32}
+            height={32}
           />
         </button>
       </div>

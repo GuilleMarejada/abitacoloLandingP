@@ -31,11 +31,11 @@ const articles = [
     class="min-h-[748px] max-md:py-8 py-24 flex-col justify-start items-center gap-6 inline-flex max-w-[1376px]"
   >
     <div>
-      <h1
+      <h2
         class="max-w-[796px] text-center text-black/90 md:text-[56px] font-semibold max-md:text-[32px] leading-[64px]"
       >
         ¿Cómo trabajamos?
-      </h1>
+      </h2>
       <p class="my-4">
         El innovador sistema de Abitacolo se basa en 3 pasos. Nuestras 3 propias
         “Rs”
@@ -52,15 +52,16 @@ const articles = [
               src={article.image}
               alt={`Imagen de ${article.title}`}
               width={448}
+              loading="lazy"
               height={396}
               class="absolute inset-0 w-full max-h- h-full object-cover"
             />
             <div class="absolute inset-0 bg-black bg-opacity-30" />
             <div class="relative z-10 h-full px-8  pb-8 grid gap-4 content-end">
               <header class=" flex-col  flex">
-                <h2 class=" text-white text-[28px] leading-loose font-bold">
+                <h3 class=" text-white text-[28px] leading-loose font-bold">
                   {article.title}
-                </h2>
+                </h3>
               </header>
               <p class=" text-white text-sm leading-tight font-semibold">
                 {article.description}
