@@ -1,20 +1,10 @@
 ---
-if (Astro.request.method === "POST") {
-  try {
-    const data = await Astro.request.formData();
-    const name = data.get("username");
-    const email = data.get("email");
-    const password = data.get("password");
-    // Procesar los datos
-  } catch (error) {
-    console.error(error instanceof Error ? error.message : error);
-  }
-}
+
 ---
 
 <div
   id="contacto"
-  class="flex justify-start pt-12 bg-white pb-6 px-3 w-full max-md:flex-col lg:justify-center"
+  class="flex justify-start pt-12 bg-white pb-6 px-4 lg:px-8 w-full max-md:flex-col lg:justify-center"
 >
   <div class="flex flex-col gap-3 text-start w-full max-w-[450px]">
     <p
@@ -33,8 +23,6 @@ if (Astro.request.method === "POST") {
       +34 xxx xxx xxx
     </div>
   </div>
-
-  <!--Separacion entre formulario y texto -->
 
   <form
     action="https://formsubmit.co/8ef3a12491cf88e883476dae52fd2893"
@@ -102,6 +90,14 @@ if (Astro.request.method === "POST") {
           >Acepto los términos y condiciones</label
         >
       </div>
+
+      <!-- Campos ocultos para mejorar la funcionalidad de FormSubmit -->
+      <!-- <input
+        type="hidden"
+        name="_next"
+        value="https://tudominio.com/gracias.html"
+      /> -->
+      <input type="hidden" name="_captcha" value="false" />
     </div>
   </form>
 </div>
