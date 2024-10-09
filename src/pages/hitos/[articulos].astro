@@ -5,7 +5,15 @@ import Nav from "../../components/Nav.astro";
 import Footer from "../../components/Footer.astro";
 import BannerHome from "../../image/hitos/hito1portada.webp";
 import Contacto from "../../components/home/Contacto.astro";
-import Hito1 from "../../image/hitos/img_contenido.jpg";
+import ImgHito1 from "../../image/hitos/hito1portada.webp";
+import ImgHito2 from "../../image/hitos/hito2portada.webp";
+import ImgHito3 from "../../image/hitos/hito3portada.webp";
+import ImgHito4 from "../../image/hitos/hito4portada.webp";
+import ImgHito5 from "../../image/hitos/hito5portada.webp";
+import ImgContenido1 from "../../image/hitos/H1-contenido.webp";
+import ImgContenido2 from "../../image/hitos/H2-contenido.webp";
+import ImgContenido3 from "../../image/hitos/H3-contenido.webp";
+import ImgContenido4 from "../../image/hitos/H4-contenido.webp";
 
 import { Image } from "astro:assets";
 export const getStaticPaths = (() => {
@@ -13,41 +21,66 @@ export const getStaticPaths = (() => {
     { params: { articulos: "articulo-1" } },
     { params: { articulos: "articulo-2" } },
     { params: { articulos: "articulo-3" } },
+    { params: {articulos : "articulo-4"}},
+   { params:  {articulos: "articulo-5"}} 
   ];
 }) satisfies GetStaticPaths;
+
+const { articulos } = Astro.params;
 
 const hitos = [
   {
     hito: "articulo-1",
     descripcion: "Xaby",
+    imgBanner: ImgHito1,
+    imgContenido: ImgContenido1
+
   },
   {
     hito: "articulo-2",
     descripcion: "Guille",
+     imgBanner: ImgHito2, 
+     imgContenido: ImgContenido2
   },
+
   {
     hito: "articulo-3",
     descripcion: "Cathy",
+     imgBanner: ImgHito3, 
+     imgContenido: ImgContenido3
   },
+  {
+    hito: "articulo-4",
+    descripcion: "Alba",
+    imgBanner: ImgHito4, 
+    imgContenido: ImgContenido4
+  },
+  {
+    hito: "articulo-5",
+    descripcion: "María",
+    imgBanner: ImgHito5, 
+  }
 ];
 
-const { articulos } = Astro.params;
-
-const hitoSeleccionado = hitos.find((hito) => hito.hito === articulos);
+const hitoSeleccionado = hitos.find((hito) => hito.hito === articulos)
 ---
 
 <Layout title={articulos}>
   <Nav />
   <main role="main" class="w-full h-[800px] bg-black/70 grid justify-center">
     <div class="max-w-[1440px] w-screen relative overflow-hidden">
-      <Image
-        src={BannerHome}
-        alt="Banner de fondo"
-        width={1440}
-        height={800}
-        class="absolute object-cover w-full"
-        loading="eager"
-      />
+      {hitoSeleccionado ? (
+        <Image
+          src={hitoSeleccionado.imgBanner}
+          alt="Banner de fondo"
+          width={1440}
+          height={800}
+          class="absolute object-cover w-full"
+          loading="eager"
+        />
+      ) : (
+        <p>Error: Hito no encontrado.</p>
+      )}
       <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-black/50">
       </div>
       <div
@@ -65,7 +98,7 @@ const hitoSeleccionado = hitos.find((hito) => hito.hito === articulos);
   </main>
   <section class="w-full max-w-[777px] flex flex-col mt-5 mx-auto text-start">
     <h1 class="text-4xl mt-4 leading-9">
-      Abitacolo revoluciona la industria del mueble con soluciones innovadoras
+     {hitoSeleccionado?.descripcion }
     </h1>
     <p class="text-lg mt-10 leading-9">
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
@@ -78,13 +111,18 @@ const hitoSeleccionado = hitos.find((hito) => hito.hito === articulos);
       inventore a aperiam aspernatur aliquid, animi reiciendis reprehenderit
       odio!
     </p>
-    <Image
-      width="776"
-      height="657"
-      src={Hito1}
-      alt="Imagen de fondo"
-      loading="lazy"
-    />
+    {hitoSeleccionado ? (
+      <Image
+        src={hitoSeleccionado.imgContenido}
+        alt="Imagen Contenido de fondo"
+        width={776}
+        height={657}
+        loading="lazy"
+      />
+    ) : (
+      <p>Error: Imagen hito contenido no encontrado.</p>
+    )}
+  
     <p class="text-lg mt-10 leading-9">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptatum
       repudiandae quam totam ipsa eos vel fuga non minus harum aspernatur
