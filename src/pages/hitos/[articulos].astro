@@ -1,0 +1,159 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "../../layouts/Layout.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+
+import Contacto from "../../components/home/Contacto.astro";
+import ImgHito1 from "../../image/hitos/hito1Portada.webp";
+import ImgHito2 from "../../image/hitos/hito2Portada.webp";
+import ImgHito3 from "../../image/hitos/hito3Portada.webp";
+import ImgHito4 from "../../image/hitos/hito4Portada.webp";
+import ImgHito5 from "../../image/hitos/hito5Portada.webp";
+import ImgContenido1 from "../../image/hitos/H1-contenido.webp";
+import ImgContenido2 from "../../image/hitos/H2-contenido.webp";
+import ImgContenido3 from "../../image/hitos/H3-contenido.webp";
+import ImgContenido4 from "../../image/hitos/H4-contenido.webp";
+
+import { Image } from "astro:assets";
+export const getStaticPaths = (() => {
+  return [
+    { params: { articulos: "articulo-1" } },
+    { params: { articulos: "articulo-2" } },
+    { params: { articulos: "articulo-3" } },
+    { params: { articulos: "articulo-4" } },
+    { params: { articulos: "articulo-5" } },
+  ];
+}) satisfies GetStaticPaths;
+
+const { articulos } = Astro.params;
+
+const hitos = [
+  {
+    hito: "articulo-1",
+    descripcion: "Xaby",
+    imgBanner: ImgHito1,
+    imgContenido: ImgContenido1,
+  },
+  {
+    hito: "articulo-2",
+    descripcion: "Guille",
+    imgBanner: ImgHito2,
+    imgContenido: ImgContenido2,
+  },
+
+  {
+    hito: "articulo-3",
+    descripcion: "Cathy",
+    imgBanner: ImgHito3,
+    imgContenido: ImgContenido3,
+  },
+  {
+    hito: "articulo-4",
+    descripcion: "Alba",
+    imgBanner: ImgHito4,
+    imgContenido: ImgContenido4,
+  },
+  {
+    hito: "articulo-5",
+    descripcion: "María",
+    imgBanner: ImgHito5,
+  },
+];
+
+const hitoSeleccionado = hitos.find((hito) => hito.hito === articulos);
+---
+
+<Layout title={articulos}>
+  <Nav />
+  <main role="main" class="w-full h-[800px] bg-black/70 grid justify-center">
+    <div class="max-w-[1440px] w-screen relative overflow-hidden">
+      {
+        hitoSeleccionado ? (
+          <Image
+            src={hitoSeleccionado.imgBanner}
+            alt="Banner de fondo"
+            width={1440}
+            height={800}
+            class="absolute object-cover w-full"
+            loading="eager"
+          />
+        ) : (
+          <p>Error: Hito no encontrado.</p>
+        )
+      }
+      <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-black/50">
+      </div>
+      <div
+        class="relative z-10 px-8 max-sm:px-4 py-24 grid gap-2.5 content-end h-full"
+      >
+        <div class="md:flex h-fit max-md:grid items-end gap-4">
+          <h1
+            class="text-white max-w-[1008px] text-[56px] max-sm:text-[32px] font-bold uppercase leading-[64px]"
+          >
+            Transforma tu HOGAR con muebles únicos
+          </h1>
+        </div>
+      </div>
+    </div>
+  </main>
+  <section class="w-full max-w-[777px] flex flex-col mt-5 mx-auto text-start">
+    <h1 class="text-4xl mt-4 leading-9">
+      {hitoSeleccionado?.descripcion}
+    </h1>
+    <p class="text-lg mt-10 leading-9">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+      nemo quam nisi, quidem, non omnis exercitationem ad rem repellat aliquid
+      possimus eius quaerat a error amet rerum doloribus dignissimos nam.
+    </p>
+    <p class="text-lg mt-10 leading-9">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, laboriosam
+      at. Tempora dicta ut officiis rerum nulla fuga voluptatibus vitae error
+      inventore a aperiam aspernatur aliquid, animi reiciendis reprehenderit
+      odio!
+    </p>
+    {
+      hitoSeleccionado ? (
+        <Image
+          src={hitoSeleccionado.imgContenido}
+          alt="Imagen Contenido de fondo"
+          width={776}
+          height={657}
+          loading="lazy"
+        />
+      ) : (
+        <p>Error: Imagen hito contenido no encontrado.</p>
+      )
+    }
+
+    <p class="text-lg mt-10 leading-9">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptatum
+      repudiandae quam totam ipsa eos vel fuga non minus harum aspernatur
+      assumenda recusandae, quidem delectus nostrum laudantium exercitationem
+      consectetur! Aperiam?
+    </p>
+    <p class="text-lg mt-10 leading-9">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi delectus
+      assumenda numquam quae sint quisquam omnis, enim aperiam tempora eaque
+      magni, deleniti nesciunt cum alias, praesentium consectetur voluptatibus
+      optio eum.
+    </p>
+    <span class="text-lg mt-10 font-bold">Nuestra misión</span>
+    <p class="text-lg mt-10 leading-9">
+      En un mundo en constante cambio, Abitacolo se destaca por su capacidad
+      para reinventar el modelo comercial de venta de mobiliario y equipamiento
+      para la vivienda. Nos dedicamos a cuidar tanto los espacios habitables
+      como el presupuesto de quienes viven en viviendas temporales o en
+      alquileres a plazos.
+    </p>
+    <p class="text-lg mt-10 leading-9">
+      Nuestro modelo, basado en sostenibilidad, economía circular y regeneración
+      urbana, permite imaginar una vivienda de paso como un hogar digno.
+      Ofrecemos una nueva visión en arquitectura e interiorismo con un diseño
+      democrático, accesible y adaptado a las necesidades de nuestra generación.
+    </p>
+  </section>
+
+  <Contacto />
+  <Footer />
+</Layout>
