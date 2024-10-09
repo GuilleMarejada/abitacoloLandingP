@@ -5,6 +5,7 @@ import CarruselReact from "../../components/home/CarruselReact.jsx";
 <section
   id="team"
   class="w-full bg-[#0000000A] grid justify-center pb-8 px-4 lg:px-8"
+  aria-labelledby="team-heading"
 >
   <article class="max-w-[1440px] rounded-sm">
     <header
@@ -25,11 +26,12 @@ import CarruselReact from "../../components/home/CarruselReact.jsx";
         </a>
       </div>
 
-      <h1
+      <h2
+        id="team-heading"
         class="lg:text-9xl text-7xl lg:leading-[121.60px] leading-[70px] max-w-[376px] tracking-[-.07em]"
       >
         Un gran equipo
-      </h1>
+      </h2>
     </header>
     <CarruselReact client:load />
 
