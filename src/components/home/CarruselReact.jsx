@@ -18,7 +18,7 @@ const team = [
     position: "Founder & CEO",
     linkImage: JCM,
     description:
-      "Construir mundos desde cero es mi pasión. Si los convierto en proyectos tangibles, entiendo que mi papel en el mundo ya lleva un camino y un propósito significativo. ",
+      "Construir mundos desde cero es mi pasión. Si los convierto en proyectos tangibles, entiendo que mi papel en el mundo ya lleva un camino y un propósito significativo.",
     linkedin: "https://www.linkedin.com/in/juliette-mallen-a001a2125/",
   },
   {
@@ -26,7 +26,7 @@ const team = [
     position: "Co-Founder & Creative Director",
     linkImage: GPC,
     description:
-      "Además de mi carácter, el desempeño profesional y mis capacidades organizativas, me convierten en un arquitecto todo terreno. Ahora soy pilar en la startup de diseño regenerativo de mobiliario. Convertimos la basura en tesoros únicos.",
+      "Además de mi carácter, el desempeño profesional y mis capacidades organizativas, me convierten en un arquitecto todo terreno. Ahora soy pilar en la startup de diseño regenerativo de mobiliario. Convertimos basura en tesoros únicos.",
     linkedin: "https://www.linkedin.com/in/gperalesc/",
   },
   {
@@ -70,7 +70,7 @@ const team = [
     position: "Full Stack Developer",
     linkImage: XLD,
     description:
-      "Soy Xavi, desarrollador Full Stack con exp en proyectos innovadores.Mi habilidad más contundente sin duda es aportar soluciones creativas y eficientes en el desarrollo web.",
+      "Si existe una idea en un papel, dibujada o escrita, tengo el conocimiento para traducirla al lenguaje encriptado de la programación. Si incluyen fronts atractivos, os aseguro que mantendré el ojo en que no pierda un pixel de su potencial persuasivo.",
     linkedin: "www.linkedin.com/in/xavierlongo",
   },
   {
@@ -78,7 +78,7 @@ const team = [
     position: "Desarrollador de Software Full Stack",
     linkImage: GCG,
     description:
-      "Soy escalador y programador, mi selección de deporte define parte de lo que se ve en mi trabajo. Llegar a la cima, disfrutar el proceso, y ver el paisaje reservado para quienes nos aventuramos.",
+      "Escalador y programador, mi selección de deporte define parte de lo que se ve en mi trabajo. Llegar a la cima, disfrutar el proceso, y ver el paisaje reservado para quienes nos aventuramos.",
     linkedin: "https://www.linkedin.com/in/guillermocg8/",
   },
 ];
