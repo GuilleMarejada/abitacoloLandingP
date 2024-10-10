@@ -146,6 +146,7 @@ const TeamCarousel = () => {
             src={FlechaIzq.src}
             className="w-8 h-8"
             alt="Desplazar Izquierda"
+            loading="lazy"
             width={32}
             height={32}
           />

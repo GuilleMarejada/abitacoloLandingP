@@ -156,8 +156,7 @@ const articulosHitos = [
     if (articleImage instanceof HTMLImageElement) {
       articles.forEach((article) => {
         article.addEventListener("mouseenter", () => {
-          const imageSrc = article.getAttribute("data-image-src");
-          const imageSrcset = article.getAttribute("data-image-srcset");
+          const { imageSrc, imageSrcset } = article.dataset;
 
           if (imageSrc) {
             articleImage.src = imageSrc;
