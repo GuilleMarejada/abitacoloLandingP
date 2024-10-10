@@ -12,15 +12,18 @@ const { title } = Astro.props;
 <html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+
     <link rel="icon" type="image/webp" href="/ANegra.webp" />
+    <link rel="canonical" href="---" />
+
     <meta name="generator" content={Astro.generator} />
-    <!-- Meta Title y Description -->
     <meta
       name="description"
       content="Abitacolo ofrece muebles en alquiler para eventos, oficinas y hogares. Flexibilidad en tiempos y entrega rápida."
     />
-    <!-- Meta Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
 
     <!-- Open Graph para redes sociales -->
     <meta
@@ -45,13 +48,10 @@ const { title } = Astro.props;
       name="twitter:description"
       content="Muebles en alquiler para cualquier ocasión. Calidad y servicio garantizado."
     />
-    <meta name="twitter:image" content="---" />
-    <!-- TODO: Cambiar -->
+    <meta name="twitter:image" content="---" /><!-- TODO: Cambiar -->
 
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="---" />
-    <!-- JSON-LD Structured Data --><!-- TODO: Cambiar -->
-    <script type="application/ld+json" is:inline>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
@@ -66,7 +66,6 @@ const { title } = Astro.props;
         }
       }
     </script>
-    <title>{title}</title>
   </head>
   <body>
     <slot />
