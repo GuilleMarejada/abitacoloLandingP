@@ -43,7 +43,7 @@ const team = [
 
     linkImage: ACG,
     description:
-      "Hablar es mi pasión y puedo hacerlo desde cualquier canal, lo que se podría definir como “ser una comunicadora 360”. Casi sin querer, le puse voz a Abitacolo.",
+      "Hablar es mi pasión y puedo hacerlo desde cualquier canal, lo que se podría definir como “ser una comunicadora 360”",
     linkedin: "https://www.linkedin.com/in/albacalditogutierrez/",
   },
 
