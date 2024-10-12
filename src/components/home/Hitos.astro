@@ -16,37 +16,37 @@ type articulosHitos = {
 
 const articulosHitos = [
   {
-    titulo: "Soluciones innovadoras",
+    titulo: "Una visión diferente",
     texto:
-      "Ofrecemos una nueva visión en decoración, diseño e interiorismo, manejando conceptos democráticos, accesibles y coherentes con las necesidades actuales.",
+      "Ofrecemos una nueva visión en decoración, diseño e interiorismo, manejando  conceptos democráticos, accesibles y coherentes con las necesidades actuales",
     image: hito1Portada,
     clases: "",
   },
   {
-    titulo: "Lo que nos hace únicos",
+    titulo: "Un modelo innovador",
     texto:
-      "Proponemos soluciones  adaptadas a ti porque sabemos que habitar una vivienda temporal requiere de una buena gestión de la incertidumbre a futuro.",
+      "El sistema Abitacolo (rescatar, reinventar, alquilar) crea un modelo de negocio de mobiliario inédito hasta la fecha, lo que abre nuevas e interesantes posibilidades",
     image: hito2Portada,
     clases: "max-md:hidden",
   },
   {
-    titulo: "Superándonos día a día",
+    titulo: "Un crecimiento consolidado",
     texto:
-      "Comprometidos con una constante evolución. nos mantenemos siempre a la vanguardia del dinámico mundo del diseño y la economía circular ",
+      "Abitacolo crece con fuerza dentro del ecosistema empresarial. Queremos estar a la vanguardia del mercado del mobiliario y trabajamos día a día para conseguirlo.",
     image: hito3Portada,
     clases: "max-md:hidden",
   },
   {
-    titulo: "¿Qué significa Abitacolo?",
+    titulo: "Un trasfondo cultural",
     texto:
-      " Abitacolo es el título que el artista Bruno Munari dio en 1971 a una exploración sobre lo doméstico. Creemos que su visión sigue hoy vigente y por eso tomamos su nombre ",
+      "Abitacolo es el título que el artista Bruno Munari dio en 1971 a una exploración sobre lo doméstico. Creemos que su visión sigue hoy vigente y por eso tomamos su nombre",
     image: hito4Portada,
     clases: "max-lg:hidden",
   },
   {
-    titulo: "Únete a esta revolución",
+    titulo: "Un proyecto abierto",
     texto:
-      "Descubre cómo Abitacolo puede transformar tu experiencia de vida. Visita nuestros recursos, explora nuestras soluciones y únete a nuestra comunidad.",
+      "En Abitacolo valoramos la colaboración. Por eso, buscamos personas que compartan nuestra visión y lanzamos una invitación abierta a unirse al proyecto.",
     image: hito5Portada,
     clases: "max-xl:hidden",
   },
@@ -66,7 +66,7 @@ const articulosHitos = [
     >
       <div class="px-6">
         <h1
-          class="justify-self-center text-black lg:text-8xl font-semibold text-6xl"
+          class="justify-self-center text-black lg:text-8xl text-6xl tracking-[-.08em] leading-[64px]"
         >
           Claves Abitacolo
         </h1>
@@ -154,15 +154,20 @@ const articulosHitos = [
     const articleImage = document.getElementById("articleImage");
 
     if (articleImage instanceof HTMLImageElement) {
+      let currentImageSrc = "";
+      let currentImageSrcset = "";
+
       articles.forEach((article) => {
         article.addEventListener("mouseenter", () => {
           const { imageSrc, imageSrcset } = article.dataset;
 
-          if (imageSrc) {
+          if (imageSrc && imageSrc !== currentImageSrc) {
             articleImage.src = imageSrc;
+            currentImageSrc = imageSrc;
           }
-          if (imageSrcset) {
+          if (imageSrcset && imageSrcset !== currentImageSrcset) {
             articleImage.srcset = imageSrcset;
+            currentImageSrcset = imageSrcset;
           }
         });
       });

@@ -122,7 +122,7 @@ const TeamCarousel = () => {
       aria-label="Carrusel de equipo"
     >
       <div className="overflow-hidden">
-        <div className="flex transition-transform duration-300 ease-in-out gap-3">
+        <div className="flex transition-transform duration-300 ease-in-out gap-3 h-[500px]">
           {visibleCards.map((member, index) => (
             <div
               key={`${member.person}-${index}`}
