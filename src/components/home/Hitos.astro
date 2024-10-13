@@ -16,91 +16,87 @@ type articulosHitos = {
 
 const articulosHitos = [
   {
-    titulo: "Soluciones innovadoras",
+    titulo: "Una visión diferente",
     texto:
-      "Ofrecemos una nueva visión en decoración, diseño e interiorismo, manejando conceptos democráticos, accesibles y coherentes con las necesidades actuales.",
+      "Ofrecemos una nueva visión en decoración, diseño e interiorismo, manejando  conceptos democráticos, accesibles y coherentes con las necesidades actuales",
     image: hito1Portada,
     clases: "",
   },
   {
-    titulo: "Lo que nos hace únicos",
+    titulo: "Un modelo innovador",
     texto:
-      "Proponemos soluciones  adaptadas a ti porque sabemos que habitar una vivienda temporal requiere de una buena gestión de la incertidumbre a futuro.",
+      "El sistema Abitacolo (rescatar, reinventar, alquilar) crea un modelo de negocio de mobiliario inédito hasta la fecha, lo que abre nuevas e interesantes posibilidades",
     image: hito2Portada,
-    clases: "max-md:hidden",
+    clases: "max-sm:hidden",
   },
   {
-    titulo: "Superándonos día a día",
+    titulo: "Un crecimiento consolidado",
     texto:
-      "Comprometidos con una constante evolución. nos mantenemos siempre a la vanguardia del dinámico mundo del diseño y la economía circular ",
+      "Abitacolo crece con fuerza dentro del ecosistema empresarial. Queremos estar a la vanguardia del mercado del mobiliario y trabajamos día a día para conseguirlo.",
     image: hito3Portada,
     clases: "max-md:hidden",
   },
   {
-    titulo: "¿Qué significa Abitacolo?",
+    titulo: "Un trasfondo cultural",
     texto:
-      " Abitacolo es el título que el artista Bruno Munari dio en 1971 a una exploración sobre lo doméstico. Creemos que su visión sigue hoy vigente y por eso tomamos su nombre ",
+      "Abitacolo es el título que el artista Bruno Munari dio en 1971 a una exploración sobre lo doméstico. Creemos que su visión sigue hoy vigente y por eso tomamos su nombre",
     image: hito4Portada,
     clases: "max-lg:hidden",
   },
   {
-    titulo: "Únete a esta revolución",
+    titulo: "Un proyecto abierto",
     texto:
-      "Descubre cómo Abitacolo puede transformar tu experiencia de vida. Visita nuestros recursos, explora nuestras soluciones y únete a nuestra comunidad.",
+      "En Abitacolo valoramos la colaboración. Por eso, buscamos personas que compartan nuestra visión y lanzamos una invitación abierta a unirse al proyecto.",
     image: hito5Portada,
     clases: "max-xl:hidden",
   },
 ];
 ---
 
-<div
-  class="w-full py-16 grid justify-center bg-[#333333] px-4 lg:px-8"
+<section
+  class="w-full py-8 sm:py-16 grid justify-center bg-[#333333] px-4 lg:px-8"
   role="main"
 >
   <div
     id="hitos"
     class="bg-[#d6ff85] grid justify-center max-w-[1376px] rounded-lg"
   >
-    <header
-      class="min-h-[350px] py-12 max-md:py-12 flex justify-center items-center"
-    >
-      <div class="px-6">
-        <h1
-          class="justify-self-center text-black lg:text-8xl font-semibold text-6xl"
-        >
-          Claves Abitacolo
-        </h1>
-        <p
-          class="max-w-[956px] text-black leading-[42px] pt-8 text-2xl font-semibold"
-        >
-          Descubre qué es lo que nos hace únicos y de qué maneras puede
-          beneficiarte
-        </p>
-      </div>
+    <header class="pb-6 sm:pb-10 pt-8 sm:pt-16 grid px-4 lg:px-28">
+      <h2
+        class="text-black text-4xl sm:text-6xl lg:text-8xl tracking-[-.07em] leading-tight sm:leading-[64px]"
+      >
+        Claves Abitacolo
+      </h2>
+      <p
+        class="max-w-[956px] text-black leading-snug sm:leading-[42px] pt-4 text-lg sm:text-xl lg:text-2xl font-semibold"
+      >
+        Descubre qué es lo que nos hace únicos y de qué maneras puede
+        beneficiarte
+      </p>
     </header>
 
     <Image
       id="articleImage"
-      class="w-full max-w-[1376px] h-[400px] object-cover"
+      class="w-full max-w-[1376px] h-[200px] sm:h-[300px] md:h-[400px] object-cover"
       src={articulosHitos[0].image}
       alt="Imagen destacada de Hitos Abitacolo"
       loading="lazy"
     />
 
     <section class="relative flex justify-center">
-      <div class="px-8 pb-24 max-md:pb-12 bg-black/5 flex gap-4">
+      <div class="px-4 sm:px-8 pb-8 sm:pb-12 bg-black/5 flex flex-wrap gap-4">
         {
           articulosHitos.map((articulo, index) => (
             <article
-              class={`min-h-72 p-10 w-full min-w-48 relative bg-white text-[#666666] hover:text-black focus:rounded-lg focus-within:text-black focus-within:bg-gray-100  hover:bg-gray-100 flex-col  gap-6 transition-colors inline-flex top-[-20px] ${articulo.clases}`}
+              class={`min-h-60 p-6 sm:p-10 w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1rem)] xl:w-[calc(20%-1rem)] relative bg-white text-[#666666] hover:text-black focus:rounded-lg focus-within:text-black focus-within:bg-gray-100 hover:bg-gray-100 flex-col gap-4 sm:gap-6 transition-colors inline-flex top-[-20px] ${articulo.clases}`}
               data-index={index}
               data-image-src={articulo.image.src}
               data-image-srcset={articulo.image.src}
             >
-              <h2 class="self-stretch text-2xl font-bold  leading-7 text-center">
+              <h2 class="self-stretch text-xl sm:text-2xl font-bold leading-tight sm:leading-7 text-center">
                 {articulo.titulo}
               </h2>
-              <p class="self-stretch text-sm leading-tight text-center">
+              <p class="self-stretch text-xs sm:text-sm leading-tight text-center">
                 {articulo.texto}
               </p>
               <a
@@ -108,7 +104,7 @@ const articulosHitos = [
                 class="m-auto mb-0 self-end"
                 aria-label={`Leer artículo: ${articulo.titulo}`}
               >
-                <button class="rounded-full border-2 border-black h-[37px] w-fit px-2 self-end py-2.5 font-semibold hover:bg-black hover:text-white transition-colors flex items-center focus:bg-black focus:text-white">
+                <button class="rounded-full border-2 border-black h-[37px] w-fit px-2 self-end py-2 text-sm sm:text-base font-semibold hover:bg-black hover:text-white transition-colors flex items-center focus:bg-black focus:text-white">
                   Leer artículo
                 </button>
               </a>
@@ -121,10 +117,12 @@ const articulosHitos = [
       Hitos={articulosHitos.filter((hito) => hito.clases.includes("hidden"))}
     />
     <footer
-      class="min-h-[408px] px-8 max-md:py-8 py-24 border-t border-black/10 flex max-lg:flex-col-reverse items-center gap-7"
+      class="min-h-[300px] sm:min-h-[408px] border-t border-black/10 flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-20 px-4 sm:px-8 lg:px-32 py-8 sm:py-12"
     >
-      <div class="flex-1 pr-32 max-md:pr-0">
-        <p class="text-black/90 md:text-2xl leading-9">
+      <div class="flex-1">
+        <p
+          class="text-black/90 text-base sm:text-xl md:text-2xl leading-snug sm:leading-9"
+        >
           En Abitacolo cada día damos pasos firmes hacia el éxito. Buscamos
           inversores visionarios, colaboradores capaces y personas curiosas por
           los servicios, que deseen ser parte de nuestro original ADN. Únete al
@@ -132,21 +130,25 @@ const articulosHitos = [
           crecimiento imparable.
         </p>
       </div>
-      <div class="flex-1 flex flex-col gap-7">
-        <h2 class="text-black/90 text-[40px] lg:text-center">
+      <div class="flex-col gap-4 sm:gap-7 flex justify-center">
+        <h2
+          class="text-black/90 text-2xl sm:text-3xl lg:text-[40px] text-center max-w-96"
+        >
           ¡Empieza tu historia con nosotros!
         </h2>
-        <a
-          href="#contacto"
-          class="h-14 px-6 py-4 rounded-full text-white text-xl font-semibold flex justify-center place-items-center bg-black hover:bg-white hover:text-black border-2 border-black transition-colors focus:bg-white focus:text-black"
-          aria-label="Contáctanos"
-        >
-          Contáctanos
-        </a>
+        <div class="flex justify-center">
+          <a
+            href="#contacto"
+            class="h-12 sm:h-14 max-w-80 w-full rounded-full text-white text-lg sm:text-xl font-semibold flex justify-center place-items-center bg-black hover:bg-white hover:text-black border-2 border-black transition-colors focus:bg-white focus:text-black"
+            aria-label="Contáctanos"
+          >
+            Contáctanos
+          </a>
+        </div>
       </div>
     </footer>
   </div>
-</div>
+</section>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -154,15 +156,20 @@ const articulosHitos = [
     const articleImage = document.getElementById("articleImage");
 
     if (articleImage instanceof HTMLImageElement) {
+      let currentImageSrc = "";
+      let currentImageSrcset = "";
+
       articles.forEach((article) => {
         article.addEventListener("mouseenter", () => {
           const { imageSrc, imageSrcset } = article.dataset;
 
-          if (imageSrc) {
+          if (imageSrc && imageSrc !== currentImageSrc) {
             articleImage.src = imageSrc;
+            currentImageSrc = imageSrc;
           }
-          if (imageSrcset) {
+          if (imageSrcset && imageSrcset !== currentImageSrcset) {
             articleImage.srcset = imageSrcset;
+            currentImageSrcset = imageSrcset;
           }
         });
       });

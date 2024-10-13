@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import LinkedInNegro from "../../image/logos/LinkedInNegro.webp";
 
 const TeamCard = ({ person, position, linkImage, description, linkedin }) => (
-  <article className="max-w-[427px] h-[538px] bg-white flex flex-col">
+  <article className="max-w-[427px] max-h-[495px] bg-white flex flex-col">
     <a href={`/team/${encodeURIComponent(person)}`}>
       <img
         className="w-full h-auto object-cover"

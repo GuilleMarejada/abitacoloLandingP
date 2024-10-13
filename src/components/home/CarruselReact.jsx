@@ -18,7 +18,7 @@ const team = [
     position: "Founder & CEO",
     linkImage: JCM,
     description:
-      "Construir mundos desde cero es mi pasión. Si los convierto en proyectos tangibles, entiendo que mi papel en el mundo ya lleva un camino y un propósito significativo.",
+      "Construir mundos desde cero es mi pasión. Convertirlos en proyectos tangibles y significativos, mi objetivo profesional",
     linkedin: "https://www.linkedin.com/in/juliette-mallen-a001a2125/",
   },
   {
@@ -26,7 +26,7 @@ const team = [
     position: "Co-Founder & Creative Director",
     linkImage: GPC,
     description:
-      "Además de mi carácter, el desempeño profesional y mis capacidades organizativas, me convierten en un arquitecto todo terreno. Ahora soy pilar en la startup de diseño regenerativo de mobiliario. Convertimos basura en tesoros únicos.",
+      "Para mí, solo hay dos tipos de cosas en el mundo: las que sé hacer y las que aún no sé hacer. Todo es ponerse a ello.",
     linkedin: "https://www.linkedin.com/in/gperalesc/",
   },
   {
@@ -34,7 +34,7 @@ const team = [
     position: "UX Product Designer Specialist",
     linkImage: MBR,
     description:
-      "Diseñador de Productos con más de 3 años de experiencia en investigación de usuarios y desarrollo de soluciones que impulsan el crecimiento empresarial, complementado con 8 años en producción audiovisual y gestión de proyectos.",
+      "Curioso, apasionado y siempre dispuesto a ayudar. ¿Lo que más me gusta de mi profesión? Tendría que decir que todo.",
     linkedin: "https://www.linkedin.com/in/benmanuel/",
   },
   {
@@ -43,7 +43,7 @@ const team = [
 
     linkImage: ACG,
     description:
-      "Hablar es mi pasión y puedo hacerlo desde cualquier canal, lo que se podría definir como “ser una comunicadora 360”. Casi sin querer, le puse voz a Abitacolo.",
+      "Hablar es mi pasión y puedo hacerlo desde cualquier canal, lo que se podría definir como “ser una comunicadora 360”.",
     linkedin: "https://www.linkedin.com/in/albacalditogutierrez/",
   },
 
@@ -53,7 +53,7 @@ const team = [
 
     linkImage: MPR,
     description:
-      "Pienso, organizo y ejecuto ideas de todo tipo. Desde campañas de publicidad a nivel nacional a eventos en locales del barrio. Y eso hago con ABITACOLO, sacar un proyecto con espíritu de barrio a nivel intergaláctico.",
+      "Pienso, organizo y ejecuto ideas de todo tipo. Puedo llevar proyectos con espíritu de barrio a un nivel intergaláctico.",
     linkedin: "https://www.linkedin.com/in/mariapararodriguez/",
   },
   {
@@ -62,7 +62,7 @@ const team = [
 
     linkImage: CA,
     description:
-      "Creo marcas, resuelvo problemas y me especializo en el marketing en entornos innovadores. En resumen, me encargo de que conozcas Abitacolo y te enamores.",
+      "Creo marcas, resuelvo problemas y me especializo en el marketing en entornos innovadores.",
     linkedin: "https://www.linkedin.com/in/cristina-allende-casal/",
   },
   {
@@ -70,7 +70,7 @@ const team = [
     position: "Full Stack Developer",
     linkImage: XLD,
     description:
-      "Si existe una idea en un papel, dibujada o escrita, tengo el conocimiento para traducirla al lenguaje encriptado de la programación. Si incluyen fronts atractivos, os aseguro que mantendré el ojo en que no pierda un pixel de su potencial persuasivo.",
+      "Con que exista una idea, yo puedo traducirla al lenguaje de programación.  No perderá un solo pixel de su potencial.",
     linkedin: "www.linkedin.com/in/xavierlongo",
   },
   {
@@ -78,7 +78,7 @@ const team = [
     position: "Desarrollador de Software Full Stack",
     linkImage: GCG,
     description:
-      "Escalador y programador, mi selección de deporte define parte de lo que se ve en mi trabajo. Llegar a la cima, disfrutar el proceso, y ver el paisaje reservado para quienes nos aventuramos.",
+      "Me encanta dedicarle tiempo a los detalles, lo que no se, me gusta trabajar en equipos y encontrar las soluciones que funcionan para nosotros.",
     linkedin: "https://www.linkedin.com/in/guillermocg8/",
   },
 ];
@@ -122,7 +122,7 @@ const TeamCarousel = () => {
       aria-label="Carrusel de equipo"
     >
       <div className="overflow-hidden">
-        <div className="flex transition-transform duration-300 ease-in-out">
+        <div className="flex transition-transform duration-300 ease-in-out gap-3 h-[500px]">
           {visibleCards.map((member, index) => (
             <div
               key={`${member.person}-${index}`}
