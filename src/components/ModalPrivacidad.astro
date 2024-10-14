@@ -20,13 +20,15 @@ import logoA from "../image/logos/ANegra.webp";
     </p>
 
     <div class="flex justify-around">
-      <Image
-        src={logoA}
-        alt="Icono de información"
-        width="89"
-        height="89"
-        loading="eager"
-      />
+      <div style={{ minWidth: "89px", minHeight: "89px" }}>
+        <Image
+          src={logoA}
+          alt="Icono de información"
+          width={89}
+          height={89}
+          loading="eager"
+        />
+      </div>
       <div class="h-[49px]">
         <div class="leading-7 tracking-wide">Nos preocupa</div>
         <div class="w-[150px] text-[#222222] text-xl font-bold leading-7">
@@ -46,7 +48,7 @@ import logoA from "../image/logos/ANegra.webp";
       </div>
     </div>
     <div
-      class="bg-[#919e32] rounded-[10px] justify-center items-center gap-1.5 flex"
+      class="bg-[#717C27] rounded-[10px] justify-center items-center gap-1.5 flex"
     >
       <button
         id="acceptAll"
@@ -63,13 +65,15 @@ import logoA from "../image/logos/ANegra.webp";
         Personalizar
       </div>
       <div class="w-4 h-4 relative">
-        <Image
-          src={ajustes}
-          alt="Icono de ajustes"
-          width="24"
-          height="26"
-          loading="eager"
-        />
+        <div style={{ minWidth: "24px", minHeight: "26px" }}>
+          <Image
+            src={ajustes}
+            alt="Icono de ajustes"
+            width={24}
+            height={26}
+            loading="eager"
+          />
+        </div>
       </div>
     </button>
     <div class="h-10 justify-start items-start gap-4 flex">
