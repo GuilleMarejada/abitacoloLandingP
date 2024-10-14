@@ -1,5 +1,4 @@
 ---
-// Importaciones de imágenes
 import { Image } from "astro:assets";
 import AbitacoloNegro from "../image/logos/AbitacoloNegro.webp";
 import InstagramNegro from "../image/logos/instagramNegro.webp";
@@ -14,10 +13,12 @@ const navItems = [
 ];
 ---
 
-<footer class="w-full flex justify-center bg-[#d6ff85] px-4 lg:px-8">
-  <div class="max-w-[1440px] w-full py-8">
-    <div class="md:flex items-center justify-between">
-      <div class="max-md:flex max-md:justify-center">
+<footer
+  class="flex w-full max-h-[574px] justify-center bg-[#d6ff85] px-4 lg:px-8"
+>
+  <div class="w-full max-w-[1440px] py-8">
+    <div class="flex items-center justify-between md:flex">
+      <div class="flex justify-center max-md:flex">
         <a href="/" aria-label="Inicio">
           <Image
             width={150}
@@ -29,11 +30,11 @@ const navItems = [
         </a>
       </div>
 
-      <div class="flex gap-6 items-center max-md:flex-col-reverse max-md:mt-10">
-        <p class="text-black font-semibold cursor-pointer text-sm">
+      <div class="flex items-center gap-6 max-md:flex-col-reverse max-md:mt-10">
+        <p class="text-sm font-semibold text-black cursor-pointer">
           POLÍTICA DE PRIVACIDAD
         </p>
-        <p class="text-black font-semibold cursor-pointer text-sm">
+        <p class="text-sm font-semibold text-black cursor-pointer">
           POLÍTICA DE COOKIES
         </p>
         <div class="flex gap-5">
@@ -51,16 +52,16 @@ const navItems = [
       </div>
     </div>
 
-    <hr class="border-black border-[1px] mt-2 max-md:mx-32" />
+    <hr class="mt-2 border-[1px] border-black max-md:mx-32" />
 
     <div class="flex flex-col mt-2">
       <div
-        class="flex max-md:items-center justify-between lg:px-8 max-md:flex-col"
+        class="flex justify-between lg:px-8 max-md:items-center max-md:flex-col"
       >
         {
           navItems.map(({ href, label }) => (
             <a href={href} data-nav-link>
-              <button class="text-black text-xl p-2 leading-relaxed">
+              <button class="p-2 text-xl text-black leading-relaxed">
                 {label}
               </button>
             </a>
@@ -69,7 +70,7 @@ const navItems = [
       </div>
 
       <p
-        class="text-black text-center text-sm mt-2 uppercase leading-relaxed tracking-[8px]"
+        class="mt-2 text-sm text-center text-black uppercase leading-relaxed tracking-[8px]"
       >
         © {new Date().getFullYear()} Abitacolo - All rights reserved
       </p>

@@ -29,17 +29,17 @@ const articles = [
 <section class="w-full bg-[#d9d9d9] px-4 lg:px-8 py-8 md:py-11">
   <div class="max-w-7xl mx-auto">
     <h2
-      class="text-center text-black/90 text-4xl md:text-6xl font-semibold leading-tight tracking-tight mb-4"
+      class="mb-4 text-center text-black/90 text-4xl md:text-6xl font-semibold leading-tight tracking-tight"
     >
       ¿Cómo trabajamos?
     </h2>
-    <p class="text-center mb-8 max-w-2xl mx-auto md:text-xl">
+    <p class="mb-8 text-center max-w-2xl mx-auto md:text-xl">
       El innovador sistema de Abitacolo se basa en 3 pasos. <strong
         >Nuestras 3 propias "Rs"</strong
       >
     </p>
 
-    <div class="grid gap-4 lg:grid-cols-3 justify-center">
+    <div class="grid gap-4 justify-center lg:grid-cols-3">
       {
         articles.map((article) => (
           <article class="relative w-full aspect-square sm:aspect-[11/10] max-w-[448px] max-md:max-h-[348px]">
@@ -51,7 +51,7 @@ const articles = [
             />
             <div class="absolute inset-0 bg-black bg-opacity-40 shadow" />
             <div class="relative h-full p-4 sm:p-6 flex flex-col justify-end">
-              <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">
+              <h3 class="mb-2 text-white text-xl sm:text-2xl font-bold">
                 {article.title}
               </h3>
               <p class="text-white text-xs sm:text-sm font-medium">
