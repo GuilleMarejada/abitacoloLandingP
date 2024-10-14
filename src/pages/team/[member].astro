@@ -151,16 +151,16 @@ const teamMember = team.find((e) => e.person === member);
           class="flex w-full max-w-[1440px] max-lg:flex-col gap-10 justify-center items-center mt-10"
         >
           <Image
-            width="400"
-            height="100"
+            width={400}
+            height={400}
             src={teamMember.linkImage}
             alt={teamMember.person}
             loading="eager"
           />
           <div class="flex flex-col">
-            <h1 class="text-4xl text-center font-semibold">
+            <h2 class="text-4xl text-center font-semibold">
               {teamMember.person}
-            </h1>
+            </h2>
 
             <p class="font-semibold text-2xl text-black text-center">
               {teamMember.position}

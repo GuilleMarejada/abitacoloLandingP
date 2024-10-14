@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import LinkedInNegro from "../../image/logos/LinkedInNegro.webp";
 
 const TeamCard = ({ person, position, linkImage, description, linkedin }) => (
-  <article className="max-w-[427px] h-[538px] bg-white flex flex-col">
+  <article className="max-w-[427px] max-h-[495px] bg-white flex flex-col">
     <a href={`/team/${encodeURIComponent(person)}`}>
       <img
         className="w-full h-auto object-cover"
@@ -14,7 +14,7 @@ const TeamCard = ({ person, position, linkImage, description, linkedin }) => (
         height="320"
       />
     </a>
-    <div className="grid gap-1 p-3 pb-0">
+    <div className="grid gap-1 p-3 pb-0 my-auto">
       <h2 className="text-black/90 text-2xl font-semibold leading-7">
         {person}
       </h2>
@@ -27,7 +27,7 @@ const TeamCard = ({ person, position, linkImage, description, linkedin }) => (
         </p>
       </div>
     </div>
-    <div className="flex items-center gap-4 mt-auto p-3 pt-1">
+    <div className="flex items-center gap-4 p-3">
       {linkedin && (
         <a href={linkedin} target="_blank" rel="noopener noreferrer">
           <img
