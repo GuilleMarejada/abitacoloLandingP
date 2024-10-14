@@ -77,24 +77,28 @@ const hiddenClasses = {
   </button>
 </div>
 
-<script>
+<script
+  is:inline
+  define:vars={{
+    flechaAbajoSrc: FlechaAbajo.src,
+    flechaArribaSrc: FlechaArriba.src,
+  }}
+>
   document.querySelector("#drop-Down")?.addEventListener("click", function () {
     const menu = document.querySelector("#dropdown-menu");
-    const arrowImage = document.querySelector(
-      "#arrow-image"
-    ) as HTMLImageElement;
+    const arrowImage = document.querySelector("#arrow-image");
     const expanded = this.getAttribute("aria-expanded") === "true";
     this.setAttribute("aria-expanded", (!expanded).toString());
     menu?.classList.toggle("hidden");
 
     // Toggle the arrow image
     if (expanded) {
-      arrowImage.src = "/src/image/home/FlechaAbajo.webp";
-      arrowImage.srcset = "/src/image/home/FlechaAbajo.webp";
+      arrowImage.src = flechaAbajoSrc;
+      arrowImage.srcset = flechaAbajoSrc;
       arrowImage.alt = "Flecha abajo";
     } else {
-      arrowImage.src = "/src/image/home/FlechaArriba.webp";
-      arrowImage.srcset = "/src/image/home/FlechaArriba.webp";
+      arrowImage.src = flechaArribaSrc;
+      arrowImage.srcset = flechaArribaSrc;
       arrowImage.alt = "Flecha arriba";
     }
   });
