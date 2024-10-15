@@ -1,19 +1,16 @@
----
-
----
-
 <section
   id="contacto"
-  class="flex pt-12 bg-white pb-6 px-4 lg:px-8 w-full max-md:flex-col justify-center"
+  class="flex pt-12 bg-white pb-6 px-4 lg:px-8 w-full max-md:flex-col justify-center "
   aria-labelledby="contact-heading"
 >
-  <div class="flex flex-col gap-3 text-start w-full max-w-[450px]">
+  <div class="flex flex-col   w-full max-w-[450px] items-start ml-5">
     <h2
       id="contact-heading"
+     
       class="text-[90px] text-black leading-[85.50px] max-md:text-[64px] max-sm:text-[50px] mx-auto tracking-[-.08em]"
     >
       Ponte en contacto con Abitacolo
-    </h2>
+  </h2>
 
     <p
       class="w-full text-[#151438]/80 text-[22px] font-medium leading-loose max-md:text-lg max-sm:text-base mx-auto"
@@ -22,7 +19,13 @@
       llamarnos, nos encantará informarte.
     </p>
     <p class="max-w-[308px] text-black leading-relaxed font-semibold text-xl">
-      +34 xxx xxx xxx
+      abitacolo.info@gmail.com
+    </p>
+    <p class="max-w-[308px] text-black leading-relaxed font-semibold text-xl">
+      +34 666 69 63 58
+    </p>
+    <p class="max-w-[308px] text-black leading-relaxed font-semibold text-xl">
+      +34 635 11 56 22
     </p>
   </div>
 
@@ -32,8 +35,9 @@
     class="w-full max-w-[700px] min-h-[516px] px-3"
   >
     <div
-      class="flex flex-col max-w-[783.71px] max-md:gap-3 md:gap-5 mt-5 justify-end"
+      class="flex flex-col max-w-[700px] gap-5 mt-5 justify-center items-center"
     >
+    
       <label for="nombre" class="sr-only">Nombre</label>
       <input
         id="nombre"
@@ -42,7 +46,7 @@
         placeholder="Nombre"
         required
         autocomplete="name"
-        class="w-full max-w-[488px] h-[50px] max-md:h-[65px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
+        class="w-full lg:max-w-[488px] h-[50px] max-md:h-[65px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
       />
 
       <label for="telefono" class="sr-only">Teléfono (Opcional)</label>
@@ -52,7 +56,7 @@
         name="telefono"
         placeholder="Teléfono (Opcional)"
         autocomplete="tel"
-        class="w-full max-w-[488px] h-[50px] max-md:h-[65px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
+        class="w-full lg:max-w-[488px] h-[50px] max-md:h-[65px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
       />
 
       <label for="email" class="sr-only">Email</label>
@@ -63,7 +67,7 @@
         name="email"
         placeholder="Email"
         autocomplete="email"
-        class="w-full max-w-[488px] h-[50px] max-md:h-[65px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
+        class="w-full lg:max-w-[488px] h-[50px] max-md:h-[65px] rounded-sm border border-[#666666] px-6 text-lg font-medium placeholder-[#151438]/40"
       />
 
       <label for="mensaje" class="sr-only">Tu mensaje</label>
@@ -72,30 +76,31 @@
         name="mensaje"
         required
         placeholder="Tu mensaje"
-        class="w-full max-w-[488px] h-[170px] max-md:h-[159px] rounded-sm border border-[#666666] p-4 text-lg font-medium placeholder-[#151438]/40 resize-none"
+        class="w-full lg:max-w-[488px] h-[170px] max-md:h-[159px] rounded-sm border border-[#666666] p-4 text-lg font-medium placeholder-[#151438]/40 resize-none"
       ></textarea>
-
-      <button
-        type="submit"
-        class="w-60 max-md:w-full max-md:mt-2 h-14 bg-[#333333]/70 rounded-3xl font-semibold tracking-wide text-white text-2xl hover:bg-[#333333] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#333333]"
-      >
-        Enviar
-      </button>
-
-      <div class="flex items-center gap-3 mt-5">
-        <input
-          type="checkbox"
-          id="terms"
-          name="terms"
-          class="w-[19px] h-[19px] max-w-[400px] rounded border border-[#919e32]"
-          required
-        />
-        <label for="terms" class="text-center"
-          >Acepto los <a
+      <div class="flex flex-col w-full items-start gap-5 mt-5 justify-start  ">
+        <button
+          type="submit"
+          class="w-60 max-md:w-full max-md:mt-2 h-14 bg-[#333333]/70 rounded-3xl font-semibold tracking-wide text-white text-2xl hover:bg-[#333333] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#333333]"
+        >
+          Enviar
+        </button>
+     
+        <div class="flex items-center align-middle gap-2 ">
+          <input
+            type="checkbox"
+            id="terms"
+            name="terms"
+            class="w-[19px] h-[19px] max-w-[400px] rounded border border-[#919e32]"
+            required
+          />
+          <label for="terms" class="text-black text-sm"
+            >Acepto los <a
             href="/terminos-y-condiciones"
             class="text-blue-600 hover:text-blue-800">términos y condiciones</a
+          ></label
           >
-        </label>
+        </div>
       </div>
     </div>
   </form>
