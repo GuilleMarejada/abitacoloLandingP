@@ -15,18 +15,18 @@ const images = [
 
 <section
   id="products"
-  class="bg-[#1c1c1e] py-12 px-4 lg:px-8"
+  class="bg-[#1c1c1e] py-12 px-5 lg:px-32"
   aria-label="Nuestros productos"
 >
   <div class="max-w-[1440px] mx-auto">
-    <header class="mb-8 pb-4 border-b border-white/10">
+    <header class="mb-8 pb-4 border-b border-white/10 flex justify-center">
       <h2
-        class="text-white text-4xl lg:text-6xl text-center leading-tight tracking-tight"
+        class="text-white text-4xl md:text-6xl max-w-[750px] lg:text-8xl text-center leading-tight tracking-tight"
       >
         Echa un vistazo a lo que hacemos
       </h2>
     </header>
-    <div class="grid md:grid-cols-2 gap-4">
+    <div class="grid md:grid-cols-2 md:gap-8 gap-3 px-9">
       {
         images.map((image) => (
           <Image
