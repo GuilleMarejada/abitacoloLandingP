@@ -15,10 +15,10 @@ import XLD from "../../image/equipo/XLD.webp";
 const team = [
   {
     person: "Juliette C. Mallen",
-    position: "Founder & CEO",
+    position: "CO-FOUNDER & CEO/COO",
     linkImage: JCM,
     description:
-      "Construir mundos desde cero es mi pasión. Convertirlos en proyectos tangibles y significativos, mi objetivo profesional",
+      "Construir mundos desde cero es mi pasión. Convertirlos en proyectos tangibles y significativos, mi objetivo profesional.",
     linkedin: "https://www.linkedin.com/in/juliette-mallen-a001a2125/",
   },
   {
@@ -78,7 +78,7 @@ const team = [
     position: "Desarrollador de Software Full Stack",
     linkImage: GCG,
     description:
-      "Me encanta dedicarle tiempo a los detalles, lo que no se, me gusta trabajar en equipos y encontrar las soluciones que funcionan para nosotros.",
+      "Soy un escalador de barrancos.. Disfruto el proceso de llegar hasta la cima y ver el paisaje reservado para quienes nos aventuramos",
     linkedin: "https://www.linkedin.com/in/guillermocg8/",
   },
 ];
