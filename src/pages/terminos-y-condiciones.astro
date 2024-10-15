@@ -1,0 +1,229 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "Términos y Condiciones de Uso";
+const currentYear = new Date().getFullYear();
+
+const terms = [
+  {
+    title: "Información general",
+    content:
+      "Bienvenido a la página web de <strong>Abitacolo S.L.</strong>. Al acceder y utilizar este sitio web, aceptas cumplir con los siguientes términos y condiciones de uso. Si no estás de acuerdo con ellos, te rogamos que no utilices esta web.",
+  },
+  {
+    title: "Propiedad intelectual",
+    content:
+      "Todo el contenido presente en este sitio web, incluyendo textos, imágenes, gráficos, logotipos y cualquier otro material, es propiedad de <strong>Abitacolo S.L.</strong> o de terceros que han autorizado su uso. Está prohibida la reproducción, distribución o modificación de este contenido sin autorización expresa por escrito.",
+  },
+  {
+    title: "Uso del sitio web",
+    content:
+      "El usuario se compromete a utilizar este sitio web de manera lícita y responsable. No está permitido:",
+    list: [
+      "Utilizar el sitio para cualquier fin ilegal o no autorizado.",
+      "Interferir con el funcionamiento del sitio o sus servicios.",
+      "Recopilar información personal de otros usuarios sin su consentimiento.",
+    ],
+  },
+  {
+    title: "Protección de datos personales",
+    content:
+      "Para enviar consultas o solicitudes de información a través de nuestro formulario de contacto, se requiere que el usuario proporcione ciertos datos personales, tales como nombre, dirección de correo electrónico y número de teléfono. Al enviar estos datos, aceptas que <strong>Abitacolo S.L.</strong> los procese conforme a nuestra política de privacidad.",
+  },
+];
+
+const privacyPolicySections = [
+  {
+    title: "Responsable del tratamiento de datos",
+    content:
+      'El responsable del tratamiento de tus datos personales es <strong>Abitacolo S.L.</strong>, con CIF XXXXXXXXX y domicilio en [Dirección de la Empresa]. Puedes contactarnos para cualquier consulta relacionada con la protección de datos a través de nuestro correo electrónico: <a href="mailto:correo@abitacolo.com" class="text-blue-600 hover:text-blue-800">correo@abitacolo.com</a>.',
+  },
+  {
+    title: "Datos recogidos",
+    content:
+      "Los datos personales que recogemos a través del formulario de contacto incluyen:",
+    list: [
+      "Nombre y apellidos",
+      "Dirección de correo electrónico",
+      "Número de teléfono",
+      "Cualquier otro dato que el usuario incluya en el mensaje",
+    ],
+  },
+  {
+    title: "Finalidad del tratamiento",
+    content:
+      "Los datos proporcionados serán utilizados exclusivamente para los siguientes fines:",
+    list: [
+      "Responder a consultas y solicitudes de información.",
+      "Gestionar y dar seguimiento a las solicitudes enviadas a través del formulario.",
+      "Enviar comunicaciones relacionadas con nuestros servicios si así lo has autorizado.",
+    ],
+  },
+  {
+    title: "Base legal del tratamiento",
+    content:
+      "El tratamiento de tus datos se basa en el consentimiento expreso que nos proporcionas al enviar el formulario de contacto.",
+  },
+  {
+    title: "Plazo de conservación",
+    content:
+      "Conservaremos tus datos durante el tiempo necesario para cumplir con las finalidades descritas, salvo que nos solicites su eliminación antes.",
+  },
+  {
+    title: "Derechos del usuario",
+    content: "Como titular de los datos, tienes derecho a:",
+    list: [
+      "Acceder a tus datos personales.",
+      "Rectificar cualquier dato incorrecto o incompleto.",
+      "Solicitar la eliminación de tus datos.",
+      "Oponerte al tratamiento o solicitar la limitación del mismo.",
+    ],
+    additionalContent:
+      'Para ejercer estos derechos, puedes ponerte en contacto con nosotros a través de <a href="mailto:correo@abitacolo.com" class="text-blue-600 hover:text-blue-800">correo@abitacolo.com</a>.',
+  },
+  {
+    title: "Seguridad de los datos",
+    content:
+      "En <strong>Abitacolo S.L.</strong>, adoptamos todas las medidas de seguridad necesarias para garantizar la protección de tus datos personales contra accesos no autorizados, alteración o divulgación.",
+  },
+  {
+    title: "Modificaciones de la política",
+    content:
+      "Nos reservamos el derecho de modificar esta política de privacidad en cualquier momento. Cualquier cambio será publicado en esta página, y te notificaremos si afecta significativamente el uso de tus datos.",
+  },
+];
+const cookiePolicy = [
+  {
+    title: "Política de Cookies",
+    content:
+      "En <strong>Abitacolo S.L.</strong>, utilizamos cookies para mejorar tu experiencia de navegación y ofrecerte un servicio más personalizado. Al continuar navegando por nuestro sitio web, aceptas el uso de cookies de acuerdo con esta política.",
+  },
+  {
+    title: "¿Qué son las cookies?",
+    content:
+      "Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio web. Estas cookies nos permiten recordar tus preferencias y mejorar tu experiencia en futuras visitas.",
+  },
+  {
+    title: "Tipos de cookies que utilizamos",
+    content: "Utilizamos los siguientes tipos de cookies:",
+    list: [
+      "Cookies esenciales: Necesarias para el funcionamiento básico del sitio web.",
+      "Cookies de rendimiento: Nos ayudan a entender cómo interactúas con nuestro sitio web.",
+      "Cookies de funcionalidad: Permiten recordar tus preferencias y opciones en el sitio.",
+      "Cookies de publicidad: Utilizadas para mostrar anuncios relevantes basados en tus intereses.",
+    ],
+  },
+  {
+    title: "Control de cookies",
+    content:
+      "Puedes gestionar las cookies a través de la configuración de tu navegador. Ten en cuenta que deshabilitar ciertas cookies puede afectar la funcionalidad de nuestro sitio web.",
+  },
+  {
+    title: "Más información",
+    content:
+      'Para obtener más información sobre cómo utilizamos las cookies, por favor contáctanos a través de <a href="mailto:correo@abitacolo.com" class="text-blue-600 hover:text-blue-800">correo@abitacolo.com</a>.',
+  },
+];
+---
+
+<Layout title={title}>
+  <div class="bg-gray-100 min-h-screen flex flex-col">
+    <header class="bg-white shadow-md">
+      <div
+        class="container mx-auto px-4 py-6 flex justify-between items-center"
+      >
+        <a
+          href="/"
+          class="text-2xl font-bold text-blue-600 hover:text-blue-800"
+        >
+          Abitacolo S.L.
+        </a>
+        <nav>
+          <a href="/" class="text-gray-600 hover:text-blue-600 ml-4">Inicio</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-8 max-w-4xl">
+      <h1 class="text-4xl md:text-6xl font-bold mb-8 text-center">{title}</h1>
+      <article class="space-y-12">
+        <section>
+          <h2 class="text-3xl font-semibold mb-6">Términos y Condiciones</h2>
+          {
+            terms.map((term, index) => (
+              <div class="mb-8">
+                <h3 class="text-2xl font-semibold mb-4">
+                  {index + 1}. {term.title}
+                </h3>
+                <p class="text-xl mb-4" set:html={term.content} />
+                {term.list && (
+                  <ul class="list-disc list-inside text-xl ml-4">
+                    {term.list.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))
+          }
+        </section>
+
+        <section>
+          <h2 class="text-3xl font-semibold mb-6">Política de Privacidad</h2>
+          {
+            privacyPolicySections.map((section, index) => (
+              <div class="mb-8">
+                <h3 class="text-2xl font-semibold mb-4">
+                  {index + 1}. {section.title}
+                </h3>
+                <p class="text-xl mb-4" set:html={section.content} />
+                {section.list && (
+                  <ul class="list-disc list-inside text-xl ml-4">
+                    {section.list.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                )}
+                {section.additionalContent && (
+                  <p
+                    class="text-xl mt-4"
+                    set:html={section.additionalContent}
+                  />
+                )}
+              </div>
+            ))
+          }
+        </section>
+
+        <section>
+          <h2 class="text-3xl font-semibold mb-6">Política de Cookies</h2>
+          {
+            cookiePolicy.map((section, index) => (
+              <div class="mb-8">
+                <h3 class="text-2xl font-semibold mb-4">
+                  {index + 1}. {section.title}
+                </h3>
+                <p class="text-xl mb-4" set:html={section.content} />
+                {section.list && (
+                  <ul class="list-disc list-inside text-xl ml-4">
+                    {section.list.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))
+          }
+        </section>
+      </article>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-4 text-center">
+        <p>
+          &copy; {currentYear} Abitacolo S.L. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+  </div>
+</Layout>
