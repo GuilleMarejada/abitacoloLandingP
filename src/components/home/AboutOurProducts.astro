@@ -1,66 +1,42 @@
 ---
 import { Image } from "astro:assets";
+import Collage1 from "../../image/products/Collages-1.webp";
+import Collage2 from "../../image/products/Collages-2.webp";
+import Collage3 from "../../image/products/Collages-3.webp";
+import Collage4 from "../../image/products/Collages-4.webp";
 
-const productInfo = [
-  {
-    title: "Titulo-1",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
-    image: "https://via.placeholder.com/320x208",
-  },
-  {
-    title: "Titulo-2",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
-    image: "https://via.placeholder.com/320x208",
-  },
-  {
-    title: "Titulo-3",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
-    image: "https://via.placeholder.com/320x208",
-  },
-  {
-    title: "Titulo-4",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut est at felis sodales tempus.",
-    image: "https://via.placeholder.com/320x208",
-  },
+const images = [
+  { src: Collage1, alt: "Collage 1" },
+  { src: Collage2, alt: "Collage 2" },
+  { src: Collage3, alt: "Collage 3" },
+  { src: Collage4, alt: "Collage 4" },
 ];
 ---
 
 <section
   id="products"
-  class="w-full bg-[#1c1c1e] grid justify-center min-h-[700px] pb-6 px-4 lg:px-8"
+  class="bg-[#1c1c1e] py-12 px-4 lg:px-8"
   aria-label="Nuestros productos"
 >
-  <div class="w-full max-w-[1440px] pt-12 flex flex-col gap-8">
-    <header class="py-4 border-b border-white/10 grid justify-center px-4">
+  <div class="max-w-[1440px] mx-auto">
+    <header class="mb-8 pb-4 border-b border-white/10">
       <h2
-        class="max-w-[958px] h-fit text-center text-white text-6xl lg:text-8xl leading-[72px] tracking-[-.08em]"
+        class="text-white text-4xl lg:text-6xl text-center leading-tight tracking-tight"
       >
         Echa un vistazo a lo que hacemos
       </h2>
     </header>
-    <div class="grid gap-8 place-content-center xl:grid-cols-2">
+    <div class="grid md:grid-cols-2 gap-4">
       {
-        productInfo.map((product) => (
-          <article class="max-w-[680px] max-md:max-w-[398px] bg-white/5 md:flex items-center max-md:rounded-lg overflow-hidden">
-            <Image
-              width={320}
-              height={208}
-              class="w-full h-auto max-md:rounded-t-lg"
-              src={product.image}
-              alt={`Imagen de ${product.title}`}
-              loading="lazy"
-            />
-            <div class="flex flex-col p-4 gap-8">
-              <h3 class="text-xl font-semibold text-white capitalize">
-                {product.title}
-              </h3>
-              <p class="text-white/90">{product.description}</p>
-            </div>
-          </article>
+        images.map((image) => (
+          <Image
+            class="w-full h-auto object-cover"
+            src={image.src}
+            alt={image.alt}
+            loading="lazy"
+            width={680}
+            height={1000}
+          />
         ))
       }
     </div>
