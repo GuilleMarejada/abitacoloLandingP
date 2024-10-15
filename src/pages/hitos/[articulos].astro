@@ -3,8 +3,9 @@ import type { GetStaticPaths } from "astro";
 import Layout from "../../layouts/Layout.astro";
 import Nav from "../../components/Nav.astro";
 import Footer from "../../components/Footer.astro";
-
 import Contacto from "../../components/home/Contacto.astro";
+import { Image } from "astro:assets";
+
 import ImgHito1 from "../../image/hitos/hito1Portada.webp";
 import ImgHito2 from "../../image/hitos/hito2Portada.webp";
 import ImgHito3 from "../../image/hitos/hito3Portada.webp";
@@ -16,17 +17,12 @@ import ImgContenido3 from "../../image/hitos/H3-contenido.webp";
 import ImgContenido4 from "../../image/hitos/H4-contenido.webp";
 import ImgContenido5 from "../../image/hitos/H5-contenido.webp";
 
-import { Image, imageConfig } from "astro:assets";
 export const prerender = true;
 
 export const getStaticPaths = (() => {
-  return [
-    { params: { articulos: "articulo-1" } },
-    { params: { articulos: "articulo-2" } },
-    { params: { articulos: "articulo-3" } },
-    { params: { articulos: "articulo-4" } },
-    { params: { articulos: "articulo-5" } },
-  ];
+  return [1, 2, 3, 4, 5].map((num) => ({
+    params: { articulos: `articulo-${num}` },
+  }));
 }) satisfies GetStaticPaths;
 
 const { articulos } = Astro.params;
