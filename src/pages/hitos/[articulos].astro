@@ -137,12 +137,12 @@ const hitoSiguiente = hitos[hitoIndex + 1] ? hitos[hitoIndex + 1].hito : null;
       </div>
     </div>
   </main>
-  <section class="w-full max-w-[777px] flex flex-col mt-5 mx-auto text-start">
+  <section class="w-full max-w-[777px] flex flex-col mt-5 mx-auto text-start ">
     
-    <h1 class="text-8xl mt-4 leading-[91.20px]" >
+    <h1 class=" max-md:text-[64px] text-8xl mt-4 leading-[91.20px] max-md:py-5 px-10" >
       {hitoSeleccionado?.titulo}
     </h1>
-    <p class="text-lg mt-10 leading-9 ">
+    <p class="text-lg  leading-9 p-10 max-md:mx-auto ">
      {hitoSeleccionado?.textoContenido}
     
     {
@@ -157,7 +157,7 @@ const hitoSiguiente = hitos[hitoIndex + 1] ? hitos[hitoIndex + 1].hito : null;
         />
       )
     }
-    <p class="text-lg mt-10 leading-9">
+    <p class="text-lg  leading-9 p-10 max-md:mx-auto max-md:py-5">
       {hitoSeleccionado?.textoContenido2}
     </p>
      {
@@ -174,44 +174,48 @@ const hitoSiguiente = hitos[hitoIndex + 1] ? hitos[hitoIndex + 1].hito : null;
     } 
     
 
-    <p class="text-lg mt-10 leading-9">
+    <p class="text-lg  leading-9 p-10 max-md:mx-auto max-md:py-5">
       {hitoSeleccionado?.textoContenido3}
     </p>
-    <p class="text-lg mt-10 leading-9">
+    <p class="text-lg  leading-9 p-10 max-md:mx-auto max-md:py-5">
       {hitoSeleccionado?.textoContenido4}
     </p>
     {
-      hitoSeleccionado?.posicionImage === 5 &&
-
-      <Image
-          src={hitoSeleccionado.imgContenido}
-          alt="Imagen Contenido de fondo"
-          width={776}
-          height={657}
-          loading="lazy"
-          class="my-10"
-        />
-        <div class = "text-center">
-          <span> Bruno Munari, Abitacolo [Habitáculo], 1971. </br>
-  CSAC. Centro Studie Archivio della Comunicazione, Universidad de Parma </br>
-  © CSAC, Universidad de Parma. © Foto: Ada Ardessi.  </br> 
-  © Bruno Munari. Maurizio Corraini s.r.l. </br>
-  Todos los derechos reservados </span>
+      hitoSeleccionado?.posicionImage === 5 && (
+        <>
+          <Image
+            src={hitoSeleccionado.imgContenido}
+            alt="Imagen Contenido de fondo"
+            width={776}
+            height={657}
+            loading="lazy"
+            class="my-10"
+          />
+          <div class="text-center">
+            <span>
+              Bruno Munari, Abitacolo [Habitáculo], 1971.<br />
+              CSAC. Centro Studie Archivio della Comunicazione, Universidad de Parma<br />
+              © CSAC, Universidad de Parma. © Foto: Ada Ardessi.<br />
+              © Bruno Munari. Maurizio Corraini s.r.l.<br />
+              Todos los derechos reservados
+            </span>
           </div>
-
-    }
-    {
-      ["articulo-2", "articulo-3", "articulo-4", "articulo-5"].some(articulo => hitoSeleccionado.hito.includes(articulo)) ? (
-        <span class="text-lg mt-10 font-bold hidden">Nuestra misión</span>
-      ) : (
-        <span class="text-lg mt-10 font-bold">Nuestra misión</span>
+        </>
       )
     }
     
-    <p class="text-lg mt-10 leading-9">
+    {
+      ["articulo-2", "articulo-3", "articulo-4", "articulo-5"].some(articulo => hitoSeleccionado.hito.includes(articulo)) ? (
+        <span class="text-lg mt-10 font-bold hidden p-10 max-md:py-5">Nuestra misión</span>
+      ) : (
+        <span class="text-lg mt-10 font-bold p-10 max-md:py-5">Nuestra misión</span>
+      )
+    }
+    
+    <p class="text-lg  leading-9 p-10 max-md:mx-auto max-md:py-5">
       {hitoSeleccionado?.textoContenido5}
     </p>
-    <p class="text-lg mt-10 leading-9">
+    <p class="text-lg  leading-9 p-10 max-md:mx-auto max-md:py-5">
       {hitoSeleccionado?.textoContenido6}
     </p>
 
@@ -226,7 +230,7 @@ const hitoSiguiente = hitos[hitoIndex + 1] ? hitos[hitoIndex + 1].hito : null;
         />
     )}
 
-    <div class="flex justify-between mt-32   max-sm:flex-col max-md:gap-10  max-sm:items-center ">
+    <div class="flex justify-between mt-32   max-sm:flex-col max-md:gap-10  max-sm:items-center p-10 max-md:py-5 ">
       <button onclick={hitoAnterior ? `location.href='/hitos/${hitoAnterior}'` : `location.href='/hitos/articulo-5'`} class="rounded-full border max-sm:border-2 hover:text-white border-black px-2 py-2 hover:bg-black text-sm text-black max-sm:font-semibold">Leer artículo anterior</button>
       <button onclick={hitoSiguiente ? `location.href='/hitos/${hitoSiguiente}'` : `location.href='/hitos/articulo-1'`} class="rounded-full border max-sm:border-2 hover:text-white hover:bg-black border-black px-2 py-2 text-sm text-black max-sm:font-semibold">Leer artículo siguiente</button>
     </div>
