@@ -15,22 +15,22 @@ const images = [
 
 <section
   id="products"
-  class="bg-[#1c1c1e] py-12 px-5 lg:px-32 grid place-items-center"
+  class="grid place-items-center bg-[#1c1c1e] px-5 py-12 lg:px-32"
   aria-label="Nuestros productos"
 >
   <div class="max-w-[1440px]">
-    <header class="mb-8 pb-4 border-b border-white/10 flex justify-center">
+    <header class="flex justify-center mb-8 border-b border-white/10 pb-4">
       <h2
-        class="text-white text-[60px] max-w-[650px] lg:text-[96px] lg:text-center lg:leading-[72px] tracking-[-.08em] leading-[60.80px]"
+        class="max-w-[650px] text-[60px] leading-[60.80px] tracking-[-.08em] text-white lg:text-[96px] lg:text-center lg:leading-[72px]"
       >
         Echa un vistazo a lo que hacemos
       </h2>
     </header>
-    <div class="grid md:grid-cols-2 md:gap-8 gap-3 px-9">
+    <div class="grid gap-3 px-9 md:grid-cols-2 md:gap-8">
       {
         images.map((image) => (
           <Image
-            class="w-full h-auto object-cover"
+            class="h-auto w-full object-cover"
             src={image.src}
             alt={image.alt}
             loading="lazy"
