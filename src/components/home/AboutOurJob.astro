@@ -18,7 +18,7 @@ const articles = [
     image: restauramos,
   },
   {
-    title: "Rentamos (alquilamos)",
+    title: "Rentamos",
     description:
       "Mostramos nuestras creaciones en un catálogo digital, para que puedas alquilar tus piezas favoritas por el tiempo que lo necesites. Te las entregamos y recogemos en tu hogar",
     image: entregamos,
@@ -26,44 +26,35 @@ const articles = [
 ];
 ---
 
-<section class="w-full grid justify-center bg-[#d9d9d9] px-4 lg:px-8">
-  <div
-    class="min-h-[748px] max-md:py-8 py-24 flex-col justify-start items-center gap-6 inline-flex max-w-[1376px]"
-  >
-    <div>
-      <h2
-        class="max-w-[796px] text-center text-black/90 md:text-[56px] font-semibold max-md:text-[32px] leading-[64px]"
-      >
-        ¿Cómo trabajamos?
-      </h2>
-      <p class="my-4">
-        El innovador sistema de Abitacolo se basa en 3 pasos. Nuestras 3 propias
-        “Rs”
-      </p>
-    </div>
-
-    <div
-      class="justify-start items-start gap-4 min-[1440px]:inline-flex max-[1440px]:grid"
+<section class="w-full bg-[#d9d9d9] px-4 lg:px-8 py-8 md:py-11">
+  <div class="max-w-7xl mx-auto">
+    <h2
+      class="mb-4 text-center text-black/90 text-4xl md:text-6xl font-semibold leading-tight tracking-tight"
     >
+      ¿Cómo trabajamos?
+    </h2>
+    <p class="mb-8 text-center max-w-2xl mx-auto md:text-xl">
+      El innovador sistema de Abitacolo se basa en 3 pasos. <strong
+        >Nuestras 3 propias "Rs"</strong
+      >
+    </p>
+
+    <div class="grid gap-4 justify-center lg:grid-cols-3">
       {
         articles.map((article) => (
-          <article class="relative max-w-[448px] h-[396px]">
+          <article class="relative w-full aspect-square sm:aspect-[11/10] max-w-[448px] max-md:max-h-[348px]">
             <Image
               src={article.image}
               alt={`Imagen de ${article.title}`}
-              width={448}
               loading="lazy"
-              height={396}
-              class="absolute inset-0 w-full max-h- h-full object-cover"
+              class="absolute inset-0 w-full h-full object-cover"
             />
-            <div class="absolute inset-0 bg-black bg-opacity-30" />
-            <div class="relative z-10 h-full px-8  pb-8 grid gap-4 content-end">
-              <header class=" flex-col  flex">
-                <h3 class=" text-white text-[28px] leading-loose font-bold">
-                  {article.title}
-                </h3>
-              </header>
-              <p class=" text-white text-sm leading-tight font-semibold">
+            <div class="absolute inset-0 bg-black bg-opacity-40 shadow" />
+            <div class="relative h-full p-4 sm:p-6 flex flex-col justify-end">
+              <h3 class="mb-2 text-white text-xl sm:text-2xl font-bold">
+                {article.title}
+              </h3>
+              <p class="text-white text-xs sm:text-sm font-medium">
                 {article.description}
               </p>
             </div>

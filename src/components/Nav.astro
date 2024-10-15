@@ -12,7 +12,7 @@ const navItems = [
 ];
 ---
 
-<nav class="w-full absolute flex justify-center h-fit pt-4 z-50 bg-white/40">
+<nav class="w-full absolute flex justify-center h-fit z-50 bg-white/40">
   <div class="max-w-[1440px] w-full h-[65px] px-8 py-4 flex items-center">
     <a href="/" aria-label="Inicio">
       <Image
@@ -32,7 +32,7 @@ const navItems = [
             <li>
               <a
                 {href}
-                class={`px-3 py-1.5 rounded-full text-white bg-[#2e2f32] hover:bg-[#3e3f42] transition-colors duration-300 ${href === "#contacto" ? "bg-[#919e32]" : ""}`}
+                class={`px-3 py-1.5 rounded-full text-white bg-[#2e2f32] hover:bg-white hover:text-black transition-colors duration-300 ${href === "#contacto" ? "bg-[#717C27]" : ""}`}
                 data-nav-link
               >
                 {label}
@@ -41,9 +41,6 @@ const navItems = [
           ))
         }
       </ul>
-      <div class="flex items-center gap-2">
-        <button class="px-2 py-1.5 rounded-lg text-white">ES</button>
-      </div>
     </div>
   </div>
   <div class="min-[951px]:hidden grid content-center"><ModalMenuMovil /></div>
