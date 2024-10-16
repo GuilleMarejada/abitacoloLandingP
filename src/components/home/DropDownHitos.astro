@@ -34,7 +34,7 @@ const hiddenClasses = {
     {
       Hitos.map((hito, index) => (
         <article
-          class={`grid w-full min-h-72 gap-4 -top-5 p-7 place-items-center bg-white text-[#666666] hover:bg-gray-100 hover:text-black ${hiddenClasses[hito.clases] || ""}`}
+          class={`grid w-full min-h-72 gap-4 -top-5 p-7 place-items-center bg-white hover:bg-gray-100 hover:text-black ${hiddenClasses[hito.clases] || ""}`}
           data-image-src={hito.image.src}
           data-image-srcset={hito.image.src}
         >
@@ -42,7 +42,7 @@ const hiddenClasses = {
             {hito.titulo}
           </h2>
           <p class="self-stretch leading-tight text-center">{hito.texto}</p>
-          <a href={`/hitos/articulo-${index + 2}`}>
+          <a href={`/hitos/articulo-${index + 2}`} role="menuitem">
             <button class="flex w-fit h-[37px] place-items-center rounded-full border-2 border-black px-2 py-2.5 font-semibold hover:bg-black hover:text-white">
               Leer articulo
             </button>
