@@ -84,11 +84,11 @@ const articulosHitos = [
     />
 
     <section class="relative flex justify-center">
-      <div class="flex flex-wrap gap-4 bg-black/5 px-4 sm:px-8">
+      <div class="flex gap-4 justify-center bg-black/5 px-4 sm:px-6">
         {
           articulosHitos.map((articulo, index) => (
             <article
-              class={`inline-flex min-h-60 w-full flex-col gap-4 bg-white p-6 transition-colors hover:bg-gray-100 hover:text-black focus-within:bg-gray-100 focus-within:text-black sm:w-[calc(50%-1rem)] sm:gap-6 sm:p-10 md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1rem)] xl:w-[calc(20%-1rem)] relative top-[-20px] focus:rounded-lg ${articulo.clases}`}
+              class={`inline-flex min-h-60 w-full flex-col gap-4 bg-white py-12 px-4 max-sm:py-6 transition-colors hover:bg-gray-100 hover:text-black focus-within:bg-gray-100 focus-within:text-black sm:w-[calc(50%-1rem)] sm:gap-6  md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1rem)] xl:w-[calc(20%-1rem)] relative top-[-20px] focus:rounded-lg ${articulo.clases}`}
               data-index={index}
               data-image-src={articulo.image.src}
               data-image-srcset={articulo.image.src}
