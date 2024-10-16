@@ -71,7 +71,7 @@ const team = [
     linkImage: XLD,
     description:
       "Con que exista una idea, yo puedo traducirla al lenguaje de programación.  No perderá un solo pixel de su potencial.",
-    linkedin: "www.linkedin.com/in/xavierlongo",
+    linkedin: "https://www.linkedin.com/in/xavierlongo/",
   },
   {
     person: "Guillermo Correa",
