@@ -70,7 +70,7 @@ const team = [
     position: "Full Stack Developer",
     linkImage: XLD,
     description:
-      "Con que exista una idea, yo puedo traducirla al lenguaje de programación.  No perderá un solo pixel de su potencial.",
+      "Con que exista una idea, puedo traducirla al lenguaje de programación.  No perderá un solo pixel de su potencial.",
     linkedin: "https://www.linkedin.com/in/xavierlongo/",
   },
   {
