@@ -45,6 +45,7 @@ const menuItems = [
               href={item.href}
               class={`${item.class} rounded-full justify-center items-center gap-1 inline-flex w-full h-[56px] text-white text-xl tracking-tight`}
               data-nav-link
+              referrerpolicy="no-referrer"
             >
               {item.text}
             </a>
@@ -65,7 +66,7 @@ const menuItems = [
       "closeButton"
     ) as HTMLButtonElement;
     const navLinks = document.querySelectorAll(
-      "[data-nav-link]"
+      "[referrerpolicy]"
     ) as NodeListOf<HTMLAnchorElement>;
     const isHomePage = ["", "/", "/index.html"].includes(
       window.location.pathname
