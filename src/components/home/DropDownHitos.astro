@@ -23,9 +23,9 @@ const hiddenClasses = {
 };
 ---
 
-<div class="relative text-left xl:hidden px-8">
+<div class="relative xl:hidden px-4 text-left">
   <div
-    class="origin-top-right mt-2 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 hidden space-y-3"
+    class="hidden mt-2 space-y-3 divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 origin-top-right"
     id="dropdown-menu"
     role="menu"
     aria-orientation="vertical"
@@ -34,7 +34,7 @@ const hiddenClasses = {
     {
       Hitos.map((hito, index) => (
         <article
-          class={`min-h-72 w-full p-12 bg-white text-[#666666] hover:text-black hover:bg-gray-300 grid place-items-center gap-6 -top-5 ${hiddenClasses[hito.clases] || ""}`}
+          class={`grid w-full min-h-72 gap-4 -top-5 p-7 place-items-center bg-white text-[#666666] hover:bg-gray-100 hover:text-black ${hiddenClasses[hito.clases] || ""}`}
           data-image-src={hito.image.src}
           data-image-srcset={hito.image.src}
         >
@@ -43,7 +43,7 @@ const hiddenClasses = {
           </h2>
           <p class="text-sm leading-tight text-center">{hito.texto}</p>
           <a href={`/hitos/articulo-${index + 1}`}>
-            <button class="rounded-full border-2 border-black h-[37px] w-fit px-2 py-2.5 font-semibold hover:bg-black hover:text-white flex place-items-center">
+            <button class="flex w-fit h-[37px] place-items-center rounded-full border-2 border-black px-2 py-2.5 font-semibold hover:bg-black hover:text-white">
               Leer articulo
             </button>
           </a>

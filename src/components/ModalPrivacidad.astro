@@ -6,13 +6,13 @@ import logoA from "../image/logos/ANegra.webp";
 
 <div
   id="cookieModal"
-  class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center w-full h-full p-10"
+  class="fixed inset-0 z-50 hidden w-full h-full items-center justify-center bg-black bg-opacity-50 p-10"
   role="dialog"
   aria-labelledby="cookieModalTitle"
   aria-describedby="cookieModalDescription"
 >
   <div
-    class="max-w-[1207px] min-h-[89px] px-4 pt-4 pb-2.5 bg-white rounded-2xl border-4 border-[#919e32] grid items-center gap-5 min-[1205px]:flex"
+    class="grid min-h-[89px] max-w-[1207px] items-center gap-5 rounded-2xl border-4 border-[#919e32] bg-white px-4 pt-4 pb-2.5 min-[1205px]:flex"
   >
     <h2 id="cookieModalTitle" class="sr-only">Consentimiento de Cookies</h2>
     <p id="cookieModalDescription" class="sr-only">
@@ -31,40 +31,40 @@ import logoA from "../image/logos/ANegra.webp";
       </div>
       <div class="h-[49px]">
         <div class="leading-7 tracking-wide">Nos preocupa</div>
-        <div class="w-[150px] text-[#222222] text-xl font-bold leading-7">
+        <div class="w-[150px] text-xl font-bold leading-7 text-[#222222]">
           tu privacidad
         </div>
       </div>
     </div>
 
     <div
-      class="max-w-[342px] min-h-[29px] flex-col justify-start items-start inline-flex"
+      class="inline-flex max-w-[342px] min-h-[29px] flex-col items-start justify-start"
     >
       <div
-        class="self-stretch text-[#37474f] text-sm leading-none tracking-tight"
+        class="self-stretch text-sm leading-none tracking-tight text-[#37474f]"
       >
         Utilizamos cookies para mejorar tu experiencia en nuestra web. Estas
         almacenan información sobre tus preferencias.
       </div>
     </div>
     <div
-      class="bg-[#717C27] rounded-full justify-center items-center gap-1.5 flex"
+      class="flex items-center justify-center gap-1.5 rounded-full bg-[#717C27]"
     >
       <button
         id="acceptAll"
-        class="text-white text-sm font-semibold leading-[16.80px] grid justify-center px-7 py-2.5 w-full"
+        class="grid w-full justify-center px-7 py-2.5 text-sm font-semibold leading-[16.80px] text-white"
       >
         Aceptar todas
       </button>
     </div>
     <button
       id="customize"
-      class="px-7 py-2.5 rounded-full border-2 border-[#666666] justify-center items-center gap-1.5 flex"
+      class="flex items-center justify-center gap-1.5 rounded-full border-2 border-[#666666] px-7 py-2.5"
     >
-      <div class="text-[#666666] text-sm font-semibold leading-[16.80px]">
+      <div class="text-sm font-semibold leading-[16.80px] text-[#666666]">
         Personalizar
       </div>
-      <div class="w-4 h-4 relative">
+      <div class="relative w-4 h-4">
         <div style={{ minWidth: "24px", minHeight: "26px" }}>
           <Image
             src={ajustes}
@@ -76,13 +76,13 @@ import logoA from "../image/logos/ANegra.webp";
         </div>
       </div>
     </button>
-    <div class="h-10 justify-start items-start gap-4 flex">
+    <div class="flex h-10 items-start justify-start gap-4">
       <button
         id="rejectAll"
-        class="py-[9px] justify-center items-center gap-2.5 flex"
+        class="flex items-center justify-center gap-2.5 py-[9px]"
       >
         <div
-          class="text-center text-[#37474f] text-sm font-medium uppercase tracking-wider"
+          class="text-center text-sm font-medium uppercase tracking-wider text-[#37474f]"
         >
           RECHAZAR TODAS
         </div>
@@ -90,7 +90,6 @@ import logoA from "../image/logos/ANegra.webp";
     </div>
   </div>
 </div>
-
 <script>
   const STORAGE_KEY = "cookieConsent";
   const COOKIE_NAME = "cookieConsent";

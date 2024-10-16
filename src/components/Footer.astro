@@ -14,23 +14,23 @@ const navItems = [
 ---
 
 <footer
-  class="flex w-full max-h-[574px] justify-center bg-[#d6ff85] px-4 lg:px-8"
+  class="flex justify-center w-full max-h-[574px] bg-[#d6ff85] px-4 py-8 lg:px-8"
 >
-  <div class="w-full max-w-[1440px] py-8">
-    <div class="max-md:flex-col items-center justify-between flex">
+  <div class="w-full max-w-[1440px]">
+    <div class="flex items-center justify-between max-md:flex-col">
       <div class="flex justify-center">
         <a href="/" aria-label="Inicio">
           <Image
-            width={150}
-            height={150}
             src={AbitacoloNegro}
             alt="Logo Abitacolo"
+            width={200}
+            height={200}
             loading="lazy"
           />
         </a>
       </div>
 
-      <div class="flex items-center gap-6 max-md:flex-col-reverse max-md:mt-10">
+      <div class="flex items-center gap-6 max-md:flex-col-reverse max-md:mt-5">
         <a
           class="text-sm font-semibold cursor-pointer hover:text-blue-800"
           href="/terminos-y-condiciones"
@@ -62,7 +62,7 @@ const navItems = [
 
     <div class="flex flex-col mt-2">
       <div
-        class="flex justify-between lg:px-8 max-md:items-center max-md:flex-col"
+        class="flex justify-between max-md:flex-col max-md:items-center lg:px-8"
       >
         {
           navItems.map(({ href, label }) => (
@@ -76,7 +76,7 @@ const navItems = [
       </div>
 
       <p
-        class="mt-2 text-sm text-center text-black uppercase leading-relaxed tracking-[8px]"
+        class="mt-2 text-sm text-black text-center uppercase leading-relaxed tracking-[8px]"
       >
         © {new Date().getFullYear()} Abitacolo - All rights reserved
       </p>

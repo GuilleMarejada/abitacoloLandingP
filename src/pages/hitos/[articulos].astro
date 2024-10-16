@@ -134,9 +134,9 @@ const hitoSiguiente = hitos[hitoIndex + 1] ? hitos[hitoIndex + 1].hito : null;
         class="object-cover w-full max-h-[800px]"
         loading="eager"
       />
-      <section class="max-w-[776px] flex flex-col mt-5 text-start gap-8">
+      <section class="max-w-[776px] w-full flex flex-col mt-5 text-start gap-8">
         <h1
-          class="max-md:text-[64px] text-8xl leading-[91.20px] py-5 max-md:px-8"
+          class="max-md:text-[50px] leading-[91.20px] max-md:leading-[60.80px] text-8xl py-5 max-md:px-8"
         >
           {hitoSeleccionado?.titulo}
         </h1>
@@ -152,7 +152,7 @@ const hitoSiguiente = hitos[hitoIndex + 1] ? hitos[hitoIndex + 1].hito : null;
               width={776}
               height={657}
               loading="lazy"
-              class="mt-5"
+              class="mt-5 h-auto w-full"
             />
           )
         }
@@ -168,6 +168,7 @@ const hitoSiguiente = hitos[hitoIndex + 1] ? hitos[hitoIndex + 1].hito : null;
               width={776}
               height={657}
               loading="lazy"
+              class="h-auto w-full"
             />
           )
         }
@@ -187,8 +188,9 @@ const hitoSiguiente = hitos[hitoIndex + 1] ? hitos[hitoIndex + 1].hito : null;
                 width={776}
                 height={657}
                 loading="lazy"
+                class="h-auto w-full"
               />
-              <div class="text-center">
+              <div class="text-center text-[10px]">
                 <span>
                   Bruno Munari, Abitacolo [Habitáculo], 1971.
                   <br />
@@ -235,6 +237,7 @@ const hitoSiguiente = hitos[hitoIndex + 1] ? hitos[hitoIndex + 1].hito : null;
               width={776}
               height={657}
               loading="lazy"
+              class="h-auto w-full"
             />
           )
         }
