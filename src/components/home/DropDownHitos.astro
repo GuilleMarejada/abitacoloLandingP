@@ -34,7 +34,7 @@ const hiddenClasses = {
     {
       Hitos.map((hito, index) => (
         <article
-          class={`min-h-72 w-full p-12 bg-white text-[#666666] hover:text-black hover:bg-gray-300 flex flex-col gap-6 -top-5 ${hiddenClasses[hito.clases] || ""}`}
+          class={`min-h-72 w-full p-12 bg-white text-[#666666] hover:text-black hover:bg-gray-300 grid place-items-center gap-6 -top-5 ${hiddenClasses[hito.clases] || ""}`}
           data-image-src={hito.image.src}
           data-image-srcset={hito.image.src}
         >
@@ -42,7 +42,7 @@ const hiddenClasses = {
             {hito.titulo}
           </h2>
           <p class="text-sm leading-tight text-center">{hito.texto}</p>
-          <a href={`/hitos/articulo-${index + 1}`} class="ml-auto mt-auto">
+          <a href={`/hitos/articulo-${index + 1}`}>
             <button class="rounded-full border-2 border-black h-[37px] w-fit px-2 py-2.5 font-semibold hover:bg-black hover:text-white flex place-items-center">
               Leer articulo
             </button>
@@ -82,8 +82,6 @@ const hiddenClasses = {
     const expanded = this.getAttribute("aria-expanded") === "true";
     this.setAttribute("aria-expanded", (!expanded).toString());
     menu?.classList.toggle("hidden");
-
-    // Toggle the arrow image
     if (expanded) {
       arrowImage.src = flechaAbajoSrc;
       arrowImage.srcset = flechaAbajoSrc;

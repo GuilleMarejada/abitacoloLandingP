@@ -12,14 +12,14 @@ import logoA from "../image/logos/ANegra.webp";
   aria-describedby="cookieModalDescription"
 >
   <div
-    class="max-w-[1207px] min-h-[89px] px-8 pt-4 pb-3.5 bg-white rounded-2xl border-2 border-[#919e32] grid items-center gap-5 min-[1205px]:flex"
+    class="max-w-[1207px] min-h-[89px] px-4 pt-4 pb-2.5 bg-white rounded-2xl border-4 border-[#919e32] grid items-center gap-5 min-[1205px]:flex"
   >
     <h2 id="cookieModalTitle" class="sr-only">Consentimiento de Cookies</h2>
     <p id="cookieModalDescription" class="sr-only">
       Elige tus preferencias de cookies
     </p>
 
-    <div class="flex justify-around">
+    <div class="flex items-center gap-6">
       <div style={{ minWidth: "89px", minHeight: "89px" }}>
         <Image
           src={logoA}
@@ -41,14 +41,14 @@ import logoA from "../image/logos/ANegra.webp";
       class="max-w-[342px] min-h-[29px] flex-col justify-start items-start inline-flex"
     >
       <div
-        class="self-stretch h-[43px] text-[#37474f] text-sm leading-none tracking-tight"
+        class="self-stretch text-[#37474f] text-sm leading-none tracking-tight"
       >
         Utilizamos cookies para mejorar tu experiencia en nuestra web. Estas
         almacenan información sobre tus preferencias.
       </div>
     </div>
     <div
-      class="bg-[#717C27] rounded-[10px] justify-center items-center gap-1.5 flex"
+      class="bg-[#717C27] rounded-full justify-center items-center gap-1.5 flex"
     >
       <button
         id="acceptAll"
@@ -59,7 +59,7 @@ import logoA from "../image/logos/ANegra.webp";
     </div>
     <button
       id="customize"
-      class="px-7 py-2.5 rounded-[10px] border-2 border-[#666666] justify-center items-center gap-1.5 flex"
+      class="px-7 py-2.5 rounded-full border-2 border-[#666666] justify-center items-center gap-1.5 flex"
     >
       <div class="text-[#666666] text-sm font-semibold leading-[16.80px]">
         Personalizar
@@ -79,7 +79,7 @@ import logoA from "../image/logos/ANegra.webp";
     <div class="h-10 justify-start items-start gap-4 flex">
       <button
         id="rejectAll"
-        class="py-[9px] rounded-lg border justify-center items-center gap-2.5 flex"
+        class="py-[9px] justify-center items-center gap-2.5 flex"
       >
         <div
           class="text-center text-[#37474f] text-sm font-medium uppercase tracking-wider"
