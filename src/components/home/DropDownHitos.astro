@@ -38,11 +38,11 @@ const hiddenClasses = {
           data-image-src={hito.image.src}
           data-image-srcset={hito.image.src}
         >
-          <h2 class="text-2xl font-bold leading-7 text-center">
+          <h2 class="text-2xl font-bold leading-tight text-center sm:leading-7">
             {hito.titulo}
           </h2>
-          <p class="text-sm leading-tight text-center">{hito.texto}</p>
-          <a href={`/hitos/articulo-${index + 1}`}>
+          <p class="self-stretch leading-tight text-center">{hito.texto}</p>
+          <a href={`/hitos/articulo-${index + 2}`}>
             <button class="flex w-fit h-[37px] place-items-center rounded-full border-2 border-black px-2 py-2.5 font-semibold hover:bg-black hover:text-white">
               Leer articulo
             </button>
