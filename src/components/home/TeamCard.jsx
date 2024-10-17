@@ -19,7 +19,7 @@ const TeamCard = ({ person, position, linkImage, description, linkedin }) => (
         {person}
       </h2>
       <div className="grid gap-4 flex-grow">
-        <p className="text-black/90 text-xs uppercase leading-tight mt-2">
+        <p className="text-black/90 uppercase max-md:text-xs leading-tight mt-2">
           {position}
         </p>
         <p className="text-[#666666] text-sm leading-tight mt-2">
