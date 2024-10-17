@@ -8,6 +8,6 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   integrations: [tailwind(), react(), sitemap()],
   output: "server",
-  site: "https://abitacolo-landing-p.vercel.app/",
+  site: "https://www.abitacolo.info/",
   adapter: vercel(),
 });
