@@ -47,12 +47,21 @@ const navItems = [
         <div class="flex gap-5">
           {
             ["Instagram", "LinkedIn"].map((social) => (
-              <Image
-                class="w-6 h-6"
-                src={social === "Instagram" ? InstagramNegro : LinkedinNegro}
-                alt={social}
-                loading="lazy"
-              />
+              <a
+                href={
+                  social === "Instagram"
+                    ? "https://www.instagram.com/abitacolomadrid/"
+                    : "https://www.linkedin.com/company/abitacolo"
+                }
+                target="_blank"
+              >
+                <Image
+                  class="w-6 h-6"
+                  src={social === "Instagram" ? InstagramNegro : LinkedinNegro}
+                  alt={social}
+                  loading="lazy"
+                />
+              </a>
             ))
           }
         </div>
