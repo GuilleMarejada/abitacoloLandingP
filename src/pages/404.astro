@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import telaAraña from "../image/Error404-telaAraña.webp";
+import Image from "astro/components/Image.astro";
 ---
 
 <Layout title="404-Not Found">
@@ -10,9 +12,17 @@ import Layout from "../layouts/Layout.astro";
       <p class="text-md text-black mb-6">
         Lo sentimos, pero la página que estás buscando no existe.
       </p>
+      <Image
+        src={telaAraña}
+        alt="Tela de error 404"
+        width={400}
+        height={80}
+        loading="eager"
+        class="mb-6"
+      />
       <a
         href="/"
-        class="text-blue-600 hover:text-blue-800 font-semibold text-lg"
+        class="text-blue-600 hover:text-blue-800 font-semibold text-lg p-6"
       >
         Volver al inicio
       </a>

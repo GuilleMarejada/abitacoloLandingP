@@ -57,7 +57,7 @@ import logoA from "../image/logos/ANegra.webp";
         Aceptar todas
       </button>
     </div>
-    <button
+    <!-- <button
       id="customize"
       class="flex items-center justify-center gap-1.5 rounded-full border-2 border-[#666666] px-7 py-2.5"
     >
@@ -75,7 +75,7 @@ import logoA from "../image/logos/ANegra.webp";
           />
         </div>
       </div>
-    </button>
+    </button> -->
     <div class="flex h-10 items-start justify-start gap-4">
       <button
         id="rejectAll"
@@ -148,16 +148,16 @@ import logoA from "../image/logos/ANegra.webp";
 
   document.addEventListener("DOMContentLoaded", () => {
     const acceptBtn = document.getElementById("acceptAll");
-    const customizeBtn = document.getElementById("customize");
+    // const customizeBtn = document.getElementById("customize");
     const rejectBtn = document.getElementById("rejectAll");
 
     acceptBtn.onclick = () => setConsent("accepted");
     rejectBtn.onclick = () => setConsent("rejected");
-    customizeBtn.onclick = () => {
-      console.log("Open customization settings");
-      // Aquí puedes implementar la lógica para abrir un modal de personalización
-      // Por ahora, no cerramos el modal principal
-    };
+    // customizeBtn.onclick = () => {
+    //   console.log("Open customization settings");
+    //   // Aquí puedes implementar la lógica para abrir un modal de personalización
+    //   // Por ahora, no cerramos el modal principal
+    // };
 
     showModal();
   });
